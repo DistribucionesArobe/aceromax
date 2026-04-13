@@ -2,4 +2,21 @@ User-agent: *
 Allow: /
 Disallow: /images/thumbs/
 
+# Sitemap location
 Sitemap: https://aceromax.mx/sitemap.xml
+
+# Bots específicos (permitir acceso completo)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
