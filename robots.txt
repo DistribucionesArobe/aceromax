@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /images/thumbs/
+
+Sitemap: https://aceromax.mx/sitemap.xml

@@ -1,0 +1,57 @@
+services:
+  - type: web
+    name: aceromax
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /css/*
+        name: Cache-Control
+        value: public, max-age=31536000
+      - path: /images/*
+        name: Cache-Control
+        value: public, max-age=31536000
+    routes:
+      - type: rewrite
+        source: /acero-estructural
+        destination: /acero-estructural/index.html
+      - type: rewrite
+        source: /ptr-perfiles
+        destination: /ptr-perfiles/index.html
+      - type: rewrite
+        source: /laminas
+        destination: /laminas/index.html
+      - type: rewrite
+        source: /tablaroca-durock
+        destination: /tablaroca-durock/index.html
+      - type: rewrite
+        source: /varilla-cemento
+        destination: /varilla-cemento/index.html
+      - type: rewrite
+        source: /losacero
+        destination: /losacero/index.html
+      - type: rewrite
+        source: /mallas
+        destination: /mallas/index.html
+      - type: rewrite
+        source: /plafones
+        destination: /plafones/index.html
+      - type: rewrite
+        source: /pinturas
+        destination: /pinturas/index.html
+      - type: rewrite
+        source: /puertas-ferreteria
+        destination: /puertas-ferreteria/index.html
+      - type: rewrite
+        source: /nosotros
+        destination: /nosotros/index.html
+      - type: rewrite
+        source: /contacto
+        destination: /contacto/index.html
