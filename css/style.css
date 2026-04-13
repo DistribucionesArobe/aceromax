@@ -1,10 +1,12 @@
 :root {
-  --primary: #C62828;
-  --primary-dark: #8E0000;
-  --accent: #FF6F00;
-  --dark: #1a1a2e;
-  --gray: #f5f5f5;
-  --text: #333;
+  --primary: #1E3A8A;
+  --primary-dark: #0F2557;
+  --accent: #C0C0C0;
+  --steel: #6B7280;
+  --steel-light: #9CA3AF;
+  --dark: #0F1729;
+  --gray: #F3F4F6;
+  --text: #1F2937;
   --white: #fff;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
