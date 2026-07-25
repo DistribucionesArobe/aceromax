@@ -91,3 +91,63 @@ services:
       - type: rewrite
         source: /marcas/dewalt
         destination: /marcas/dewalt/index.html
+      - type: rewrite
+        source: /productos/tablaroca
+        destination: /productos/tablaroca/index.html
+      - type: rewrite
+        source: /productos/durock
+        destination: /productos/durock/index.html
+      - type: rewrite
+        source: /productos/plafones
+        destination: /productos/plafones/index.html
+      - type: rewrite
+        source: /productos/lamina-galvanizada
+        destination: /productos/lamina-galvanizada/index.html
+      - type: rewrite
+        source: /productos/fierro
+        destination: /productos/fierro/index.html
+      - type: rewrite
+        source: /productos/vigas
+        destination: /productos/vigas/index.html
+      - type: rewrite
+        source: /productos/pintura
+        destination: /productos/pintura/index.html
+      - type: rewrite
+        source: /productos/malla-ciclonica
+        destination: /productos/malla-ciclonica/index.html
+      - type: rewrite
+        source: /productos/rejacero
+        destination: /productos/rejacero/index.html
+      - type: rewrite
+        source: /productos/malla-borreguera
+        destination: /productos/malla-borreguera/index.html
+      - type: rewrite
+        source: /productos/puertas-multipanel
+        destination: /productos/puertas-multipanel/index.html
+      - type: rewrite
+        source: /productos/ferreteria
+        destination: /productos/ferreteria/index.html
+      - type: rewrite
+        source: /productos/canal-de-acero
+        destination: /productos/canal-de-acero/index.html
+      - type: rewrite
+        source: /productos/varilla
+        destination: /productos/varilla/index.html
+      - type: rewrite
+        source: /productos/cemento
+        destination: /productos/cemento/index.html
+      - type: rewrite
+        source: /productos/lambrin
+        destination: /productos/lambrin/index.html
+      - type: rewrite
+        source: /productos/material-decoracion
+        destination: /productos/material-decoracion/index.html
+      - type: rewrite
+        source: /productos/galvateja
+        destination: /productos/galvateja/index.html
+      - type: rewrite
+        source: /productos/aceroteja
+        destination: /productos/aceroteja/index.html
+      - type: rewrite
+        source: /productos
+        destination: /productos/index.html
