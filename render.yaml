@@ -55,3 +55,39 @@ services:
       - type: rewrite
         source: /contacto
         destination: /contacto/index.html
+      - type: rewrite
+        source: /marcas
+        destination: /marcas/index.html
+      - type: rewrite
+        source: /marcas/usg
+        destination: /marcas/usg/index.html
+      - type: rewrite
+        source: /marcas/prolamsa
+        destination: /marcas/prolamsa/index.html
+      - type: rewrite
+        source: /marcas/deacero
+        destination: /marcas/deacero/index.html
+      - type: rewrite
+        source: /marcas/ternium
+        destination: /marcas/ternium/index.html
+      - type: rewrite
+        source: /marcas/apasco
+        destination: /marcas/apasco/index.html
+      - type: rewrite
+        source: /marcas/doal
+        destination: /marcas/doal/index.html
+      - type: rewrite
+        source: /marcas/alvamex
+        destination: /marcas/alvamex/index.html
+      - type: rewrite
+        source: /marcas/megapanel
+        destination: /marcas/megapanel/index.html
+      - type: rewrite
+        source: /marcas/truper
+        destination: /marcas/truper/index.html
+      - type: rewrite
+        source: /marcas/makita
+        destination: /marcas/makita/index.html
+      - type: rewrite
+        source: /marcas/dewalt
+        destination: /marcas/dewalt/index.html
