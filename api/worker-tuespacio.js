@@ -166,6 +166,7 @@ export default {
       formData.append('prompt', prompt);
       formData.append('size', 'auto');
       formData.append('quality', 'medium');
+      formData.append('response_format', 'b64_json');
 
       // Call OpenAI
       const controller = new AbortController();
@@ -185,8 +186,11 @@ export default {
       if (!openaiResponse.ok) {
         const errorText = await openaiResponse.text();
         console.error('OpenAI error:', openaiResponse.status, errorText);
+        let debugMsg = '';
+        try { debugMsg = JSON.parse(errorText)?.error?.message || errorText.substring(0, 200); } catch(e) { debugMsg = errorText.substring(0, 200); }
         return new Response(JSON.stringify({
           error: 'Error al procesar la imagen. Intenta con otra foto.',
+          debug: debugMsg,
           details: openaiResponse.status,
         }), {
           status: 502,
