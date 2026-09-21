@@ -149,5 +149,8 @@ services:
         source: /productos/aceroteja
         destination: /productos/aceroteja/index.html
       - type: rewrite
+        source: /tuespacio
+        destination: /tuespacio/index.html
+      - type: rewrite
         source: /productos
         destination: /productos/index.html

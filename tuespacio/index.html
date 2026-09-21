@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Espacio — Visualizador de Pintura Alvamex | AceroMAX Ciudad Victoria</title>
+<meta name="description" content="Visualizador de pintura Alvamex de AceroMAX en Ciudad Victoria: sube una foto de tu espacio, elige entre decenas de colores Alquimex y Alvacolor, calcula cuánta pintura necesitas y recibe tu cotización al instante por WhatsApp.">
+<link rel="canonical" href="https://aceromax.mx/tuespacio">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tu Espacio — Visualizador de Pintura Alvamex | AceroMAX">
+<meta property="og:description" content="Sube una foto de tu espacio, elige un color Alvamex y mira cómo quedaría pintado. Calcula tu pintura y cotiza al instante.">
+<meta property="og:url" content="https://aceromax.mx/tuespacio">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="AceroMAX">
+
+<!-- Geo -->
+<meta name="geo.region" content="MX-TAM">
+<meta name="geo.placename" content="Ciudad Victoria, Tamaulipas">
+<meta name="geo.position" content="23.7369;-99.1411">
+<meta name="ICBM" content="23.7369, -99.1411">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Tu Espacio - Visualizador de Pintura Alvamex",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web",
+      "url": "https://aceromax.mx/tuespacio",
+      "description": "Herramienta gratuita para visualizar colores de pintura Alvamex sobre una fotografía real y calcular la cantidad de pintura necesaria.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "MXN"
+      },
+      "provider": {
+        "@type": "HardwareStore",
+        "name": "AceroMAX",
+        "telephone": "+528341100942",
+        "email": "acero2@aceromax.mx",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ciudad Victoria",
+          "addressRegion": "Tamaulipas",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "HardwareStore",
+      "name": "AceroMAX",
+      "image": "https://aceromax.mx/logo.png",
+      "telephone": "+528341100942",
+      "email": "acero2@aceromax.mx",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad Victoria",
+        "addressRegion": "Tamaulipas",
+        "addressCountry": "MX"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://aceromax.mx/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tu Espacio",
+          "item": "https://aceromax.mx/tuespacio"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HTPSHZR7NT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HTPSHZR7NT');
+</script>
+
+<style>
+  :root {
+    --primary: #1E3A8A;
+    --primary-dark: #0F2557;
+    --accent: #C0C0C0;
+    --steel: #6B7280;
+    --steel-light: #9CA3AF;
+    --dark: #0F1729;
+    --gray: #F3F4F6;
+    --text: #1F2937;
+    --white: #fff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; }
+  input { font-family: inherit; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ===== Top Bar ===== */
+  .topbar {
+    background: var(--dark);
+    color: var(--accent);
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  .topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .topbar a { color: var(--accent); }
+  .topbar a:hover { color: var(--white); }
+
+  /* ===== Nav ===== */
+  nav {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+  }
+  .logo span { color: var(--steel); }
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--primary-dark);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text);
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-cta {
+    background: #25D366;
+    color: var(--white) !important;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: #1eb956; }
+
+  @media (max-width: 900px) {
+    .hamburger { display: block; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-cta { display: inline-block; }
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 55%, var(--primary) 100%);
+    color: var(--white);
+    padding: 70px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(192,192,192,0.08), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.06), transparent 40%);
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+  .hero .subtitle {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .hero p.desc {
+    max-width: 640px;
+    margin: 0 auto;
+    color: #D1D5DB;
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  .hero .badges {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero .badges span {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    color: var(--white);
+  }
+
+  /* ===== Wizard Progress ===== */
+  .progress-wrap {
+    position: sticky;
+    top: 65px;
+    background: var(--white);
+    z-index: 900;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 12px 0;
+  }
+  .progress-track {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow-x: auto;
+  }
+  .progress-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transition: opacity .3s;
+  }
+  .progress-step.active, .progress-step.done { opacity: 1; }
+  .progress-step .num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--gray);
+    color: var(--steel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .progress-step.active .num { background: var(--primary); color: var(--white); }
+  .progress-step.done .num { background: #10B981; color: var(--white); }
+  .progress-step .label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .progress-line {
+    width: 20px;
+    height: 2px;
+    background: #E5E7EB;
+    flex-shrink: 0;
+  }
+
+  /* ===== Sections / Steps ===== */
+  .step-section {
+    padding: 56px 0;
+    border-bottom: 1px solid #F0F0F0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .step-section.visible { opacity: 1; transform: translateY(0); }
+  .step-section.locked { display: none; }
+
+  .step-header { text-align: center; margin-bottom: 36px; }
+  .step-kicker {
+    display: inline-block;
+    background: var(--gray);
+    color: var(--primary);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .step-header h2 {
+    font-size: clamp(24px, 4vw, 34px);
+    color: var(--primary-dark);
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .step-header p { color: var(--steel); font-size: 15px; max-width: 560px; margin: 0 auto; }
+
+  /* ===== Step 1: Upload ===== */
+  .upload-zone {
+    max-width: 640px;
+    margin: 0 auto;
+    border: 3px dashed var(--steel-light);
+    border-radius: 16px;
+    background: var(--gray);
+    padding: 50px 24px;
+    text-align: center;
+    transition: border-color .2s, background .2s;
+    cursor: pointer;
+  }
+  .upload-zone:hover, .upload-zone.dragover {
+    border-color: var(--primary);
+    background: #EEF2FF;
+  }
+  .upload-zone .icon { font-size: 52px; margin-bottom: 14px; }
+  .upload-zone h3 { font-size: 19px; color: var(--primary-dark); margin-bottom: 6px; }
+  .upload-zone p { color: var(--steel); font-size: 13.5px; margin-bottom: 20px; }
+  .upload-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14.5px;
+    border: none;
+    transition: transform .15s, box-shadow .15s, background .2s;
+  }
+  .btn-primary { background: var(--primary); color: var(--white); }
+  .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30,58,138,0.3); }
+  .btn-outline { background: var(--white); color: var(--primary); border: 2px solid var(--primary); }
+  .btn-outline:hover { background: var(--primary); color: var(--white); }
+  .btn-wa { background: #25D366; color: var(--white); }
+  .btn-wa:hover { background: #1eb956; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.35); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+  .btn-block { width: 100%; justify-content: center; }
+  .btn-lg { padding: 17px 30px; font-size: 16.5px; }
+
+  #fileInput, #cameraInput { display: none; }
+
+  .upload-hint { text-align: center; margin-top: 14px; font-size: 12.5px; color: var(--steel-light); }
+
+  .photo-preview-wrap { max-width: 640px; margin: 24px auto 0; text-align: center; }
+  .photo-preview-wrap img { border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); max-height: 360px; margin: 0 auto; }
+  .photo-preview-wrap .change-photo { margin-top: 14px; }
+
+  /* ===== Step 2: Room types ===== */
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  @media (max-width: 700px) { .room-grid { grid-template-columns: repeat(2, 1fr); } }
+  .room-card {
+    background: var(--white);
+    border: 2px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 26px 14px;
+    text-align: center;
+    transition: all .2s;
+  }
+  .room-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 10px 24px rgba(30,58,138,0.12); }
+  .room-card.selected { border-color: var(--primary); background: #EEF2FF; }
+  .room-card .emoji { font-size: 38px; margin-bottom: 10px; }
+  .room-card .name { font-weight: 700; font-size: 15px; color: var(--text); }
+
+  /* ===== Step 3: Colors ===== */
+  .recommend-box {
+    background: var(--gray);
+    border-radius: 16px;
+    padding: 26px 20px;
+    max-width: 1000px;
+    margin: 0 auto 36px;
+  }
+  .recommend-box h3 {
+    text-align: center;
+    color: var(--primary-dark);
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+  .recommend-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 700px) { .recommend-grid { grid-template-columns: repeat(2, 1fr); } }
+  .recommend-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .recommend-card .swatch-lg {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px #E5E7EB;
+  }
+  .recommend-card .name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .recommend-card .reason { font-size: 11.5px; color: var(--steel); margin-bottom: 12px; min-height: 30px; }
+  .recommend-card .btn { padding: 8px 14px; font-size: 12.5px; width: 100%; justify-content: center; }
+
+  .color-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .color-tab {
+    padding: 12px 24px;
+    border-radius: 30px;
+    background: var(--gray);
+    color: var(--steel);
+    font-weight: 700;
+    font-size: 14px;
+    border: 2px solid transparent;
+  }
+  .color-tab.active { background: var(--primary); color: var(--white); }
+
+  .color-search {
+    max-width: 400px;
+    margin: 0 auto 28px;
+    position: relative;
+  }
+  .color-search input {
+    width: 100%;
+    padding: 13px 16px 13px 40px;
+    border-radius: 10px;
+    border: 2px solid #E5E7EB;
+    font-size: 14.5px;
+  }
+  .color-search input:focus { outline: none; border-color: var(--primary); }
+  .color-search .icn { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--steel-light); }
+
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: 18px 8px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .swatch-item { text-align: center; }
+  .swatch-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    margin: 0 auto 8px;
+    display: block;
+    box-shadow: 0 0 0 1px #E5E7EB, 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform .15s;
+  }
+  .swatch-btn:hover { transform: scale(1.12); }
+  .swatch-btn.selected { border-color: var(--primary-dark); box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--primary); transform: scale(1.1); }
+  .swatch-item .sname { font-size: 11px; font-weight: 600; color: var(--text); line-height: 1.2; }
+  .swatch-item .scode { font-size: 10px; color: var(--steel-light); }
+  .swatch-empty { text-align: center; color: var(--steel); padding: 30px; grid-column: 1/-1; }
+
+  /* ===== Step 4: Preview ===== */
+  .preview-wrap { max-width: 720px; margin: 0 auto; }
+  .compare-box {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.2);
+    background: #000;
+    touch-action: none;
+    user-select: none;
+  }
+  .compare-box canvas { display: block; width: 100%; height: auto; }
+  .canvas-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: inset(0 0 0 50%);
+  }
+  .compare-divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--white);
+    transform: translateX(-2px);
+    cursor: ew-resize;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  }
+  .compare-divider::after {
+    content: '\2194';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .compare-label {
+    position: absolute;
+    top: 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--white);
+    background: rgba(0,0,0,0.55);
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  .compare-label.left { left: 12px; }
+  .compare-label.right { right: 12px; }
+
+  .intensity-row {
+    max-width: 720px;
+    margin: 24px auto 0;
+    background: var(--gray);
+    padding: 18px 20px;
+    border-radius: 12px;
+  }
+  .intensity-row label { display: flex; justify-content: space-between; font-size: 13.5px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .intensity-row input[type=range] { width: 100%; accent-color: var(--primary); }
+
+  .color-info-bar {
+    max-width: 720px;
+    margin: 20px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--white);
+    border: 2px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 16px 18px;
+    flex-wrap: wrap;
+  }
+  .color-info-bar .info-swatch {
+    width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+    box-shadow: 0 0 0 3px var(--white), 0 0 0 5px #E5E7EB;
+  }
+  .color-info-bar .info-text { flex: 1; min-width: 140px; }
+  .color-info-bar .info-name { font-weight: 800; font-size: 16px; color: var(--primary-dark); }
+  .color-info-bar .info-meta { font-size: 12.5px; color: var(--steel); }
+
+  .preview-actions { max-width: 720px; margin: 24px auto 0; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  /* ===== Step 5: Calculator ===== */
+  .wall-count-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  .wall-count-btn {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 2px solid #E5E7EB;
+    background: var(--white);
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--text);
+  }
+  .wall-count-btn.selected { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+  .walls-form {
+    max-width: 640px;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .wall-row {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    background: var(--gray);
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+  .wall-row .wnum { font-weight: 800; color: var(--primary); font-size: 14px; }
+  .wall-row .field label { display: block; font-size: 11px; color: var(--steel); margin-bottom: 4px; font-weight: 600; }
+  .wall-row .field input {
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border: 1.5px solid #E5E7EB;
+    font-size: 14px;
+  }
+  .wall-row .field input:focus { outline: none; border-color: var(--primary); }
+
+  .calc-results {
+    max-width: 640px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    border-radius: 16px;
+    padding: 28px 24px;
+  }
+  .calc-results .row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.15); font-size: 14.5px; }
+  .calc-results .row:last-child { border-bottom: none; }
+  .calc-results .row .label { color: var(--accent); }
+  .calc-results .row .val { font-weight: 800; text-align: right; }
+  .calc-results .containers-box {
+    margin-top: 14px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .calc-actions { max-width: 640px; margin: 24px auto 0; text-align: center; }
+
+  /* ===== Step 6: Lead form ===== */
+  .lead-form {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--gray);
+    border-radius: 18px;
+    padding: 32px 26px;
+  }
+  .lead-form .field { margin-bottom: 18px; }
+  .lead-form label { display: block; font-size: 13.5px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .lead-form input {
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: 10px;
+    border: 2px solid #E5E7EB;
+    font-size: 15px;
+    background: var(--white);
+  }
+  .lead-form input:focus { outline: none; border-color: var(--primary); }
+  .lead-summary {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .lead-summary b { color: var(--primary-dark); }
+
+  /* ===== Footer ===== */
+  footer { background: var(--dark); color: #D1D5DB; padding: 50px 0 0; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-bottom: 34px;
+  }
+  @media (max-width: 800px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+  .footer-col h4 { color: var(--white); font-size: 16px; margin-bottom: 14px; }
+  .footer-col p { font-size: 13.5px; margin-bottom: 8px; color: var(--steel-light); }
+  .footer-col a { display: block; font-size: 13.5px; margin-bottom: 10px; color: #D1D5DB; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 18px 0;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--steel-light);
+  }
+
+  /* ===== WhatsApp float ===== */
+  .wa-float {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 999;
+  }
+  .wa-float a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: var(--white);
+    padding: 14px 18px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+    font-weight: 700;
+    font-size: 14px;
+    transition: transform .2s;
+  }
+  .wa-float a:hover { transform: scale(1.06); }
+  @media (max-width: 600px) { .wa-float .wa-text { display: none; } .wa-float a { padding: 14px; } }
+
+  .toast {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--dark);
+    color: var(--white);
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 13.5px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, transform .3s;
+    z-index: 2000;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .req-star { color: #DC2626; }
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <div class="container">
+    <div>
+      <a href="tel:+528341100942">834 110 0942</a> &nbsp;|&nbsp;
+      <a href="tel:+528343132000">834 313 2000</a> &nbsp;|&nbsp;
+      <a href="mailto:acero2@aceromax.mx">acero2@aceromax.mx</a>
+    </div>
+    <div>Lun-Vie 8:00-18:00 &nbsp;|&nbsp; Sab 8:00-14:00</div>
+  </div>
+</div>
+<nav>
+  <div class="container">
+    <a href="/" class="logo">Acero<span>MAX</span></a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Menú">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/#productos">Productos</a></li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/#sucursales">Sucursales</a></li>
+      <li><a href="/marcas">Marcas</a></li>
+      <li><a href="/tuespacio" style="color:var(--primary);font-weight:700;">Tu Espacio</a></li>
+      <li><a href="https://wa.me/528348528236?text=Hola%2C%20quiero%20cotizar%20materiales" class="nav-cta" target="_blank" rel="noopener">Cotizar por WhatsApp</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="container hero-inner">
+    <h1>Tu Espacio</h1>
+    <div class="subtitle">Visualiza el color perfecto para tus paredes</div>
+    <p class="desc">Sube una foto de tu espacio, elige un color Alvamex, y mira cómo quedaría pintado. Calcula cuánta pintura necesitas y recibe tu cotización al instante.</p>
+    <div class="badges">
+      <span>Distribuidor autorizado Alvamex</span>
+      <span>100% gratis</span>
+      <span>Cotización por WhatsApp</span>
+    </div>
+  </div>
+</header>
+
+<!-- Progress -->
+<div class="progress-wrap">
+  <div class="progress-track" id="progressTrack">
+    <div class="progress-step active" data-step="1"><div class="num">1</div><div class="label">Foto</div></div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="2"><div class="num">2</div><div class="label">Espacio</div></div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="3"><div class="num">3</div><div class="label">Color</div></div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="4"><div class="num">4</div><div class="label">Vista Previa</div></div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="5"><div class="num">5</div><div class="label">Calcular</div></div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="6"><div class="num">6</div><div class="label">Cotizar</div></div>
+  </div>
+</div>
+
+<main>
+
+  <!-- STEP 1: Upload -->
+  <section class="step-section visible" id="step1" data-step="1">
+    <div class="container">
+      <div class="step-header">
+        <span class="step-kicker">Paso 1</span>
+        <h2>Sube tu Foto</h2>
+        <p>Toma o sube una foto clara de la pared o espacio que quieres pintar.</p>
+      </div>
+
+      <div id="uploadZone" class="upload-zone">
+        <div class="icon">&#128247;</div>
+        <h3>Arrastra tu foto aquí</h3>
+        <p>Formatos JPG, PNG o WEBP &middot; Máximo 10MB</p>
+        <div class="upload-actions">
+          <button class="btn btn-primary" id="btnChooseFile" type="button">Elegir Archivo</button>
+          <button class="btn btn-outline" id="btnUseCamera" type="button">Usar Cámara</button>
+        </div>
+      </div>
+      <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp">
+      <input type="file" id="cameraInput" accept="image/*" capture="environment">
+      <p class="upload-hint">Tu foto se procesa en tu propio navegador — no se sube a ningún servidor.</p>
+
+      <div class="photo-preview-wrap" id="photoPreviewWrap" style="display:none;">
+        <img id="photoPreviewImg" alt="Foto de tu espacio">
+        <div class="change-photo">
+          <button class="btn btn-outline" id="btnChangePhoto" type="button">Cambiar Foto</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2: Room type -->
+  <section class="step-section locked" id="step2" data-step="2">
+    <div class="container">
+      <div class="step-header">
+        <span class="step-kicker">Paso 2</span>
+        <h2>&iquest;Qu&eacute; espacio quieres pintar?</h2>
+        <p>Selecciona el tipo de espacio para recibir recomendaciones de color personalizadas.</p>
+      </div>
+      <div class="room-grid" id="roomGrid"></div>
+    </div>
+  </section>
+
+  <!-- STEP 3: Color -->
+  <section class="step-section locked" id="step3" data-step="3">
+    <div class="container">
+      <div class="step-header">
+        <span class="step-kicker">Paso 3</span>
+        <h2>Elige tu Color</h2>
+        <p>Explora los colores Alvamex y elige el que mejor se adapte a tu espacio.</p>
+      </div>
+
+      <div class="recommend-box" id="recommendBox" style="display:none;">
+        <h3>Te Proponemos</h3>
+        <div class="recommend-grid" id="recommendGrid"></div>
+      </div>
+
+      <div class="color-tabs">
+        <button class="color-tab active" data-line="alquimex" type="button">Alquimex (Interior)</button>
+        <button class="color-tab" data-line="alvacolor" type="button">Alvacolor (Exterior)</button>
+      </div>
+
+      <div class="color-search">
+        <span class="icn">&#128269;</span>
+        <input type="text" id="colorSearch" placeholder="Buscar color por nombre...">
+      </div>
+
+      <div class="swatch-grid" id="swatchGrid"></div>
+    </div>
+  </section>
+
+  <!-- STEP 4: Preview -->
+  <section class="step-section locked" id="step4" data-step="4">
+    <div class="container">
+      <div class="step-header">
+        <span class="step-kicker">Paso 4</span>
+        <h2>Vista Previa</h2>
+        <p>Arrastra la línea para comparar el antes y después. Ajusta la intensidad del color.</p>
+      </div>
+
+      <div class="preview-wrap">
+        <div class="compare-box" id="compareBox">
+          <canvas id="canvasBefore"></canvas>
+          <canvas id="canvasAfter" class="canvas-after"></canvas>
+          <div class="compare-label left">Antes</div>
+          <div class="compare-label right">Despu&eacute;s</div>
+          <div class="compare-divider" id="compareDivider"></div>
+        </div>
+
+        <div class="intensity-row">
+          <label><span>Intensidad del color</span><span id="intensityVal">50%</span></label>
+          <input type="range" id="intensitySlider" min="0.3" max="0.8" step="0.01" value="0.5">
+        </div>
+
+        <div class="color-info-bar">
+          <div class="info-swatch" id="infoSwatch"></div>
+          <div class="info-text">
+            <div class="info-name" id="infoName">&mdash;</div>
+            <div class="info-meta" id="infoMeta">&mdash;</div>
+          </div>
+          <button class="btn btn-outline" id="btnChangeColor" type="button">Cambiar Color</button>
+        </div>
+
+        <div class="preview-actions">
+          <button class="btn btn-primary btn-lg" id="btnGoCalc" type="button">Calcular mi Pintura &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 5: Calculator -->
+  <section class="step-section locked" id="step5" data-step="5">
+    <div class="container">
+      <div class="step-header">
+        <span class="step-kicker">Paso 5</span>
+        <h2>Calcula tu Pintura</h2>
+        <p>&iquest;Cu&aacute;ntas paredes vas a pintar?</p>
+      </div>
+
+      <div class="wall-count-row" id="wallCountRow"></div>
+
+      <div class="walls-form" id="wallsForm"></div>
+
+      <div class="calc-results" id="calcResults" style="display:none;">
+        <div class="row"><span class="label">&Aacute;rea total</span><span class="val" id="calcArea">0 m&sup2;</span></div>
+        <div class="row"><span class="label">Manos necesarias</span><span class="val" id="calcManos">&mdash;</span></div>
+        <div class="row"><span class="label">Litros necesarios</span><span class="val" id="calcLitros">&mdash;</span></div>
+        <div class="containers-box" id="calcContainers">&mdash;</div>
+      </div>
+
+      <div class="calc-actions">
+        <button class="btn btn-primary btn-lg" id="btnGoLead" type="button" style="display:none;">Recibir mi Cotizaci&oacute;n &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 6: Lead -->
+  <section class="step-section locked" id="step6" data-step="6">
+    <div class="container">
+      <div class="step-header">
+        <span class="step-kicker">Paso 6</span>
+        <h2>Recibe tu Cotizaci&oacute;n</h2>
+        <p>D&eacute;janos tus datos y te enviamos el detalle por WhatsApp al instante.</p>
+      </div>
+
+      <div class="lead-form">
+        <div class="lead-summary" id="leadSummary"></div>
+        <div class="field">
+          <label>Nombre <span class="req-star">*</span></label>
+          <input type="text" id="leadName" placeholder="Tu nombre completo">
+        </div>
+        <div class="field">
+          <label>WhatsApp <span class="req-star">*</span></label>
+          <input type="tel" id="leadPhone" placeholder="834 123 4567">
+        </div>
+        <button class="btn btn-wa btn-block btn-lg" id="btnSendLead" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.932 11.932 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.336 0-4.512-.767-6.266-2.064l-.437-.332-3.278 1.098 1.098-3.278-.332-.437A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Enviar Cotizaci&oacute;n por WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>AceroMAX</h4>
+        <p>Distribuidor autorizado de materiales de construcci&oacute;n en Ciudad Victoria, Tamaulipas.</p>
+        <p>Alvamex &middot; Prolamsa &middot; USG &middot; Deacero &middot; Ternium</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sucursales</h4>
+        <a href="https://maps.app.goo.gl/">&#128205; Hombres Ilustres 510</a>
+        <a href="https://maps.app.goo.gl/">&#128205; Naciones Unidas 1155</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="tel:+528341100942">&#128222; 834 110 0942</a>
+        <a href="tel:+528343132000">&#128222; 834 313 2000</a>
+        <a href="mailto:acero2@aceromax.mx">&#9993; acero2@aceromax.mx</a>
+      </div>
+      <div class="footer-col">
+        <h4>Herramientas</h4>
+        <a href="/tuespacio">&#127912; Tu Espacio</a>
+        <a href="/pinturas">Pinturas</a>
+        <a href="/marcas/alvamex">Alvamex</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AceroMAX — Materiales de Construcción. Ciudad Victoria, Tamaulipas.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<div class="wa-float">
+  <a href="https://wa.me/528348528236?text=Hola%2C%20quiero%20cotizar%20materiales" target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.932 11.932 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.336 0-4.512-.767-6.266-2.064l-.437-.332-3.278 1.098 1.098-3.278-.332-.437A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    <span class="wa-text">Cotizar</span>
+  </a>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ==================== DATA ==================== */
+  var PAINT_DATA = {
+    "meta": {
+      "rendimiento_cubeta_m2": 75,
+      "manos": { "alquimex": 3, "alvacolor": 2 }
+    },
+    "lineas": [
+      {
+        "id": "alquimex",
+        "nombre": "Alquimex",
+        "tipo": "Interior",
+        "presentaciones": ["4L", "18L"],
+        "cubeta_grande": 18,
+        "rendimiento_litro": 3.5,
+        "colores": [
+          {"codigo":"1100","nombre":"Blanco","hex":"#FFFFFF"},
+          {"codigo":"1101","nombre":"Marfil","hex":"#F5F0E1"},
+          {"codigo":"1102","nombre":"Crema","hex":"#F5E6C8"},
+          {"codigo":"1103","nombre":"Piñón","hex":"#C4A67D"},
+          {"codigo":"1104","nombre":"Verde Tierno","hex":"#A8D5A2"},
+          {"codigo":"1105","nombre":"Azul Celeste","hex":"#9DC8E8"},
+          {"codigo":"1106","nombre":"Amarillo Paja","hex":"#E8D48B"},
+          {"codigo":"1107","nombre":"Verde Suave","hex":"#B8D8B0"},
+          {"codigo":"1108","nombre":"Turquesa","hex":"#5BB8B0"},
+          {"codigo":"1109","nombre":"Rosado","hex":"#F2B8C0"},
+          {"codigo":"1110","nombre":"Azul","hex":"#4A7FB5"},
+          {"codigo":"1111","nombre":"Azul Griego","hex":"#3B6FA0"},
+          {"codigo":"1112","nombre":"Blanco Ostión","hex":"#F0EBD8"},
+          {"codigo":"1113","nombre":"Amarillo Óxido","hex":"#D4A033"},
+          {"codigo":"1114","nombre":"Rojo Óxido","hex":"#A63820"},
+          {"codigo":"1115","nombre":"Durazno","hex":"#F5C8A0"},
+          {"codigo":"1116","nombre":"Coral","hex":"#E87460"},
+          {"codigo":"1117","nombre":"Rosa Mexicano","hex":"#E4007C"},
+          {"codigo":"1118","nombre":"Violeta","hex":"#7B4B8A"},
+          {"codigo":"1119","nombre":"Gris Oriental","hex":"#8C8C8C"},
+          {"codigo":"1120","nombre":"Salmón","hex":"#E89878"},
+          {"codigo":"1121","nombre":"Flamingo","hex":"#F08890"}
+        ]
+      },
+      {
+        "id": "alvacolor",
+        "nombre": "Alvacolor",
+        "tipo": "Exterior",
+        "presentaciones": ["4L", "19L"],
+        "cubeta_grande": 19,
+        "rendimiento_litro": 4.5,
+        "colores": [
+          {"codigo":"100","nombre":"Blanco","hex":"#FFFFFF"},
+          {"codigo":"101","nombre":"Marfil","hex":"#F5F0E1"},
+          {"codigo":"102","nombre":"Crema","hex":"#F5E6C8"},
+          {"codigo":"103","nombre":"Piñón","hex":"#C4A67D"},
+          {"codigo":"104","nombre":"Salmón Claro","hex":"#F5B098"},
+          {"codigo":"106","nombre":"Amarillo","hex":"#F0C830"},
+          {"codigo":"107","nombre":"Verde Suave","hex":"#B8D8B0"},
+          {"codigo":"108","nombre":"Turquesa","hex":"#5BB8B0"},
+          {"codigo":"109","nombre":"Verde Tierno","hex":"#A8D5A2"},
+          {"codigo":"110","nombre":"Azul Verde","hex":"#2E8B8B"},
+          {"codigo":"111","nombre":"Azul Griego","hex":"#3B6FA0"},
+          {"codigo":"112","nombre":"Menta","hex":"#A0E8C0"},
+          {"codigo":"113","nombre":"Amarillo Óxido","hex":"#D4A033"},
+          {"codigo":"114","nombre":"Rojo Óxido","hex":"#A63820"},
+          {"codigo":"115","nombre":"Durazno","hex":"#F5C8A0"},
+          {"codigo":"116","nombre":"Capuchino","hex":"#9B7350"},
+          {"codigo":"117","nombre":"Negro","hex":"#2A2A2A"},
+          {"codigo":"118","nombre":"Lila","hex":"#B088B4"},
+          {"codigo":"119","nombre":"Rosa Mexicano","hex":"#E4007C"},
+          {"codigo":"120","nombre":"Blanco Perla","hex":"#F0EAD6"},
+          {"codigo":"121","nombre":"Marrón","hex":"#6B3A2E"},
+          {"codigo":"122","nombre":"Arena Orgánica","hex":"#C8AD85"},
+          {"codigo":"123","nombre":"Azul Capri","hex":"#3DA8D9"},
+          {"codigo":"124","nombre":"Roble","hex":"#7A5C30"},
+          {"codigo":"126","nombre":"Naranja","hex":"#E87830"},
+          {"codigo":"127","nombre":"Coral","hex":"#E87460"},
+          {"codigo":"128","nombre":"Verde Claro","hex":"#88C878"},
+          {"codigo":"129","nombre":"Napolitano","hex":"#F0C0C0"},
+          {"codigo":"130","nombre":"Amarillo Básico","hex":"#FFE000","basico":true},
+          {"codigo":"131","nombre":"Naranja Básico","hex":"#FF6A00","basico":true},
+          {"codigo":"132","nombre":"Rojo Básico","hex":"#E02020","basico":true},
+          {"codigo":"133","nombre":"Violeta Básico","hex":"#7830A0","basico":true},
+          {"codigo":"134","nombre":"Azul Básico","hex":"#2040C0","basico":true},
+          {"codigo":"135","nombre":"Verde Básico","hex":"#00A840","basico":true}
+        ]
+      }
+    ]
+  };
+
+  var ROOMS = [
+    { id: "sala", name: "Sala", emoji: "&#128715;" },
+    { id: "recamara", name: "Rec&aacute;mara", emoji: "&#128716;" },
+    { id: "cocina", name: "Cocina", emoji: "&#127859;" },
+    { id: "bano", name: "Ba&ntilde;o", emoji: "&#128703;" },
+    { id: "fachada", name: "Fachada", emoji: "&#127968;" },
+    { id: "oficina", name: "Oficina", emoji: "&#128188;" }
+  ];
+
+  var RECOMMENDATIONS = {
+    sala: { line: "alquimex", names: ["Crema", "Marfil", "Azul Celeste", "Gris Oriental"], reason: "Colores c&aacute;lidos y neutros que dan amplitud y elegancia a la sala." },
+    recamara: { line: "alquimex", names: ["Verde Suave", "Lila", "Rosado", "Blanco Ostión"], reason: "Tonos suaves que favorecen el descanso y la tranquilidad." },
+    cocina: { line: "alquimex", names: ["Amarillo Paja", "Durazno", "Crema", "Verde Tierno"], reason: "Colores vivos que dan energ&iacute;a y frescura a la cocina." },
+    bano: { line: "alquimex", names: ["Turquesa", "Menta", "Azul Celeste", "Blanco Perla"], reason: "Tonos frescos que evocan limpieza y relajaci&oacute;n." },
+    fachada: { line: "alvacolor", names: ["Arena Orgánica", "Capuchino", "Piñón", "Salmón Claro"], reason: "Colores resistentes al exterior que realzan tu fachada." },
+    oficina: { line: "alquimex", names: ["Gris Oriental", "Azul Griego", "Blanco", "Marfil"], reason: "Tonos serios y profesionales que favorecen la concentraci&oacute;n." }
+  };
+
+  /* ==================== STATE ==================== */
+  var state = {
+    photoDataUrl: null,
+    img: null,
+    roomType: null,
+    activeLine: "alquimex",
+    selectedColor: null, // {codigo, nombre, hex, lineId}
+    intensity: 0.5,
+    wallCount: 0,
+    walls: [],
+    totalArea: 0
+  };
+
+  var maxStepReached = 1;
+
+  /* ==================== HELPERS ==================== */
+  function $(sel){ return document.querySelector(sel); }
+  function $all(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+
+  function track(eventName, params){
+    try {
+      if (typeof gtag === 'function') gtag('event', eventName, params || {});
+    } catch(e){}
+  }
+
+  function showToast(msg){
+    var t = $('#toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(function(){ t.classList.remove('show'); }, 2400);
+  }
+
+  function unlockStep(n){
+    if (n > maxStepReached) maxStepReached = n;
+    updateProgress();
+  }
+
+  function updateProgress(){
+    $all('.progress-step').forEach(function(el){
+      var s = parseInt(el.getAttribute('data-step'), 10);
+      el.classList.remove('active', 'done');
+      if (s < maxStepReached) el.classList.add('done');
+      else if (s === maxStepReached) el.classList.add('active');
+    });
+  }
+
+  function goToStep(n){
+    unlockStep(n);
+    var sec = $('#step' + n);
+    sec.classList.remove('locked');
+    // trigger fade-in
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        sec.classList.add('visible');
+      });
+    });
+    setTimeout(function(){
+      sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
+  }
+
+  function hexToRgb(hex){
+    hex = hex.replace('#','');
+    if (hex.length === 3) hex = hex.split('').map(function(c){return c+c;}).join('');
+    var num = parseInt(hex, 16);
+    return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+  }
+
+  /* ==================== STEP 1: UPLOAD ==================== */
+  var uploadZone = $('#uploadZone');
+  var fileInput = $('#fileInput');
+  var cameraInput = $('#cameraInput');
+
+  $('#btnChooseFile').addEventListener('click', function(){ fileInput.click(); });
+  $('#btnUseCamera').addEventListener('click', function(){ cameraInput.click(); });
+  $('#btnChangePhoto').addEventListener('click', function(){ fileInput.click(); });
+
+  uploadZone.addEventListener('click', function(e){
+    if (e.target.closest('button')) return;
+    fileInput.click();
+  });
+
+  ['dragenter','dragover'].forEach(function(evt){
+    uploadZone.addEventListener(evt, function(e){
+      e.preventDefault(); e.stopPropagation();
+      uploadZone.classList.add('dragover');
+    });
+  });
+  ['dragleave','drop'].forEach(function(evt){
+    uploadZone.addEventListener(evt, function(e){
+      e.preventDefault(); e.stopPropagation();
+      uploadZone.classList.remove('dragover');
+    });
+  });
+  uploadZone.addEventListener('drop', function(e){
+    var files = e.dataTransfer.files;
+    if (files && files.length) handleFile(files[0]);
+  });
+
+  fileInput.addEventListener('change', function(){
+    if (fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+  cameraInput.addEventListener('change', function(){
+    if (cameraInput.files && cameraInput.files[0]) handleFile(cameraInput.files[0]);
+  });
+
+  function handleFile(file){
+    var validTypes = ['image/jpeg','image/jpg','image/png','image/webp'];
+    if (validTypes.indexOf(file.type) === -1) {
+      showToast('Formato no válido. Usa JPG, PNG o WEBP.');
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      showToast('La imagen supera los 10MB. Elige una más ligera.');
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function(e){
+      state.photoDataUrl = e.target.result;
+      var img = new Image();
+      img.onload = function(){
+        state.img = img;
+        $('#photoPreviewImg').src = state.photoDataUrl;
+        $('#photoPreviewWrap').style.display = 'block';
+        uploadZone.style.display = 'none';
+        track('tuespacio_foto_subida', { file_type: file.type });
+        setTimeout(function(){ goToStep(2); }, 500);
+      };
+      img.src = state.photoDataUrl;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  /* ==================== STEP 2: ROOM TYPE ==================== */
+  var roomGrid = $('#roomGrid');
+  ROOMS.forEach(function(room){
+    var card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'room-card';
+    card.setAttribute('data-room', room.id);
+    card.innerHTML = '<div class="emoji">' + room.emoji + '</div><div class="name">' + room.name + '</div>';
+    card.addEventListener('click', function(){
+      $all('.room-card').forEach(function(c){ c.classList.remove('selected'); });
+      card.classList.add('selected');
+      state.roomType = room.id;
+      track('tuespacio_tipo_espacio', { room_type: room.id });
+      buildRecommendations();
+      setTimeout(function(){ goToStep(3); }, 350);
+    });
+    roomGrid.appendChild(card);
+  });
+
+  /* ==================== STEP 3: COLOR ==================== */
+  function findColorByName(lineId, name){
+    var line = PAINT_DATA.lineas.filter(function(l){ return l.id === lineId; })[0];
+    if (!line) return null;
+    var found = line.colores.filter(function(c){ return c.nombre === name; })[0];
+    return found ? { codigo: found.codigo, nombre: found.nombre, hex: found.hex, lineId: lineId } : null;
+  }
+
+  function buildRecommendations(){
+    var rec = state.roomType ? RECOMMENDATIONS[state.roomType] : null;
+    var box = $('#recommendBox');
+    var grid = $('#recommendGrid');
+    grid.innerHTML = '';
+    if (!rec) { box.style.display = 'none'; return; }
+    box.style.display = 'block';
+
+    // switch active tab to the recommended line
+    setActiveLine(rec.line);
+
+    rec.names.forEach(function(name){
+      var color = findColorByName(rec.line, name);
+      if (!color) return;
+      var card = document.createElement('div');
+      card.className = 'recommend-card';
+      card.innerHTML =
+        '<div class="swatch-lg" style="background:' + color.hex + ';"></div>' +
+        '<div class="name">' + color.nombre + '</div>' +
+        '<div class="reason">' + rec.reason + '</div>' +
+        '<button class="btn btn-outline" type="button">Seleccionar</button>';
+      card.querySelector('button').addEventListener('click', function(){
+        selectColor(color);
+      });
+      grid.appendChild(card);
+    });
+  }
+
+  var colorTabs = $all('.color-tab');
+  colorTabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      setActiveLine(tab.getAttribute('data-line'));
+    });
+  });
+
+  function setActiveLine(lineId){
+    state.activeLine = lineId;
+    colorTabs.forEach(function(t){
+      t.classList.toggle('active', t.getAttribute('data-line') === lineId);
+    });
+    renderSwatches();
+  }
+
+  var colorSearchInput = $('#colorSearch');
+  colorSearchInput.addEventListener('input', renderSwatches);
+
+  function renderSwatches(){
+    var grid = $('#swatchGrid');
+    grid.innerHTML = '';
+    var line = PAINT_DATA.lineas.filter(function(l){ return l.id === state.activeLine; })[0];
+    if (!line) return;
+    var query = colorSearchInput.value.trim().toLowerCase();
+    var colors = line.colores.filter(function(c){
+      return !query || c.nombre.toLowerCase().indexOf(query) !== -1;
+    });
+    if (!colors.length) {
+      grid.innerHTML = '<div class="swatch-empty">No se encontraron colores con ese nombre.</div>';
+      return;
+    }
+    colors.forEach(function(c){
+      var item = document.createElement('div');
+      item.className = 'swatch-item';
+      var isSelected = state.selectedColor && state.selectedColor.codigo === c.codigo && state.selectedColor.lineId === line.id;
+      item.innerHTML =
+        '<button type="button" class="swatch-btn' + (isSelected ? ' selected' : '') + '" style="background:' + c.hex + ';" aria-label="' + c.nombre + '"></button>' +
+        '<div class="sname">' + c.nombre + '</div>' +
+        '<div class="scode">#' + c.codigo + '</div>';
+      item.querySelector('.swatch-btn').addEventListener('click', function(){
+        selectColor({ codigo: c.codigo, nombre: c.nombre, hex: c.hex, lineId: line.id });
+      });
+      grid.appendChild(item);
+    });
+  }
+
+  function selectColor(color){
+    state.selectedColor = color;
+    track('tuespacio_color_seleccionado', { color_name: color.nombre, color_code: color.codigo, line: color.lineId });
+    renderSwatches();
+    updatePreviewInfoBar();
+    renderCanvasAfter();
+    setTimeout(function(){ goToStep(4); }, 300);
+  }
+
+  renderSwatches();
+
+  /* ==================== STEP 4: PREVIEW CANVAS ==================== */
+  var canvasBefore = $('#canvasBefore');
+  var canvasAfter = $('#canvasAfter');
+  var ctxBefore = canvasBefore.getContext('2d');
+  var ctxAfter = canvasAfter.getContext('2d');
+  var compareBox = $('#compareBox');
+  var compareDivider = $('#compareDivider');
+  var intensitySlider = $('#intensitySlider');
+  var intensityVal = $('#intensityVal');
+
+  function drawCanvases(){
+    if (!state.img) return;
+    var img = state.img;
+    var maxW = 900;
+    var scale = Math.min(1, maxW / img.naturalWidth);
+    var w = Math.round(img.naturalWidth * scale);
+    var h = Math.round(img.naturalHeight * scale);
+
+    [canvasBefore, canvasAfter].forEach(function(c){
+      c.width = w; c.height = h;
+    });
+
+    ctxBefore.clearRect(0,0,w,h);
+    ctxBefore.drawImage(img, 0, 0, w, h);
+
+    renderCanvasAfter();
+  }
+
+  function renderCanvasAfter(){
+    if (!state.img) return;
+    var w = canvasAfter.width, h = canvasAfter.height;
+    if (!w || !h) return;
+    ctxAfter.clearRect(0,0,w,h);
+    ctxAfter.drawImage(state.img, 0, 0, w, h);
+    if (state.selectedColor) {
+      ctxAfter.globalCompositeOperation = 'color';
+      ctxAfter.globalAlpha = state.intensity;
+      ctxAfter.fillStyle = state.selectedColor.hex;
+      ctxAfter.fillRect(0, 0, w, h);
+      ctxAfter.globalCompositeOperation = 'source-over';
+      ctxAfter.globalAlpha = 1.0;
+    }
+  }
+
+  intensitySlider.addEventListener('input', function(){
+    state.intensity = parseFloat(intensitySlider.value);
+    intensityVal.textContent = Math.round(state.intensity * 100) + '%';
+    renderCanvasAfter();
+  });
+
+  function updatePreviewInfoBar(){
+    if (!state.selectedColor) return;
+    $('#infoSwatch').style.background = state.selectedColor.hex;
+    $('#infoName').textContent = state.selectedColor.nombre;
+    var line = PAINT_DATA.lineas.filter(function(l){ return l.id === state.selectedColor.lineId; })[0];
+    $('#infoMeta').textContent = (line ? line.nombre : '') + ' · Código ' + state.selectedColor.codigo;
+    drawCanvases();
+    track('tuespacio_preview_vista', { color_name: state.selectedColor.nombre });
+  }
+
+  $('#btnChangeColor').addEventListener('click', function(){
+    goToStep(3);
+  });
+
+  /* Draggable divider */
+  var dragging = false;
+
+  function setDividerPercent(pct){
+    pct = Math.max(0, Math.min(100, pct));
+    compareDivider.style.left = pct + '%';
+    canvasAfter.parentElement.querySelector('.canvas-after').style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+  }
+
+  function pctFromClientX(clientX){
+    var rect = compareBox.getBoundingClientRect();
+    return ((clientX - rect.left) / rect.width) * 100;
+  }
+
+  compareDivider.addEventListener('mousedown', function(e){ dragging = true; e.preventDefault(); });
+  document.addEventListener('mousemove', function(e){
+    if (!dragging) return;
+    setDividerPercent(pctFromClientX(e.clientX));
+  });
+  document.addEventListener('mouseup', function(){ dragging = false; });
+
+  compareDivider.addEventListener('touchstart', function(e){ dragging = true; }, { passive: true });
+  document.addEventListener('touchmove', function(e){
+    if (!dragging) return;
+    var touch = e.touches[0];
+    setDividerPercent(pctFromClientX(touch.clientX));
+  }, { passive: true });
+  document.addEventListener('touchend', function(){ dragging = false; });
+
+  // Allow clicking anywhere on compare box to move divider
+  compareBox.addEventListener('click', function(e){
+    if (e.target === compareDivider) return;
+    setDividerPercent(pctFromClientX(e.clientX));
+  });
+
+  window.addEventListener('resize', function(){
+    // keep divider visually centered proportionally; no-op needed since % based
+  });
+
+  $('#btnGoCalc').addEventListener('click', function(){
+    goToStep(5);
+  });
+
+  /* ==================== STEP 5: CALCULATOR ==================== */
+  var wallCountRow = $('#wallCountRow');
+  for (var i = 1; i <= 6; i++) {
+    (function(n){
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'wall-count-btn';
+      btn.textContent = n;
+      btn.addEventListener('click', function(){
+        $all('.wall-count-btn').forEach(function(b){ b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        setWallCount(n);
+      });
+      wallCountRow.appendChild(btn);
+    })(i);
+  }
+
+  function setWallCount(n){
+    state.wallCount = n;
+    state.walls = [];
+    for (var i = 0; i < n; i++) state.walls.push({ largo: 0, alto: 0 });
+    renderWallsForm();
+    recalc();
+  }
+
+  function renderWallsForm(){
+    var form = $('#wallsForm');
+    form.innerHTML = '';
+    state.walls.forEach(function(wall, idx){
+      var row = document.createElement('div');
+      row.className = 'wall-row';
+      row.innerHTML =
+        '<div class="wnum">Pared ' + (idx+1) + '</div>' +
+        '<div class="field"><label>Largo (m)</label><input type="number" min="0" step="0.1" data-idx="' + idx + '" data-dim="largo" placeholder="0.0"></div>' +
+        '<div class="field"><label>Alto (m)</label><input type="number" min="0" step="0.1" data-idx="' + idx + '" data-dim="alto" placeholder="0.0"></div>';
+      form.appendChild(row);
+    });
+    $all('#wallsForm input').forEach(function(inp){
+      inp.addEventListener('input', function(){
+        var idx = parseInt(inp.getAttribute('data-idx'), 10);
+        var dim = inp.getAttribute('data-dim');
+        var val = parseFloat(inp.value);
+        state.walls[idx][dim] = isNaN(val) ? 0 : val;
+        recalc();
+      });
+    });
+  }
+
+  function ceilDiv(a, b){ return Math.ceil(a / b); }
+
+  function recalc(){
+    var totalArea = state.walls.reduce(function(sum, w){ return sum + (w.largo * w.alto); }, 0);
+    state.totalArea = totalArea;
+
+    var resultsBox = $('#calcResults');
+    var btnGoLead = $('#btnGoLead');
+
+    if (totalArea <= 0 || !state.selectedColor) {
+      resultsBox.style.display = 'none';
+      btnGoLead.style.display = 'none';
+      return;
+    }
+
+    var lineId = state.selectedColor.lineId;
+    var line = PAINT_DATA.lineas.filter(function(l){ return l.id === lineId; })[0];
+    var manos = PAINT_DATA.meta.manos[lineId];
+    var rendimientoLitro = line.rendimiento_litro;
+    var cubetaGrande = line.cubeta_grande; // 18 or 19
+    var galonChico = 4;
+
+    var litrosNecesarios = (totalArea * manos) / rendimientoLitro;
+
+    var cubetasGrandes = Math.floor(litrosNecesarios / cubetaGrande);
+    var restoLitros = litrosNecesarios - (cubetasGrandes * cubetaGrande);
+    var galones = ceilDiv(restoLitros, galonChico);
+
+    // if galones ends up being enough to form another big cubeta, keep simple (algorithm as specified)
+    var parts = [];
+    if (cubetasGrandes > 0) parts.push(cubetasGrandes + ' cubeta' + (cubetasGrandes > 1 ? 's' : '') + ' de ' + cubetaGrande + 'L');
+    if (galones > 0) parts.push(galones + ' gal&oacute;n' + (galones > 1 ? 'es' : '') + ' de ' + galonChico + 'L');
+    if (!parts.length) parts.push('1 gal&oacute;n de ' + galonChico + 'L');
+
+    $('#calcArea').textContent = totalArea.toFixed(1) + ' m&sup2;'.replace('&sup2;','²');
+    $('#calcManos').textContent = manos + ' manos';
+    $('#calcLitros').textContent = litrosNecesarios.toFixed(1) + ' L';
+    $('#calcContainers').innerHTML = 'Necesitas: ' + parts.join(' + ');
+
+    resultsBox.style.display = 'block';
+    btnGoLead.style.display = 'inline-flex';
+
+    state.calc = {
+      totalArea: totalArea,
+      manos: manos,
+      litros: litrosNecesarios,
+      cubetasGrandes: cubetasGrandes,
+      cubetaSize: cubetaGrande,
+      galones: galones,
+      galonSize: galonChico,
+      containersText: parts.join(' + ')
+    };
+
+    track('tuespacio_calculo_pintura', {
+      total_area: Math.round(totalArea * 10) / 10,
+      wall_count: state.wallCount,
+      line: lineId
+    });
+  }
+
+  $('#btnGoLead').addEventListener('click', function(){
+    buildLeadSummary();
+    goToStep(6);
+  });
+
+  /* ==================== STEP 6: LEAD ==================== */
+  function buildLeadSummary(){
+    if (!state.selectedColor || !state.calc) return;
+    var line = PAINT_DATA.lineas.filter(function(l){ return l.id === state.selectedColor.lineId; })[0];
+    var summary = $('#leadSummary');
+    summary.innerHTML =
+      '<div><b>Color:</b> ' + line.nombre + ' - ' + state.selectedColor.nombre + ' (c&oacute;digo ' + state.selectedColor.codigo + ')</div>' +
+      '<div><b>&Aacute;rea:</b> ' + state.calc.totalArea.toFixed(1) + ' m&sup2; (' + state.wallCount + ' pared' + (state.wallCount !== 1 ? 'es' : '') + ')</div>' +
+      '<div><b>Necesitas:</b> ' + state.calc.containersText + '</div>';
+  }
+
+  $('#btnSendLead').addEventListener('click', function(){
+    var name = $('#leadName').value.trim();
+    var phone = $('#leadPhone').value.trim();
+
+    if (!name) { showToast('Por favor ingresa tu nombre.'); $('#leadName').focus(); return; }
+    if (!phone) { showToast('Por favor ingresa tu WhatsApp.'); $('#leadPhone').focus(); return; }
+    if (!state.selectedColor || !state.calc) { showToast('Completa los pasos anteriores primero.'); return; }
+
+    var line = PAINT_DATA.lineas.filter(function(l){ return l.id === state.selectedColor.lineId; })[0];
+
+    var message = "Hola AceroMAX! Acabo de usar Tu Espacio y quiero cotizar:\n" +
+      "Color: " + line.nombre + " - " + state.selectedColor.nombre + " (código " + state.selectedColor.codigo + ")\n" +
+      "Área: " + state.calc.totalArea.toFixed(1) + " m2 (" + state.wallCount + " paredes)\n" +
+      "Necesito: " + state.calc.containersText.replace(/&oacute;/g,'ó') + "\n" +
+      name;
+
+    var url = 'https://wa.me/528348528236?text=' + encodeURIComponent(message);
+
+    track('tuespacio_lead_enviado', {
+      color_name: state.selectedColor.nombre,
+      total_area: Math.round(state.calc.totalArea * 10) / 10,
+      line: state.selectedColor.lineId
+    });
+
+    window.open(url, '_blank', 'noopener');
+  });
+
+  /* ==================== INTERSECTION OBSERVER FOR FADE-IN ==================== */
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting && !entry.target.classList.contains('locked')) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  $all('.step-section').forEach(function(sec){ observer.observe(sec); });
+
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "marca": "Alvamex",
+    "rendimiento_cubeta_m2": 75,
+    "presentaciones": {
+      "alquimex": ["4L", "18L"],
+      "alvacolor": ["4L", "19L", "200L"]
+    },
+    "manos_recomendadas": {
+      "alquimex": 3,
+      "alvacolor": 2
+    },
+    "acabado": {
+      "alquimex": "Mate",
+      "alvacolor": "Mate"
+    },
+    "rendimiento_m_por_litro": {
+      "alquimex": "3-4",
+      "alvacolor": "4-5"
+    }
+  },
+  "lineas": [
+    {
+      "id": "alquimex",
+      "nombre": "Alquimex",
+      "tipo": "Interior",
+      "descripcion": "Pintura vinílica de interior, acabado mate. Producto económico, cubre al secar por completo. Mínimo 3 manos.",
+      "presentaciones": ["4L", "18L"],
+      "colores": [
+        { "codigo": "1100", "nombre": "Blanco", "hex": "#FFFFFF" },
+        { "codigo": "1101", "nombre": "Marfil", "hex": "#F5F0E1" },
+        { "codigo": "1102", "nombre": "Crema", "hex": "#F5E6C8" },
+        { "codigo": "1103", "nombre": "Piñón", "hex": "#C4A67D" },
+        { "codigo": "1104", "nombre": "Verde Tierno", "hex": "#A8D5A2" },
+        { "codigo": "1105", "nombre": "Azul Celeste", "hex": "#9DC8E8" },
+        { "codigo": "1106", "nombre": "Amarillo Paja", "hex": "#E8D48B" },
+        { "codigo": "1107", "nombre": "Verde Suave", "hex": "#B8D8B0" },
+        { "codigo": "1108", "nombre": "Turquesa", "hex": "#5BB8B0" },
+        { "codigo": "1109", "nombre": "Rosado", "hex": "#F2B8C0" },
+        { "codigo": "1110", "nombre": "Azul", "hex": "#4A7FB5" },
+        { "codigo": "1111", "nombre": "Azul Griego", "hex": "#3B6FA0" },
+        { "codigo": "1112", "nombre": "Blanco Ostión", "hex": "#F0EBD8" },
+        { "codigo": "1113", "nombre": "Amarillo Óxido", "hex": "#D4A033" },
+        { "codigo": "1114", "nombre": "Rojo Óxido", "hex": "#A63820" },
+        { "codigo": "1115", "nombre": "Durazno", "hex": "#F5C8A0" },
+        { "codigo": "1116", "nombre": "Coral", "hex": "#E87460" },
+        { "codigo": "1117", "nombre": "Rosa Mexicano", "hex": "#E4007C" },
+        { "codigo": "1118", "nombre": "Violeta", "hex": "#7B4B8A" },
+        { "codigo": "1119", "nombre": "Gris Oriental", "hex": "#8C8C8C" },
+        { "codigo": "1120", "nombre": "Salmón", "hex": "#E89878" },
+        { "codigo": "1121", "nombre": "Flamingo", "hex": "#F08890" }
+      ]
+    },
+    {
+      "id": "alvacolor",
+      "nombre": "Alvacolor",
+      "tipo": "Exterior",
+      "descripcion": "Pintura vinílica de exterior, acabado mate. Presentaciones de 4, 19 y 200 litros.",
+      "presentaciones": ["4L", "19L", "200L"],
+      "colores": [
+        { "codigo": "100", "nombre": "Blanco", "hex": "#FFFFFF" },
+        { "codigo": "101", "nombre": "Marfil", "hex": "#F5F0E1" },
+        { "codigo": "102", "nombre": "Crema", "hex": "#F5E6C8" },
+        { "codigo": "103", "nombre": "Piñón", "hex": "#C4A67D" },
+        { "codigo": "104", "nombre": "Salmón Claro", "hex": "#F5B098" },
+        { "codigo": "106", "nombre": "Amarillo", "hex": "#F0C830" },
+        { "codigo": "107", "nombre": "Verde Suave", "hex": "#B8D8B0" },
+        { "codigo": "108", "nombre": "Turquesa", "hex": "#5BB8B0" },
+        { "codigo": "109", "nombre": "Verde Tierno", "hex": "#A8D5A2" },
+        { "codigo": "110", "nombre": "Azul Verde", "hex": "#2E8B8B" },
+        { "codigo": "111", "nombre": "Azul Griego", "hex": "#3B6FA0" },
+        { "codigo": "112", "nombre": "Menta", "hex": "#A0E8C0" },
+        { "codigo": "113", "nombre": "Amarillo Óxido", "hex": "#D4A033" },
+        { "codigo": "114", "nombre": "Rojo Óxido", "hex": "#A63820" },
+        { "codigo": "115", "nombre": "Durazno", "hex": "#F5C8A0" },
+        { "codigo": "116", "nombre": "Capuchino", "hex": "#9B7350" },
+        { "codigo": "117", "nombre": "Negro", "hex": "#2A2A2A" },
+        { "codigo": "118", "nombre": "Lila", "hex": "#B088B4" },
+        { "codigo": "119", "nombre": "Rosa Mexicano", "hex": "#E4007C" },
+        { "codigo": "120", "nombre": "Blanco Perla", "hex": "#F0EAD6" },
+        { "codigo": "121", "nombre": "Marrón", "hex": "#6B3A2E" },
+        { "codigo": "122", "nombre": "Arena Orgánica", "hex": "#C8AD85" },
+        { "codigo": "123", "nombre": "Azul Capri", "hex": "#3DA8D9" },
+        { "codigo": "124", "nombre": "Roble", "hex": "#7A5C30" },
+        { "codigo": "126", "nombre": "Naranja", "hex": "#E87830" },
+        { "codigo": "127", "nombre": "Coral", "hex": "#E87460" },
+        { "codigo": "128", "nombre": "Verde Claro", "hex": "#88C878" },
+        { "codigo": "129", "nombre": "Napolitano", "hex": "#F0C0C0" },
+        { "codigo": "130", "nombre": "Amarillo Básico", "hex": "#FFE000", "basico": true },
+        { "codigo": "131", "nombre": "Naranja Básico", "hex": "#FF6A00", "basico": true },
+        { "codigo": "132", "nombre": "Rojo Básico", "hex": "#E02020", "basico": true },
+        { "codigo": "133", "nombre": "Violeta Básico", "hex": "#7830A0", "basico": true },
+        { "codigo": "134", "nombre": "Azul Básico", "hex": "#2040C0", "basico": true },
+        { "codigo": "135", "nombre": "Verde Básico", "hex": "#00A840", "basico": true }
+      ]
+    }
+  ]
+}
