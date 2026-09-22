@@ -963,7 +963,7 @@
           <button class="btn btn-outline" id="btnChangeColor" type="button">Cambiar Color</button>
         </div>
 
-        <!-- Spinner y errores ARRIBA de la imagen -->
+        <!-- Spinner, errores y acciones ARRIBA de la imagen -->
         <div class="ai-render-section" id="aiRenderSection">
           <div style="text-align:center; margin: 12px 0 16px;">
             <div class="ai-spinner" id="aiSpinner" style="display:none;">
@@ -974,6 +974,16 @@
             <button class="btn btn-primary btn-lg" id="btnAiRender" type="button">
               Generar Vista Previa
             </button>
+            <!-- Aparece después de generar -->
+            <div id="postRenderActions" style="display:none; margin-top:16px; gap:12px; justify-content:center; flex-wrap:wrap;">
+              <button class="btn btn-lg" id="btnCalcTop" type="button" style="background:#25D366; color:#fff; font-size:1.1rem; padding:14px 32px; border:none; border-radius:12px; box-shadow:0 4px 16px rgba(37,211,102,.35);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+                Calcular y Cotizar
+              </button>
+              <button class="btn btn-outline" id="btnRegenerate" type="button" style="font-size:0.95rem; padding:12px 24px;">
+                Cambiar Color
+              </button>
+            </div>
           </div>
         </div>
 
@@ -1503,6 +1513,9 @@
   function updatePreviewInfoBar(){
     if (!state.selectedColor) return;
     state.aiResultImg = null; /* Limpiar render IA al cambiar color */
+    /* Resetear botones post-render */
+    var pr = $('#postRenderActions'); if (pr) pr.style.display = 'none';
+    var br = $('#btnAiRender'); if (br) { br.style.display = ''; br.disabled = false; }
     $('#infoSwatch').style.background = state.selectedColor.hex;
     $('#infoName').textContent = state.selectedColor.nombre;
     var line = PAINT_DATA.lineas.filter(function(l){ return l.id === state.selectedColor.lineId; })[0];
@@ -1556,6 +1569,17 @@
 
   $('#btnGoCalc').addEventListener('click', function(){
     goToStep(5);
+  });
+
+  /* Botón "Calcular y Cotizar" que aparece después de generar */
+  var btnCalcTop = $('#btnCalcTop');
+  if (btnCalcTop) btnCalcTop.addEventListener('click', function(){
+    goToStep(5);
+  });
+  /* Botón "Cambiar Color" post-render */
+  var btnRegen = $('#btnRegenerate');
+  if (btnRegen) btnRegen.addEventListener('click', function(){
+    goToStep(3);
   });
 
   /* ==================== AI RENDER ==================== */
@@ -1646,6 +1670,11 @@
           renderCanvasAfter();
         };
         aiImg.src = 'data:image/png;base64,' + result.data.image_base64;
+
+        // Mostrar botones de acción arriba y ocultar Generar
+        btnAiRender.style.display = 'none';
+        var postActions = $('#postRenderActions');
+        if (postActions) postActions.style.display = 'flex';
 
         track('tuespacio_ai_render', {
           color_name: state.selectedColor.nombre,
