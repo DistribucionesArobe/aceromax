@@ -953,16 +953,7 @@
       </div>
 
       <div class="preview-wrap">
-        <div class="compare-box" id="compareBox">
-          <canvas id="canvasBefore"></canvas>
-          <canvas id="canvasAfter" class="canvas-after"></canvas>
-          <div class="compare-label left">Antes</div>
-          <div class="compare-label right">Despu&eacute;s</div>
-          <div class="compare-divider" id="compareDivider"></div>
-        </div>
-
-        <!-- Intensidad removida: se usa solo renderizado IA -->
-
+        <!-- Color + Generar ARRIBA -->
         <div class="color-info-bar">
           <div class="info-swatch" id="infoSwatch"></div>
           <div class="info-text">
@@ -972,29 +963,39 @@
           <button class="btn btn-outline" id="btnChangeColor" type="button">Cambiar Color</button>
         </div>
 
-        <!-- Render -->
+        <!-- Spinner y errores ARRIBA de la imagen -->
         <div class="ai-render-section" id="aiRenderSection">
-          <div style="text-align:center; margin: 20px 0;">
-            <button class="btn btn-primary btn-lg" id="btnAiRender" type="button">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              Generar
-            </button>
+          <div style="text-align:center; margin: 12px 0 16px;">
             <div class="ai-spinner" id="aiSpinner" style="display:none;">
               <div class="spinner-ring"></div>
               <span>Generando vista previa... puede tardar 15-30 segundos</span>
             </div>
             <div class="ai-error" id="aiError" style="display:none;"></div>
+            <button class="btn btn-primary btn-lg" id="btnAiRender" type="button">
+              Generar Vista Previa
+            </button>
           </div>
-          <div class="ai-result" id="aiResult" style="display:none;">
-            <div class="ai-compare">
-              <div class="ai-img-wrap">
-                <span class="ai-img-label">Original</span>
-                <img id="aiOriginal" alt="Foto original">
-              </div>
-              <div class="ai-img-wrap">
-                <span class="ai-img-label">Pintado</span>
-                <img id="aiRendered" alt="Vista previa pintada">
-              </div>
+        </div>
+
+        <!-- Comparación antes/después -->
+        <div class="compare-box" id="compareBox">
+          <canvas id="canvasBefore"></canvas>
+          <canvas id="canvasAfter" class="canvas-after"></canvas>
+          <div class="compare-label left">Antes</div>
+          <div class="compare-label right">Despu&eacute;s</div>
+          <div class="compare-divider" id="compareDivider"></div>
+        </div>
+
+        <!-- Resultado IA debajo de la comparación -->
+        <div class="ai-result" id="aiResult" style="display:none;">
+          <div class="ai-compare">
+            <div class="ai-img-wrap">
+              <span class="ai-img-label">Original</span>
+              <img id="aiOriginal" alt="Foto original">
+            </div>
+            <div class="ai-img-wrap">
+              <span class="ai-img-label">Pintado</span>
+              <img id="aiRendered" alt="Vista previa pintada">
             </div>
           </div>
         </div>
