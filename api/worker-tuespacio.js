@@ -166,7 +166,6 @@ export default {
       formData.append('prompt', prompt);
       formData.append('size', 'auto');
       formData.append('quality', 'medium');
-      formData.append('response_format', 'b64_json');
 
       // Call OpenAI
       const controller = new AbortController();
@@ -199,7 +198,21 @@ export default {
       }
 
       const result = await openaiResponse.json();
-      const editedImageBase64 = result.data?.[0]?.b64_json;
+      let editedImageBase64 = result.data?.[0]?.b64_json;
+
+      // Si OpenAI devuelve URL en vez de b64, descargar y convertir
+      if (!editedImageBase64 && result.data?.[0]?.url) {
+        try {
+          const imgResp = await fetch(result.data[0].url);
+          const imgBuf = await imgResp.arrayBuffer();
+          const bytes = new Uint8Array(imgBuf);
+          let binary = '';
+          for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+          editedImageBase64 = btoa(binary);
+        } catch (e) {
+          console.error('Error downloading image from URL:', e);
+        }
+      }
 
       if (!editedImageBase64) {
         return new Response(JSON.stringify({ error: 'No se recibió imagen del servicio de IA.' }), {
