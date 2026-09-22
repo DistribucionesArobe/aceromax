@@ -949,7 +949,7 @@
       <div class="step-header">
         <span class="step-kicker">Paso 4</span>
         <h2>Vista Previa</h2>
-        <p>Haz clic en <strong>Renderizar con IA</strong> para ver cómo quedaría tu espacio pintado. Arrastra la línea para comparar.</p>
+        <p>Generando vista previa de tu espacio pintado. Arrastra la línea para comparar.</p>
       </div>
 
       <div class="preview-wrap">
@@ -972,34 +972,28 @@
           <button class="btn btn-outline" id="btnChangeColor" type="button">Cambiar Color</button>
         </div>
 
-        <!-- AI Render -->
+        <!-- Render -->
         <div class="ai-render-section" id="aiRenderSection">
-          <div class="ai-render-card">
-            <div class="ai-render-header">
-              <span class="ai-badge">IA</span>
-              <span>Renderizado Fotorrealista con Inteligencia Artificial</span>
-            </div>
-            <p class="ai-desc">Genera una vista previa profesional donde la IA repinta las paredes de tu foto con el color seleccionado.</p>
-            <button class="btn btn-ai" id="btnAiRender" type="button">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              Generar con IA
+          <div style="text-align:center; margin: 20px 0;">
+            <button class="btn btn-primary btn-lg" id="btnAiRender" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              Generar
             </button>
             <div class="ai-spinner" id="aiSpinner" style="display:none;">
               <div class="spinner-ring"></div>
-              <span>Procesando con OpenAI... puede tardar 15-30 segundos</span>
+              <span>Generando vista previa... puede tardar 15-30 segundos</span>
             </div>
             <div class="ai-error" id="aiError" style="display:none;"></div>
           </div>
           <div class="ai-result" id="aiResult" style="display:none;">
-            <h3>Resultado IA</h3>
             <div class="ai-compare">
               <div class="ai-img-wrap">
                 <span class="ai-img-label">Original</span>
                 <img id="aiOriginal" alt="Foto original">
               </div>
               <div class="ai-img-wrap">
-                <span class="ai-img-label">Con IA</span>
-                <img id="aiRendered" alt="Renderizado con IA">
+                <span class="ai-img-label">Pintado</span>
+                <img id="aiRendered" alt="Vista previa pintada">
               </div>
             </div>
           </div>
@@ -1459,7 +1453,11 @@
     renderSwatches();
     updatePreviewInfoBar();
     renderCanvasAfter();
-    setTimeout(function(){ goToStep(4); }, 300);
+    setTimeout(function(){
+      goToStep(4);
+      /* Auto-lanzar render al seleccionar color */
+      setTimeout(function(){ if (btnAiRender && !btnAiRender.disabled) btnAiRender.click(); }, 500);
+    }, 300);
   }
 
   renderSwatches();
