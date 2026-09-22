@@ -962,8 +962,8 @@
         </div>
 
         <div class="intensity-row">
-          <label><span>Intensidad del color</span><span id="intensityVal">50%</span></label>
-          <input type="range" id="intensitySlider" min="0.3" max="0.8" step="0.01" value="0.5">
+          <label><span>Intensidad del color</span><span id="intensityVal">100%</span></label>
+          <input type="range" id="intensitySlider" min="0.3" max="1.0" step="0.01" value="1.0">
         </div>
 
         <div class="color-info-bar">
@@ -1228,7 +1228,7 @@
     roomType: null,
     activeLine: "alquimex",
     selectedColor: null, // {codigo, nombre, hex, lineId}
-    intensity: 0.5,
+    intensity: 1.0,
     wallCount: 0,
     walls: [],
     totalArea: 0
@@ -1565,7 +1565,7 @@
         }
       }
 
-      /* ── Paso 6: aplicar color solo a pixeles pared en bloques limpios ── */
+      /* ── Paso 6: aplicar color como pintura real (sólido + sombras naturales) ── */
       for (var y = 0; y < h; y++) {
         var by = Math.min(Math.floor(y / BLK), bh - 1);
         for (var x = 0; x < w; x++) {
@@ -1576,10 +1576,21 @@
           var i = pidx * 4;
           var r = d[i], g = d[i+1], b = d[i+2];
           var lum = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
-          var blend = alpha * (lum > 0.65 ? 0.55 : 0.35);
-          d[i]   = Math.round(r + (cr - r) * blend);
-          d[i+1] = Math.round(g + (cg - g) * blend);
-          d[i+2] = Math.round(b + (cb - b) * blend);
+          /* Pintura sólida: el color base se modula por la luminosidad
+             original para conservar sombras y reflejos naturales */
+          var lumFactor = 0.3 + lum * 0.9; /* rango ~0.3-1.2: sombras oscuras, luces brillantes */
+          if (lumFactor > 1.15) lumFactor = 1.15;
+          var pr = Math.round(cr * lumFactor);
+          var pg = Math.round(cg * lumFactor);
+          var pb = Math.round(cb * lumFactor);
+          if (pr > 255) pr = 255;
+          if (pg > 255) pg = 255;
+          if (pb > 255) pb = 255;
+          /* Mezclar: alpha=1 → 90% pintura + 10% textura original */
+          var blend = alpha * 0.9;
+          d[i]   = Math.round(r * (1 - blend) + pr * blend);
+          d[i+1] = Math.round(g * (1 - blend) + pg * blend);
+          d[i+2] = Math.round(b * (1 - blend) + pb * blend);
         }
       }
       ctxAfter.putImageData(imageData, 0, 0);
