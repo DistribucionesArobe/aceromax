@@ -1501,7 +1501,6 @@
     ctxAfter.clearRect(0,0,w,h);
     ctxAfter.drawImage(state.img, 0, 0, w, h);
     if (state.selectedColor) {
-      // Leer pixeles para aplicar color solo en zonas claras (paredes)
       var imageData = ctxAfter.getImageData(0, 0, w, h);
       var d = imageData.data;
       var hex = state.selectedColor.hex;
@@ -1509,20 +1508,51 @@
       var cg = parseInt(hex.slice(3,5),16);
       var cb = parseInt(hex.slice(5,7),16);
       var alpha = state.intensity;
+
+      // Paso 1: mapa de luminosidad para detección de bordes
+      var lumMap = new Float32Array(w * h);
       for (var i = 0; i < d.length; i += 4) {
-        var r = d[i], g = d[i+1], b = d[i+2];
-        var lum = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
-        var sat = 0;
-        var maxC = Math.max(r,g,b), minC = Math.min(r,g,b);
-        if (maxC > 0) sat = (maxC - minC) / maxC;
-        // Solo colorear pixeles claros y poco saturados (paredes, techos)
-        if (lum > 0.35 && sat < 0.45) {
-          var blend = alpha * (lum > 0.5 ? 1.0 : (lum - 0.35) / 0.15);
-          blend = Math.min(blend, 0.7);
-          // Blend manteniendo luminosidad
-          d[i]   = Math.round(r + (cr - r) * blend);
-          d[i+1] = Math.round(g + (cg - g) * blend);
-          d[i+2] = Math.round(b + (cb - b) * blend);
+        lumMap[i / 4] = (d[i] * 0.299 + d[i+1] * 0.587 + d[i+2] * 0.114) / 255;
+      }
+
+      // Paso 2: colorear solo pixeles de pared (claros, neutros, zona lisa)
+      for (var y = 0; y < h; y++) {
+        for (var x = 0; x < w; x++) {
+          var idx = y * w + x;
+          var i = idx * 4;
+          var r = d[i], g = d[i+1], b = d[i+2];
+          var lum = lumMap[idx];
+
+          // Saturación
+          var maxC = Math.max(r,g,b), minC = Math.min(r,g,b);
+          var sat = maxC > 0 ? (maxC - minC) / maxC : 0;
+
+          // Gradiente (detección de bordes) — las paredes son lisas
+          var grad = 0;
+          if (x > 1 && x < w-2 && y > 1 && y < h-2) {
+            var gx = Math.abs(lumMap[idx+1] - lumMap[idx-1]);
+            var gy = Math.abs(lumMap[idx+w] - lumMap[idx-w]);
+            grad = Math.sqrt(gx*gx + gy*gy);
+          } else {
+            grad = 1; // bordes de imagen = no pintar
+          }
+
+          // Reducir efecto en parte inferior (probable piso)
+          var yRatio = y / h;
+          var floorPenalty = yRatio > 0.75 ? (yRatio - 0.75) / 0.25 : 0;
+
+          // Criterios de pared: luminosidad alta, sin color fuerte, zona lisa
+          if (lum > 0.55 && sat < 0.25 && grad < 0.06) {
+            var blend = alpha * (lum > 0.7 ? 1.0 : (lum - 0.55) / 0.15);
+            blend = Math.min(blend, 0.5);
+            // Penalizar zona de piso
+            blend *= (1 - floorPenalty * 0.7);
+            if (blend > 0.02) {
+              d[i]   = Math.round(r + (cr - r) * blend);
+              d[i+1] = Math.round(g + (cg - g) * blend);
+              d[i+2] = Math.round(b + (cb - b) * blend);
+            }
+          }
         }
       }
       ctxAfter.putImageData(imageData, 0, 0);
