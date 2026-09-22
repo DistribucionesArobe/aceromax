@@ -1508,51 +1508,78 @@
       var cg = parseInt(hex.slice(3,5),16);
       var cb = parseInt(hex.slice(5,7),16);
       var alpha = state.intensity;
+      var BLK = 8;
+      var bw = Math.ceil(w / BLK), bh = Math.ceil(h / BLK);
 
-      // Paso 1: mapa de luminosidad para detección de bordes
-      var lumMap = new Float32Array(w * h);
+      /* ── Paso 1: test por pixel (claro + neutro) ── */
+      var pxWall = new Uint8Array(w * h);
       for (var i = 0; i < d.length; i += 4) {
-        lumMap[i / 4] = (d[i] * 0.299 + d[i+1] * 0.587 + d[i+2] * 0.114) / 255;
+        var r = d[i], g = d[i+1], b = d[i+2];
+        var lum = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+        var mx = Math.max(r,g,b), mn = Math.min(r,g,b);
+        var sat = mx > 0 ? (mx - mn) / mx : 0;
+        if (lum > 0.45 && sat < 0.22) pxWall[i / 4] = 1;
       }
 
-      // Paso 2: colorear solo pixeles de pared (claros, neutros, zona lisa)
+      /* ── Paso 2: consenso por bloque 8×8 ── */
+      var blkWall = new Uint8Array(bw * bh);
+      for (var by = 0; by < bh; by++) {
+        for (var bx = 0; bx < bw; bx++) {
+          var cnt = 0, tot = 0;
+          var y0 = by * BLK, y1 = Math.min(y0 + BLK, h);
+          var x0 = bx * BLK, x1 = Math.min(x0 + BLK, w);
+          for (var yy = y0; yy < y1; yy++)
+            for (var xx = x0; xx < x1; xx++) { tot++; if (pxWall[yy * w + xx]) cnt++; }
+          if (cnt / tot > 0.55) blkWall[by * bw + bx] = 1;
+        }
+      }
+
+      /* ── Paso 3: excluir techo (top 15%) y piso (bottom 20%) ── */
+      var ceilRow = Math.floor(bh * 0.15);
+      var floorRow = Math.floor(bh * 0.80);
+      for (var by = 0; by < bh; by++) {
+        if (by < ceilRow || by >= floorRow) {
+          for (var bx = 0; bx < bw; bx++) blkWall[by * bw + bx] = 0;
+        }
+      }
+
+      /* ── Paso 4: erosión — solo bloques con ≥2 vecinos cardinales ── */
+      var blkClean = new Uint8Array(bw * bh);
+      for (var by = 1; by < bh - 1; by++) {
+        for (var bx = 1; bx < bw - 1; bx++) {
+          var bi = by * bw + bx;
+          if (!blkWall[bi]) continue;
+          var n = (blkWall[bi-1]||0)+(blkWall[bi+1]||0)+(blkWall[bi-bw]||0)+(blkWall[bi+bw]||0);
+          if (n >= 2) blkClean[bi] = 1;
+        }
+      }
+
+      /* ── Paso 5: dilatación 1-px para suavizar bordes ── */
+      var blkFinal = new Uint8Array(bw * bh);
+      for (var bi = 0; bi < bw * bh; bi++) blkFinal[bi] = blkClean[bi];
+      for (var by = 1; by < bh - 1; by++) {
+        for (var bx = 1; bx < bw - 1; bx++) {
+          var bi = by * bw + bx;
+          if (blkClean[bi] || blkClean[bi-1] || blkClean[bi+1] ||
+              blkClean[bi-bw] || blkClean[bi+bw]) blkFinal[bi] = 1;
+        }
+      }
+
+      /* ── Paso 6: aplicar color solo a pixeles pared en bloques limpios ── */
       for (var y = 0; y < h; y++) {
+        var by = Math.min(Math.floor(y / BLK), bh - 1);
         for (var x = 0; x < w; x++) {
-          var idx = y * w + x;
-          var i = idx * 4;
+          var bx = Math.min(Math.floor(x / BLK), bw - 1);
+          if (!blkFinal[by * bw + bx]) continue;
+          var pidx = y * w + x;
+          if (!pxWall[pidx]) continue;
+          var i = pidx * 4;
           var r = d[i], g = d[i+1], b = d[i+2];
-          var lum = lumMap[idx];
-
-          // Saturación
-          var maxC = Math.max(r,g,b), minC = Math.min(r,g,b);
-          var sat = maxC > 0 ? (maxC - minC) / maxC : 0;
-
-          // Gradiente (detección de bordes) — las paredes son lisas
-          var grad = 0;
-          if (x > 1 && x < w-2 && y > 1 && y < h-2) {
-            var gx = Math.abs(lumMap[idx+1] - lumMap[idx-1]);
-            var gy = Math.abs(lumMap[idx+w] - lumMap[idx-w]);
-            grad = Math.sqrt(gx*gx + gy*gy);
-          } else {
-            grad = 1; // bordes de imagen = no pintar
-          }
-
-          // Reducir efecto en parte inferior (probable piso)
-          var yRatio = y / h;
-          var floorPenalty = yRatio > 0.75 ? (yRatio - 0.75) / 0.25 : 0;
-
-          // Criterios de pared: luminosidad alta, sin color fuerte, zona lisa
-          if (lum > 0.55 && sat < 0.25 && grad < 0.06) {
-            var blend = alpha * (lum > 0.7 ? 1.0 : (lum - 0.55) / 0.15);
-            blend = Math.min(blend, 0.5);
-            // Penalizar zona de piso
-            blend *= (1 - floorPenalty * 0.7);
-            if (blend > 0.02) {
-              d[i]   = Math.round(r + (cr - r) * blend);
-              d[i+1] = Math.round(g + (cg - g) * blend);
-              d[i+2] = Math.round(b + (cb - b) * blend);
-            }
-          }
+          var lum = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+          var blend = alpha * (lum > 0.65 ? 0.55 : 0.35);
+          d[i]   = Math.round(r + (cr - r) * blend);
+          d[i+1] = Math.round(g + (cg - g) * blend);
+          d[i+2] = Math.round(b + (cb - b) * blend);
         }
       }
       ctxAfter.putImageData(imageData, 0, 0);
