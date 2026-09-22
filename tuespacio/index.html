@@ -1471,8 +1471,7 @@
   var ctxAfter = canvasAfter.getContext('2d');
   var compareBox = $('#compareBox');
   var compareDivider = $('#compareDivider');
-  var intensitySlider = $('#intensitySlider');
-  var intensityVal = $('#intensityVal');
+  /* Intensidad removida — se usa solo renderizado IA */
 
   function drawCanvases(){
     if (!state.img) return;
@@ -1505,11 +1504,7 @@
     }
   }
 
-  intensitySlider.addEventListener('input', function(){
-    state.intensity = parseFloat(intensitySlider.value);
-    intensityVal.textContent = Math.round(state.intensity * 100) + '%';
-    renderCanvasAfter();
-  });
+  /* Listener de intensidad removido */
 
   function updatePreviewInfoBar(){
     if (!state.selectedColor) return;
