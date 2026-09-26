@@ -154,3 +154,21 @@ services:
       - type: rewrite
         source: /productos
         destination: /productos/index.html
+      - type: rewrite
+        source: /blog
+        destination: /blog/index.html
+      - type: rewrite
+        source: /blog/guia-materiales-construccion-tamaulipas
+        destination: /blog/guia-materiales-construccion-tamaulipas/index.html
+      - type: rewrite
+        source: /blog/como-elegir-acero-estructural
+        destination: /blog/como-elegir-acero-estructural/index.html
+      - type: rewrite
+        source: /blog/tablaroca-vs-durock-diferencias
+        destination: /blog/tablaroca-vs-durock-diferencias/index.html
+      - type: rewrite
+        source: /blog/guia-pinturas-interiores-exteriores
+        destination: /blog/guia-pinturas-interiores-exteriores/index.html
+      - type: rewrite
+        source: /blog/losacero-vs-losa-tradicional
+        destination: /blog/losacero-vs-losa-tradicional/index.html

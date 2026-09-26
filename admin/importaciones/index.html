@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Importaci&oacute;n | AceroMAX Admin</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#1B2A4A;--accent:#2563EB;--green:#25D366;--red:#EF4444;--orange:#F59E0B;--bg:#F3F4F6;--card:#fff;--border:#E5E7EB;--text:#1F2937;--muted:#6B7280;--radius:12px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+.topbar{background:var(--primary);color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar h1{font-size:1.1rem;font-weight:600}
+.topbar a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem}
+.topbar a:hover{color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab{padding:10px 20px;border-radius:8px;border:2px solid var(--border);background:#fff;cursor:pointer;font-weight:500;font-size:.95rem;transition:.2s}
+.tab:hover{border-color:var(--accent)}
+.tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.card{background:var(--card);border-radius:var(--radius);padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card h2{font-size:1.15rem;margin-bottom:16px;color:var(--primary);display:flex;align-items:center;gap:8px}
+.card h2 .badge{background:var(--accent);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:10px;font-weight:600}
+.row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.field{flex:1;min-width:140px}
+.field label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:4px;font-weight:500}
+.field input,.field select{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:.95rem;background:#fff;transition:.2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.field input[type=number]{font-variant-numeric:tabular-nums}
+.field .prefix{position:relative}
+.field .prefix input{padding-left:28px}
+.field .prefix span{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.85rem}
+
+/* Products table */
+.prod-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.prod-table th{background:var(--primary);color:#fff;padding:8px 10px;text-align:left;font-weight:500;white-space:nowrap}
+.prod-table th:first-child{border-radius:8px 0 0 0}
+.prod-table th:last-child{border-radius:0 8px 0 0}
+.prod-table td{padding:6px 8px;border-bottom:1px solid var(--border)}
+.prod-table tr:hover td{background:rgba(37,99,235,.03)}
+.prod-table input{width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:6px;font-size:.85rem}
+.prod-table .num{text-align:right;font-variant-numeric:tabular-nums}
+.prod-table .calc{background:#F0F9FF;font-weight:500;color:var(--primary)}
+.prod-table tfoot td{background:var(--primary);color:#fff;font-weight:600;padding:10px}
+.prod-table tfoot td:first-child{border-radius:0 0 0 8px}
+.prod-table tfoot td:last-child{border-radius:0 0 8px 0}
+.table-wrap{overflow-x:auto;margin:0 -8px;padding:0 8px}
+
+/* Costs section */
+.cost-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.cost-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#F9FAFB;border-radius:8px;border:1px solid var(--border)}
+.cost-item label{flex:1;font-size:.85rem;color:var(--muted)}
+.cost-item input{width:120px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:.9rem;text-align:right}
+
+/* Results */
+.results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.result-box{padding:16px;border-radius:10px;text-align:center}
+.result-box.blue{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:1px solid #BFDBFE}
+.result-box.green{background:linear-gradient(135deg,#ECFDF5,#D1FAE5);border:1px solid #A7F3D0}
+.result-box.orange{background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:1px solid #FDE68A}
+.result-box.red{background:linear-gradient(135deg,#FEF2F2,#FEE2E2);border:1px solid #FECACA}
+.result-box .val{font-size:1.5rem;font-weight:700;color:var(--primary)}
+.result-box .lbl{font-size:.75rem;color:var(--muted);margin-top:2px}
+
+/* Pricing table */
+.price-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.price-table th{background:var(--green);color:#fff;padding:8px 10px;text-align:left;font-weight:500}
+.price-table th:first-child{border-radius:8px 0 0 0}
+.price-table th:last-child{border-radius:0 8px 0 0}
+.price-table td{padding:8px 10px;border-bottom:1px solid var(--border)}
+.price-table .num{text-align:right;font-variant-numeric:tabular-nums}
+.price-table input{width:70px;padding:6px;border:1px solid var(--border);border-radius:6px;font-size:.85rem;text-align:center}
+.price-table tfoot td{background:#065F46;color:#fff;font-weight:600;padding:10px}
+
+/* Buttons */
+.btn{padding:12px 24px;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-green{background:var(--green);color:#fff}
+.btn-outline{background:#fff;color:var(--primary);border:2px solid var(--border)}
+.btn-red{background:var(--red);color:#fff}
+.btn-sm{padding:6px 14px;font-size:.8rem}
+.actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+
+/* History */
+.history-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#F9FAFB;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:.2s}
+.history-item:hover{border-color:var(--accent);background:#F0F7FF}
+.history-item .meta{font-size:.8rem;color:var(--muted)}
+.history-item .name{font-weight:600;font-size:.95rem}
+.history-item .stats{text-align:right;font-size:.85rem}
+.history-item .total{font-weight:700;color:var(--accent)}
+
+/* Compare */
+.compare-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.compare-table th,.compare-table td{padding:8px 10px;border:1px solid var(--border);text-align:center}
+.compare-table th{background:var(--primary);color:#fff}
+.compare-table .best{background:#D1FAE5;font-weight:600}
+.compare-table .worst{background:#FEE2E2}
+
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty-state svg{width:64px;height:64px;opacity:.3;margin-bottom:12px}
+.empty-state p{font-size:1rem;margin-bottom:16px}
+
+.hidden{display:none!important}
+
+/* Toast */
+.toast{position:fixed;bottom:20px;right:20px;background:var(--primary);color:#fff;padding:14px 24px;border-radius:10px;font-size:.9rem;z-index:999;animation:slideUp .3s ease;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+@media(max-width:768px){
+  .container{padding:12px}
+  .card{padding:16px}
+  .row{flex-direction:column;gap:8px}
+  .field{min-width:100%}
+  .results-grid{grid-template-columns:1fr 1fr}
+  .cost-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>AceroMAX &mdash; Calculadora de Importaci&oacute;n</h1>
+  <a href="/">&larr; Volver al sitio</a>
+</div>
+
+<div class="container">
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" data-tab="calculator">Nueva Importaci&oacute;n</div>
+    <div class="tab" data-tab="history">Historial</div>
+    <div class="tab" data-tab="compare">Comparar</div>
+  </div>
+
+  <!-- ==================== CALCULATOR TAB ==================== -->
+  <div id="tabCalculator">
+
+    <!-- General Info -->
+    <div class="card">
+      <h2>Datos Generales</h2>
+      <div class="row">
+        <div class="field">
+          <label>Nombre / Referencia</label>
+          <input type="text" id="impName" placeholder="Ej: Contenedor China Sept 2026">
+        </div>
+        <div class="field">
+          <label>Proveedor</label>
+          <input type="text" id="impSupplier" placeholder="Ej: Zhejiang Trading Co.">
+        </div>
+        <div class="field" style="max-width:160px">
+          <label>Tipo de Cambio (USD&rarr;MXN)</label>
+          <div class="prefix"><span>$</span><input type="number" id="exchangeRate" value="18" step="0.01"></div>
+        </div>
+        <div class="field" style="max-width:140px">
+          <label>Fecha</label>
+          <input type="date" id="impDate">
+        </div>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div class="card">
+      <h2>Productos <span class="badge" id="prodCount">0</span></h2>
+      <div class="table-wrap">
+        <table class="prod-table">
+          <thead>
+            <tr>
+              <th style="width:30px">#</th>
+              <th style="min-width:200px">Producto</th>
+              <th style="width:70px">Kg/pza</th>
+              <th style="width:80px">Piezas</th>
+              <th style="width:100px">Precio USD</th>
+              <th style="width:90px">Markup &times;</th>
+              <th class="num" style="width:100px">Monto USD</th>
+              <th class="num" style="width:100px">Monto MXN</th>
+              <th class="num" style="width:80px">Kg Total</th>
+              <th style="width:40px"></th>
+            </tr>
+          </thead>
+          <tbody id="prodBody"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">TOTAL</td>
+              <td class="num" id="totalPieces">0</td>
+              <td></td>
+              <td></td>
+              <td class="num" id="totalUSD">$0</td>
+              <td class="num" id="totalMXN">$0</td>
+              <td class="num" id="totalKg">0</td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="actions">
+        <button class="btn btn-outline btn-sm" id="btnAddProd">+ Agregar Producto</button>
+      </div>
+    </div>
+
+    <!-- Indirect Costs -->
+    <div class="card">
+      <h2>Costos Indirectos e Impuestos</h2>
+      <div class="cost-grid">
+        <div class="cost-item">
+          <label>Flete Mar&iacute;timo (MXN)</label>
+          <input type="number" id="costFreight" value="102960" step="100">
+        </div>
+        <div class="cost-item">
+          <label>Seguro (MXN)</label>
+          <input type="number" id="costInsurance" value="2552" step="100">
+        </div>
+        <div class="cost-item">
+          <label>Tasa Arancel (%)</label>
+          <input type="number" id="costTariffRate" value="0.8" step="0.1">
+        </div>
+        <div class="cost-item">
+          <label>IVA + DTA (MXN)</label>
+          <input type="number" id="costTaxes" value="48849" step="100">
+        </div>
+        <div class="cost-item">
+          <label>Maniobra (MXN)</label>
+          <input type="number" id="costHandling" value="19000" step="100">
+        </div>
+        <div class="cost-item">
+          <label>Padr&oacute;n (MXN)</label>
+          <input type="number" id="costPadron" value="15553" step="100">
+        </div>
+        <div class="cost-item">
+          <label>Revalidaci&oacute;n (MXN)</label>
+          <input type="number" id="costReval" value="8000" step="100">
+        </div>
+        <div class="cost-item">
+          <label>Reconocimiento Aduanero (MXN)</label>
+          <input type="number" id="costRecon" value="5000" step="100">
+        </div>
+        <div class="cost-item">
+          <label>Flete M&eacute;xico (MXN)</label>
+          <input type="number" id="costDomFreight" value="80000" step="100">
+        </div>
+        <div class="cost-item">
+          <label>Honorarios e Interfaz (MXN)</label>
+          <input type="number" id="costHonorarios" value="12528" step="100">
+        </div>
+        <div class="cost-item">
+          <label>% Financiamiento</label>
+          <input type="number" id="costFinancing" value="15" step="1">
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="card" id="resultsCard">
+      <h2>Resumen de Costos</h2>
+      <div class="results-grid">
+        <div class="result-box blue">
+          <div class="val" id="resCIF">$0</div>
+          <div class="lbl">CIF (Mercanc&iacute;a + Flete + Seguro)</div>
+        </div>
+        <div class="result-box orange">
+          <div class="val" id="resIndirect">$0</div>
+          <div class="lbl">Total Costos Indirectos</div>
+        </div>
+        <div class="result-box blue">
+          <div class="val" id="resInversion">$0</div>
+          <div class="lbl">Inversi&oacute;n Total (CD + CI)</div>
+        </div>
+        <div class="result-box green">
+          <div class="val" id="resIngresos">$0</div>
+          <div class="lbl">Ingresos Proyectados</div>
+        </div>
+        <div class="result-box green">
+          <div class="val" id="resUtilidad">$0</div>
+          <div class="lbl">Utilidad Bruta</div>
+        </div>
+        <div class="result-box orange">
+          <div class="val" id="resFinancing">$0</div>
+          <div class="lbl">Costo Financiamiento</div>
+        </div>
+        <div class="result-box green">
+          <div class="val" id="resMargenNeto">$0</div>
+          <div class="lbl">Margen Neto</div>
+        </div>
+        <div class="result-box blue">
+          <div class="val" id="resROI">0%</div>
+          <div class="lbl">ROI</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Table -->
+    <div class="card" id="pricingCard">
+      <h2>Precios de Venta por Producto</h2>
+      <div class="table-wrap">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th class="num">Costo Unit. MXN</th>
+              <th class="num">Markup</th>
+              <th class="num">Precio Venta</th>
+              <th class="num">Utilidad/pza</th>
+              <th class="num">Ingreso Total</th>
+            </tr>
+          </thead>
+          <tbody id="priceBody"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4"></td>
+              <td class="num">Total:</td>
+              <td class="num" id="priceTotalRev">$0</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions" style="justify-content:center;margin:24px 0">
+      <button class="btn btn-green btn-lg" id="btnSave" style="font-size:1.1rem;padding:16px 40px">
+        Guardar Importaci&oacute;n
+      </button>
+      <button class="btn btn-outline" id="btnClear">Limpiar Todo</button>
+    </div>
+  </div>
+
+  <!-- ==================== HISTORY TAB ==================== -->
+  <div id="tabHistory" class="hidden">
+    <div class="card">
+      <h2>Historial de Importaciones</h2>
+      <div id="historyList">
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          <p>No hay importaciones guardadas a&uacute;n.<br>Crea tu primera importaci&oacute;n en la pesta&ntilde;a "Nueva Importaci&oacute;n".</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== COMPARE TAB ==================== -->
+  <div id="tabCompare" class="hidden">
+    <div class="card">
+      <h2>Comparar Importaciones</h2>
+      <p style="color:var(--muted);margin-bottom:16px;font-size:.9rem">Selecciona 2 o m&aacute;s importaciones para comparar costos, m&aacute;rgenes y proveedores.</p>
+      <div id="compareCheckboxes" style="margin-bottom:16px"></div>
+      <button class="btn btn-primary btn-sm" id="btnCompare">Comparar Seleccionadas</button>
+      <div id="compareResult" style="margin-top:20px"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $ = function(s){ return document.querySelector(s); };
+  var $$ = function(s){ return document.querySelectorAll(s); };
+
+  // ==================== STATE ====================
+  var products = [];
+  var prodIdCounter = 0;
+
+  // Set today's date
+  $('#impDate').value = new Date().toISOString().split('T')[0];
+
+  // ==================== TABS ====================
+  $$('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      $$('.tab').forEach(function(x){ x.classList.remove('active'); });
+      t.classList.add('active');
+      var tab = t.dataset.tab;
+      $('#tabCalculator').classList.toggle('hidden', tab !== 'calculator');
+      $('#tabHistory').classList.toggle('hidden', tab !== 'history');
+      $('#tabCompare').classList.toggle('hidden', tab !== 'compare');
+      if (tab === 'history') renderHistory();
+      if (tab === 'compare') renderCompareCheckboxes();
+    });
+  });
+
+  // ==================== PRODUCTS ====================
+  function addProduct(data){
+    data = data || {};
+    var id = ++prodIdCounter;
+    products.push({
+      id: id,
+      name: data.name || '',
+      kgPerPiece: data.kgPerPiece || 0,
+      pieces: data.pieces || 0,
+      priceUSD: data.priceUSD || 0,
+      markup: data.markup || 2.5
+    });
+    renderProducts();
+    recalc();
+  }
+
+  function removeProduct(id){
+    products = products.filter(function(p){ return p.id !== id; });
+    renderProducts();
+    recalc();
+  }
+
+  function renderProducts(){
+    var tbody = $('#prodBody');
+    var rate = parseFloat($('#exchangeRate').value) || 18;
+    tbody.innerHTML = '';
+    products.forEach(function(p, i){
+      var montoUSD = p.pieces * p.priceUSD;
+      var montoMXN = montoUSD * rate;
+      var kgTotal = p.pieces * p.kgPerPiece;
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td style="text-align:center;color:var(--muted)">' + (i+1) + '</td>' +
+        '<td><input type="text" value="' + esc(p.name) + '" data-id="'+p.id+'" data-field="name" placeholder="Nombre del producto"></td>' +
+        '<td><input type="number" value="' + p.kgPerPiece + '" data-id="'+p.id+'" data-field="kgPerPiece" step="0.1" min="0"></td>' +
+        '<td><input type="number" value="' + p.pieces + '" data-id="'+p.id+'" data-field="pieces" min="0"></td>' +
+        '<td><input type="number" value="' + p.priceUSD + '" data-id="'+p.id+'" data-field="priceUSD" step="0.01" min="0"></td>' +
+        '<td><input type="number" value="' + p.markup + '" data-id="'+p.id+'" data-field="markup" step="0.1" min="1"></td>' +
+        '<td class="num calc">$' + fmt(montoUSD) + '</td>' +
+        '<td class="num calc">$' + fmt(montoMXN) + '</td>' +
+        '<td class="num calc">' + fmt(kgTotal) + '</td>' +
+        '<td><button class="btn btn-red btn-sm" data-remove="'+p.id+'" style="padding:4px 8px;font-size:.75rem">&times;</button></td>';
+      tbody.appendChild(tr);
+    });
+    $('#prodCount').textContent = products.length;
+    // Bind inputs
+    tbody.querySelectorAll('input').forEach(function(inp){
+      inp.addEventListener('input', function(){
+        var id = parseInt(inp.dataset.id);
+        var field = inp.dataset.field;
+        var prod = products.find(function(p){ return p.id === id; });
+        if (!prod) return;
+        if (field === 'name') prod[field] = inp.value;
+        else prod[field] = parseFloat(inp.value) || 0;
+        recalc();
+        // Update calculated cells in same row
+        var tr = inp.closest('tr');
+        var rate = parseFloat($('#exchangeRate').value) || 18;
+        var cells = tr.querySelectorAll('.calc');
+        var mu = prod.pieces * prod.priceUSD;
+        cells[0].textContent = '$' + fmt(mu);
+        cells[1].textContent = '$' + fmt(mu * rate);
+        cells[2].textContent = fmt(prod.pieces * prod.kgPerPiece);
+      });
+    });
+    tbody.querySelectorAll('[data-remove]').forEach(function(btn){
+      btn.addEventListener('click', function(){ removeProduct(parseInt(btn.dataset.remove)); });
+    });
+  }
+
+  $('#btnAddProd').addEventListener('click', function(){ addProduct(); });
+
+  // ==================== RECALCULATE ====================
+  function recalc(){
+    var rate = parseFloat($('#exchangeRate').value) || 18;
+
+    // Product totals
+    var totalPcs = 0, totalUSD = 0, totalMXN = 0, totalKg = 0;
+    products.forEach(function(p){
+      var mu = p.pieces * p.priceUSD;
+      totalPcs += p.pieces;
+      totalUSD += mu;
+      totalMXN += mu * rate;
+      totalKg += p.pieces * p.kgPerPiece;
+    });
+    $('#totalPieces').textContent = fmt(totalPcs);
+    $('#totalUSD').textContent = '$' + fmt(totalUSD);
+    $('#totalMXN').textContent = '$' + fmt(totalMXN);
+    $('#totalKg').textContent = fmt(totalKg);
+
+    // Indirect costs
+    var freight = n('#costFreight');
+    var insurance = n('#costInsurance');
+    var tariffRate = n('#costTariffRate') / 100;
+    var taxes = n('#costTaxes');
+    var handling = n('#costHandling');
+    var padron = n('#costPadron');
+    var reval = n('#costReval');
+    var recon = n('#costRecon');
+    var domFreight = n('#costDomFreight');
+    var honorarios = n('#costHonorarios');
+    var financingRate = n('#costFinancing') / 100;
+
+    var cifMerch = totalMXN + freight + insurance;
+    var tariff = cifMerch * tariffRate;
+    var totalIndirect = tariff + taxes + handling + padron + reval + recon + domFreight + honorarios;
+    var cif = totalMXN + freight + insurance;
+    var totalCostCD_CI = cif + totalIndirect;
+    var inversion = totalCostCD_CI;
+
+    // Results boxes
+    $('#resCIF').textContent = '$' + fmt(cif);
+    $('#resIndirect').textContent = '$' + fmt(totalIndirect);
+    $('#resInversion').textContent = '$' + fmt(inversion);
+
+    // Per-product pricing with prorate
+    var priceBody = $('#priceBody');
+    priceBody.innerHTML = '';
+    var totalRevenue = 0;
+
+    products.forEach(function(p){
+      if (!p.pieces || !p.priceUSD) return;
+      var prodMXN = p.pieces * p.priceUSD * rate;
+      var pctShare = totalMXN > 0 ? prodMXN / totalMXN : 0;
+      var proratedIndirect = pctShare * totalIndirect;
+      var totalCostProd = prodMXN + proratedIndirect;
+      var unitCost = totalCostProd / p.pieces;
+      var salePrice = unitCost * p.markup;
+      var profitPerUnit = salePrice - unitCost;
+      var revenue = salePrice * p.pieces;
+      totalRevenue += revenue;
+
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td>' + esc(p.name || 'Sin nombre') + '</td>' +
+        '<td class="num">$' + fmt(unitCost) + '</td>' +
+        '<td class="num">&times;' + p.markup.toFixed(1) + '</td>' +
+        '<td class="num" style="font-weight:700;color:var(--primary)">$' + fmt(salePrice) + '</td>' +
+        '<td class="num" style="color:var(--green)">$' + fmt(profitPerUnit) + '</td>' +
+        '<td class="num">$' + fmt(revenue) + '</td>';
+      priceBody.appendChild(tr);
+    });
+
+    $('#priceTotalRev').textContent = '$' + fmt(totalRevenue);
+    var utilidad = totalRevenue - inversion;
+    var financing = inversion * financingRate;
+    var margenNeto = utilidad - financing;
+    var roi = inversion > 0 ? ((totalRevenue / inversion - 1) * 100) : 0;
+
+    $('#resIngresos').textContent = '$' + fmt(totalRevenue);
+    $('#resUtilidad').textContent = '$' + fmt(utilidad);
+    $('#resFinancing').textContent = '$' + fmt(financing);
+    $('#resMargenNeto').textContent = '$' + fmt(margenNeto);
+    $('#resROI').textContent = roi.toFixed(1) + '%';
+
+    // Color code margin
+    var mbox = $('#resMargenNeto').parentElement;
+    mbox.className = 'result-box ' + (margenNeto >= 0 ? 'green' : 'red');
+  }
+
+  // Recalc on any cost input change
+  $$('.cost-item input').forEach(function(inp){
+    inp.addEventListener('input', recalc);
+  });
+  $('#exchangeRate').addEventListener('input', function(){
+    renderProducts();
+    recalc();
+  });
+
+  // ==================== SAVE / LOAD ====================
+  function getStorageKey(){ return 'aceromax_imports'; }
+
+  function loadImports(){
+    try { return JSON.parse(localStorage.getItem(getStorageKey())) || []; }
+    catch(e){ return []; }
+  }
+
+  function saveImports(list){
+    localStorage.setItem(getStorageKey(), JSON.stringify(list));
+  }
+
+  function gatherCurrentData(){
+    return {
+      id: Date.now().toString(36) + Math.random().toString(36).substr(2,4),
+      name: $('#impName').value || 'Sin nombre',
+      supplier: $('#impSupplier').value || '',
+      date: $('#impDate').value,
+      exchangeRate: n('#exchangeRate'),
+      products: products.map(function(p){ return {name:p.name,kgPerPiece:p.kgPerPiece,pieces:p.pieces,priceUSD:p.priceUSD,markup:p.markup}; }),
+      costs: {
+        freight: n('#costFreight'),
+        insurance: n('#costInsurance'),
+        tariffRate: n('#costTariffRate'),
+        taxes: n('#costTaxes'),
+        handling: n('#costHandling'),
+        padron: n('#costPadron'),
+        reval: n('#costReval'),
+        recon: n('#costRecon'),
+        domFreight: n('#costDomFreight'),
+        honorarios: n('#costHonorarios'),
+        financing: n('#costFinancing')
+      },
+      // Store computed results
+      computed: computeResults()
+    };
+  }
+
+  function computeResults(){
+    var rate = n('#exchangeRate');
+    var totalMXN = 0, totalPcs = 0;
+    products.forEach(function(p){
+      totalMXN += p.pieces * p.priceUSD * rate;
+      totalPcs += p.pieces;
+    });
+    var freight = n('#costFreight'), insurance = n('#costInsurance');
+    var tariffRate = n('#costTariffRate')/100, taxes = n('#costTaxes');
+    var handling = n('#costHandling'), padron = n('#costPadron');
+    var reval = n('#costReval'), recon = n('#costRecon');
+    var domFreight = n('#costDomFreight'), honorarios = n('#costHonorarios');
+    var financingRate = n('#costFinancing')/100;
+    var cif = totalMXN + freight + insurance;
+    var tariff = cif * tariffRate;
+    var totalIndirect = tariff + taxes + handling + padron + reval + recon + domFreight + honorarios;
+    var inversion = cif + totalIndirect;
+    var totalRevenue = 0;
+    products.forEach(function(p){
+      if (!p.pieces || !p.priceUSD) return;
+      var prodMXN = p.pieces * p.priceUSD * rate;
+      var pctShare = totalMXN > 0 ? prodMXN / totalMXN : 0;
+      var unitCost = (prodMXN + pctShare * totalIndirect) / p.pieces;
+      totalRevenue += unitCost * p.markup * p.pieces;
+    });
+    var utilidad = totalRevenue - inversion;
+    var financing = inversion * financingRate;
+    return { cif:cif, totalIndirect:totalIndirect, inversion:inversion, revenue:totalRevenue, utilidad:utilidad, financing:financing, margenNeto:utilidad-financing, roi: inversion>0?((totalRevenue/inversion-1)*100):0, totalPcs:totalPcs };
+  }
+
+  $('#btnSave').addEventListener('click', function(){
+    if (products.length === 0){ toast('Agrega al menos un producto'); return; }
+    var data = gatherCurrentData();
+    var list = loadImports();
+    list.unshift(data);
+    saveImports(list);
+    toast('Importación guardada correctamente');
+  });
+
+  $('#btnClear').addEventListener('click', function(){
+    if (!confirm('¿Limpiar todos los datos?')) return;
+    products = [];
+    prodIdCounter = 0;
+    $('#impName').value = '';
+    $('#impSupplier').value = '';
+    renderProducts();
+    recalc();
+  });
+
+  function loadImportIntoForm(data){
+    $('#impName').value = data.name || '';
+    $('#impSupplier').value = data.supplier || '';
+    $('#impDate').value = data.date || '';
+    $('#exchangeRate').value = data.exchangeRate || 18;
+    // Costs
+    var c = data.costs || {};
+    $('#costFreight').value = c.freight || 0;
+    $('#costInsurance').value = c.insurance || 0;
+    $('#costTariffRate').value = c.tariffRate || 0;
+    $('#costTaxes').value = c.taxes || 0;
+    $('#costHandling').value = c.handling || 0;
+    $('#costPadron').value = c.padron || 0;
+    $('#costReval').value = c.reval || 0;
+    $('#costRecon').value = c.recon || 0;
+    $('#costDomFreight').value = c.domFreight || 0;
+    $('#costHonorarios').value = c.honorarios || 0;
+    $('#costFinancing').value = c.financing || 15;
+    // Products
+    products = [];
+    prodIdCounter = 0;
+    (data.products || []).forEach(function(p){ addProduct(p); });
+    // Switch tab
+    $$('.tab').forEach(function(t){ t.classList.remove('active'); });
+    $$('.tab')[0].classList.add('active');
+    $('#tabCalculator').classList.remove('hidden');
+    $('#tabHistory').classList.add('hidden');
+    $('#tabCompare').classList.add('hidden');
+    window.scrollTo(0,0);
+  }
+
+  // ==================== HISTORY ====================
+  function renderHistory(){
+    var list = loadImports();
+    var container = $('#historyList');
+    if (list.length === 0){
+      container.innerHTML = '<div class="empty-state"><p>No hay importaciones guardadas aún.</p></div>';
+      return;
+    }
+    container.innerHTML = '';
+    list.forEach(function(imp, idx){
+      var comp = imp.computed || {};
+      var div = document.createElement('div');
+      div.className = 'history-item';
+      div.innerHTML =
+        '<div><div class="name">' + esc(imp.name) + '</div><div class="meta">' + esc(imp.supplier || 'Sin proveedor') + ' &middot; ' + (imp.date || '') + ' &middot; TC $' + (imp.exchangeRate||18) + '</div></div>' +
+        '<div class="stats"><div class="total">Inv: $' + fmt(comp.inversion||0) + '</div><div style="color:var(--green)">Margen: $' + fmt(comp.margenNeto||0) + '</div><div>ROI: ' + (comp.roi||0).toFixed(1) + '%</div></div>' +
+        '<div style="display:flex;gap:6px;margin-left:12px"><button class="btn btn-outline btn-sm load-btn" data-idx="'+idx+'">Abrir</button><button class="btn btn-red btn-sm del-btn" data-idx="'+idx+'">&times;</button></div>';
+      container.appendChild(div);
+    });
+    container.querySelectorAll('.load-btn').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        loadImportIntoForm(list[parseInt(btn.dataset.idx)]);
+      });
+    });
+    container.querySelectorAll('.del-btn').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (!confirm('¿Eliminar esta importación?')) return;
+        list.splice(parseInt(btn.dataset.idx), 1);
+        saveImports(list);
+        renderHistory();
+      });
+    });
+  }
+
+  // ==================== COMPARE ====================
+  function renderCompareCheckboxes(){
+    var list = loadImports();
+    var container = $('#compareCheckboxes');
+    if (list.length < 2){
+      container.innerHTML = '<p style="color:var(--muted)">Necesitas al menos 2 importaciones guardadas para comparar.</p>';
+      return;
+    }
+    container.innerHTML = '';
+    list.forEach(function(imp, idx){
+      var lbl = document.createElement('label');
+      lbl.style.cssText = 'display:inline-flex;align-items:center;gap:6px;margin:4px 12px 4px 0;font-size:.9rem;cursor:pointer';
+      lbl.innerHTML = '<input type="checkbox" class="cmp-check" data-idx="'+idx+'"> ' + esc(imp.name) + ' (' + (imp.date||'') + ')';
+      container.appendChild(lbl);
+    });
+  }
+
+  $('#btnCompare').addEventListener('click', function(){
+    var list = loadImports();
+    var selected = [];
+    $$('.cmp-check:checked').forEach(function(cb){ selected.push(parseInt(cb.dataset.idx)); });
+    if (selected.length < 2){ toast('Selecciona al menos 2 importaciones'); return; }
+
+    var items = selected.map(function(idx){ return list[idx]; });
+    var container = $('#compareResult');
+
+    // Find best/worst for key metrics
+    var metrics = [
+      {key:'inversion', label:'Inversión Total', lower:true},
+      {key:'revenue', label:'Ingresos', lower:false},
+      {key:'margenNeto', label:'Margen Neto', lower:false},
+      {key:'roi', label:'ROI %', lower:false},
+      {key:'totalIndirect', label:'Costos Indirectos', lower:true}
+    ];
+
+    var html = '<div class="table-wrap"><table class="compare-table"><thead><tr><th>Métrica</th>';
+    items.forEach(function(imp){ html += '<th>' + esc(imp.name) + '<br><small>' + esc(imp.supplier||'') + '</small></th>'; });
+    html += '</tr></thead><tbody>';
+
+    metrics.forEach(function(m){
+      var vals = items.map(function(imp){ return (imp.computed||{})[m.key]||0; });
+      var best = m.lower ? Math.min.apply(null,vals) : Math.max.apply(null,vals);
+      var worst = m.lower ? Math.max.apply(null,vals) : Math.min.apply(null,vals);
+      html += '<tr><td style="font-weight:600">' + m.label + '</td>';
+      vals.forEach(function(v){
+        var cls = v === best ? 'best' : (v === worst && vals.length > 2 ? 'worst' : '');
+        html += '<td class="num ' + cls + '">' + (m.key === 'roi' ? v.toFixed(1)+'%' : '$'+fmt(v)) + '</td>';
+      });
+      html += '</tr>';
+    });
+
+    // Add exchange rate row
+    html += '<tr><td style="font-weight:600">Tipo de Cambio</td>';
+    items.forEach(function(imp){ html += '<td class="num">$' + (imp.exchangeRate||18).toFixed(2) + '</td>'; });
+    html += '</tr>';
+
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+  });
+
+  // ==================== UTILITIES ====================
+  function n(sel){ return parseFloat($(sel).value) || 0; }
+  function fmt(v){ return v.toLocaleString('es-MX', {minimumFractionDigits:0, maximumFractionDigits:0}); }
+  function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+  function toast(msg){
+    var t = document.createElement('div');
+    t.className = 'toast';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function(){ t.remove(); }, 3000);
+  }
+
+  // ==================== INIT: Load sample data from Excel ====================
+  addProduct({name:'Mineral fiber ceiling 605x605 cross fissured', kgPerPiece:1.2, pieces:8000, priceUSD:0.72, markup:2.55});
+  addProduct({name:'Mineral fiber ceiling 605x605 cross fissured black', kgPerPiece:1.2, pieces:1000, priceUSD:0.83, markup:3});
+  addProduct({name:'Perforated gypsum board', kgPerPiece:22, pieces:400, priceUSD:6.99, markup:3});
+  recalc();
+
+})();
+</script>
+</body>
+</html>

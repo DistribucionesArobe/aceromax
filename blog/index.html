@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Guías de Construcción | AceroMAX</title>
+  <meta name="description" content="Guías prácticas de construcción para constructores en Tamaulipas. Aprende sobre materiales, acero estructural, pinturas, tablaroca y más con AceroMAX.">
+  <link rel="canonical" href="https://aceromax.mx/blog/">
+  <meta property="og:title" content="Blog | Guías de Construcción | AceroMAX">
+  <meta property="og:description" content="Guías prácticas de construcción para constructores en Tamaulipas. Aprende sobre materiales, acero estructural, pinturas, tablaroca y más con AceroMAX.">
+  <meta property="og:url" content="https://aceromax.mx/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="AceroMAX">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://aceromax.mx/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://aceromax.mx/blog/"
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #333;
+      background: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    .site-header {
+      background: #1B2A4A;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #2563EB;
+    }
+
+    .header-nav a {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-left: 28px;
+      transition: color 0.2s;
+    }
+
+    .header-nav a:hover {
+      color: #fff;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px 0;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .breadcrumbs a {
+      color: #2563EB;
+      transition: color 0.2s;
+    }
+
+    .breadcrumbs a:hover {
+      color: #1B2A4A;
+    }
+
+    .breadcrumbs .sep {
+      margin: 0 6px;
+      color: #9ca3af;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1B2A4A 0%, #1e3a6e 100%);
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Cards grid */
+    .blog-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .card-body {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-date {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1B2A4A;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .card-title a {
+      color: #1B2A4A;
+      transition: color 0.2s;
+    }
+
+    .card-title a:hover {
+      color: #2563EB;
+    }
+
+    .card-excerpt {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2563EB;
+      transition: color 0.2s;
+    }
+
+    .card-link:hover {
+      color: #1B2A4A;
+    }
+
+    .card-link svg {
+      margin-left: 6px;
+      transition: transform 0.2s;
+    }
+
+    .card-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Top accent bar on cards */
+    .card-accent {
+      height: 4px;
+      background: linear-gradient(90deg, #2563EB, #1B2A4A);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #1B2A4A;
+      color: rgba(255,255,255,0.7);
+      padding: 40px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      max-width: 320px;
+    }
+
+    .footer-contact p {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* WhatsApp CTA */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      z-index: 200;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+    }
+
+    .whatsapp-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .header-nav {
+        display: none;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://aceromax.mx/" class="logo">Acero<span>MAX</span></a>
+      <nav class="header-nav">
+        <a href="https://aceromax.mx/">Inicio</a>
+        <a href="https://aceromax.mx/blog/">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="https://aceromax.mx/">Inicio</a>
+    <span class="sep">›</span>
+    <span>Blog</span>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Guías de Construcción</h1>
+    <p>Recursos prácticos para constructores, contratistas y profesionales de la obra en Tamaulipas.</p>
+  </section>
+
+  <!-- Blog Cards -->
+  <main class="blog-section">
+    <div class="cards-grid">
+
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <p class="card-date">26 de septiembre de 2026</p>
+          <h2 class="card-title">
+            <a href="/blog/guia-materiales-construccion-tamaulipas/">Guía Completa de Materiales de Construcción en Tamaulipas 2026</a>
+          </h2>
+          <p class="card-excerpt">Conoce las principales categorías de materiales, las marcas más confiables y los mejores consejos de compra para tus proyectos de construcción en la región. Una referencia indispensable para planificar tu obra con eficiencia.</p>
+          <a href="/blog/guia-materiales-construccion-tamaulipas/" class="card-link">
+            Leer más
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <p class="card-date">26 de septiembre de 2026</p>
+          <h2 class="card-title">
+            <a href="/blog/como-elegir-acero-estructural/">Cómo Elegir Acero Estructural: Guía de Vigas IPR, PTR y Perfiles</a>
+          </h2>
+          <p class="card-excerpt">Aprende a distinguir entre vigas IPR, tubos PTR y perfiles de canal. Descubre cuándo usar cada tipo de acero estructural y cómo dimensionarlo correctamente para tu proyecto.</p>
+          <a href="/blog/como-elegir-acero-estructural/" class="card-link">
+            Leer más
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <p class="card-date">26 de septiembre de 2026</p>
+          <h2 class="card-title">
+            <a href="/blog/tablaroca-vs-durock-diferencias/">Tablaroca vs Durock: ¿Cuál Usar? Diferencias, Usos y Precios</a>
+          </h2>
+          <p class="card-excerpt">Compara las diferencias clave entre tablaroca y Durock para interiores y exteriores. Te explicamos cuándo conviene cada panel, sus ventajas y cómo impactan en el costo final de tu obra.</p>
+          <a href="/blog/tablaroca-vs-durock-diferencias/" class="card-link">
+            Leer más
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <p class="card-date">26 de septiembre de 2026</p>
+          <h2 class="card-title">
+            <a href="/blog/guia-pinturas-interiores-exteriores/">Guía de Pinturas para Interiores y Exteriores: Cómo Elegir el Color y Tipo Correcto</a>
+          </h2>
+          <p class="card-excerpt">Descubre los tipos de pintura disponibles, cómo calcular el rendimiento por metro cuadrado y consejos prácticos para elegir el color ideal según el espacio y las condiciones climáticas.</p>
+          <a href="/blog/guia-pinturas-interiores-exteriores/" class="card-link">
+            Leer más
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <p class="card-date">26 de septiembre de 2026</p>
+          <h2 class="card-title">
+            <a href="/blog/losacero-vs-losa-tradicional/">Losacero vs Losa Tradicional: Ventajas, Costos y Cuál Conviene</a>
+          </h2>
+          <p class="card-excerpt">Compara el sistema de losacero con la losa tradicional de concreto. Analizamos ventajas, tiempos de instalación y costos para que elijas la mejor opción según las necesidades de tu proyecto.</p>
+          <a href="/blog/losacero-vs-losa-tradicional/" class="card-link">
+            Leer más
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Acero<span>MAX</span></div>
+        <p>Distribuidor de materiales de construcción en Ciudad Victoria, Tamaulipas. Acero, tablaroca, pinturas, losacero y más para tu obra.</p>
+      </div>
+      <div class="footer-contact">
+        <p><strong style="color:#fff;">Ubicación</strong></p>
+        <p>Ciudad Victoria, Tamaulipas, México</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AceroMAX. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/?text=Hola%2C%20me%20interesa%20información%20de%20AceroMAX" class="whatsapp-btn" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 2.667A13.28 13.28 0 002.68 15.947a13.18 13.18 0 001.796 6.64L2.667 29.333l6.96-1.78a13.3 13.3 0 006.36 1.62h.006A13.29 13.29 0 0029.333 15.96 13.29 13.29 0 0016.004 2.667zm0 24.32a11.04 11.04 0 01-5.62-1.54l-.4-.24-4.18 1.1 1.12-4.08-.26-.42a11 11 0 01-1.7-5.88 11.06 11.06 0 0111.04-11.02 11.06 11.06 0 0111.04 11.04 11.07 11.07 0 01-11.04 11.04zm6.06-8.26c-.33-.17-1.96-.97-2.27-1.08-.3-.11-.52-.17-.74.17s-.85 1.08-1.04 1.3c-.19.22-.39.24-.72.08a9.08 9.08 0 01-2.68-1.66 10.1 10.1 0 01-1.86-2.31c-.19-.33 0-.5.15-.67.14-.15.33-.39.49-.58.17-.2.22-.33.33-.56.11-.22.06-.41-.03-.58-.08-.17-.74-1.78-1.01-2.43-.27-.64-.54-.56-.74-.57h-.63a1.21 1.21 0 00-.88.41 3.7 3.7 0 00-1.15 2.74 6.42 6.42 0 001.35 3.42 14.73 14.73 0 005.63 4.98c.79.34 1.4.54 1.88.7a4.53 4.53 0 002.08.13 3.4 3.4 0 002.23-1.57 2.76 2.76 0 00.19-1.57c-.08-.14-.3-.22-.63-.39z"/></svg>
+  </a>
+
+</body>
+</html>

@@ -1,11 +1,15 @@
 User-agent: *
 Allow: /
 Disallow: /images/thumbs/
+Disallow: /admin/
 
 # Sitemap location
 Sitemap: https://aceromax.mx/sitemap.xml
 
-# Bots específicos (permitir acceso completo)
+# LLMs.txt para inteligencias artificiales
+# https://aceromax.mx/llms.txt
+
+# === Bots de Búsqueda Tradicional ===
 User-agent: Googlebot
 Allow: /
 
@@ -15,8 +19,49 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# === Bots de IA y Búsqueda Generativa ===
+
+# OpenAI (ChatGPT Search)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI (Gemini training)
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Copilot
+User-agent: Bingbot
+Allow: /
+
+# Meta
+User-agent: FacebookBot
+Allow: /
+
+# Apple (Siri/Spotlight)
+User-agent: Applebot
+Allow: /
+
+# Common Crawl (entrena muchos modelos)
+User-agent: CCBot
+Allow: /
+
+# === Redes Sociales ===
 User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
 Allow: /
