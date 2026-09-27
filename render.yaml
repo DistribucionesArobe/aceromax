@@ -187,3 +187,9 @@ services:
       - type: rewrite
         source: /construccion-ligera
         destination: /construccion-ligera/index.html
+      - type: rewrite
+        source: /vigas
+        destination: /vigas/index.html
+      - type: rewrite
+        source: /canales-polines
+        destination: /canales-polines/index.html
