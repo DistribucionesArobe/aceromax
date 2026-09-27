@@ -178,3 +178,12 @@ services:
       - type: rewrite
         source: /proyectos-industriales
         destination: /proyectos-industriales/index.html
+      - type: rewrite
+        source: /aislamientos
+        destination: /aislamientos/index.html
+      - type: rewrite
+        source: /cercos-perimetrales
+        destination: /cercos-perimetrales/index.html
+      - type: rewrite
+        source: /construccion-ligera
+        destination: /construccion-ligera/index.html
