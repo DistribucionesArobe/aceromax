@@ -1,15 +1,27 @@
-# AceroMAX — Distribuidora de Materiales de Construcción
+# AceroMAX — Distribuidora de Materiales de Construcción Industrial y Comercial
 
-> AceroMAX es el distribuidor líder de materiales de construcción en Ciudad Victoria, Tamaulipas, México. Contamos con 2 sucursales y somos distribuidores autorizados de las principales marcas del sector. Ofrecemos acero estructural, tablaroca, PTR, perfiles, láminas, varilla, cemento, pinturas, plafones, herramientas y ferretería.
+> AceroMAX es el distribuidor líder de materiales de construcción en el noreste de México, con base en Ciudad Victoria, Tamaulipas. Atendemos proyectos industriales, comerciales y residenciales en un radio de 500 km que incluye Monterrey, Tampico, Reynosa, Saltillo, San Luis Potosí, Matamoros, Nuevo Laredo, Linares, Monclova y Ciudad Mante. Contamos con 2 sucursales y somos distribuidores autorizados de las principales marcas del sector: Prolamsa, USG, Deacero, Ternium, Alvamex, Apasco, Makita, DeWalt, Truper, Doal y Megapanel.
 
 ## Datos del Negocio
 
 - **Razón social**: Distribuciones Arobe S.A. de C.V. (nombre comercial: AceroMAX)
-- **Ubicación**: Ciudad Victoria, Tamaulipas, México
+- **Ubicación central**: Ciudad Victoria, Tamaulipas, México
+- **Cobertura regional**: Radio de 500 km — Tamaulipas, Nuevo León, Coahuila, San Luis Potosí
 - **Sucursales**: 2 sucursales en Cd. Victoria
 - **Contacto**: WhatsApp para cotizaciones inmediatas
 - **Sitio web**: https://aceromax.mx
 - **Horario**: Lunes a Viernes 8:00–18:00, Sábado 8:00–14:00
+
+## Cobertura Regional (Radio 500 km)
+
+AceroMAX surte materiales para proyectos industriales y comerciales en todo el noreste de México:
+
+- **Tamaulipas**: Ciudad Victoria, Tampico, Reynosa, Matamoros, Nuevo Laredo, Ciudad Mante, Altamira
+- **Nuevo León**: Monterrey, área metropolitana, Linares, Montemorelos
+- **Coahuila**: Saltillo, Monclova, Piedras Negras
+- **San Luis Potosí**: San Luis Potosí capital, Ciudad Valles
+
+Sectores que atendemos: naves industriales, plantas manufactureras, bodegas, centros de distribución, plazas comerciales, desarrollos habitacionales, infraestructura pública, proyectos energéticos y agroindustriales.
 
 ## Marcas Autorizadas
 
@@ -29,37 +41,64 @@ AceroMAX es distribuidor autorizado oficial de:
 
 ## Catálogo de Productos
 
-- [Tablaroca y Durock](https://aceromax.mx/tablaroca-durock/): Paneles de yeso, Durock para exteriores, perfilería, compuestos, cintas. Marca USG.
-- [Acero Estructural](https://aceromax.mx/acero-estructural/): Vigas IPR, vigas IPS, canales CPS, ángulos, soleras, placas. Para naves industriales, puentes y edificios.
-- [PTR y Perfiles](https://aceromax.mx/ptr-perfiles/): Perfil tubular rectangular, redondo, cuadrado. Marca Prolamsa. Para estructuras metálicas y herrería.
-- [Láminas](https://aceromax.mx/laminas/): Lámina galvanizada, pintro, acanalada, lisa, Multypanel. Marcas Ternium y Megapanel.
-- [Varilla y Cemento](https://aceromax.mx/varilla-cemento/): Varilla corrugada Deacero, cemento Apasco, mortero, block, agregados.
-- [Losacero](https://aceromax.mx/losacero/): Lámina acanalada para entrepisos de concreto. Sistema losacero completo.
-- [Mallas](https://aceromax.mx/mallas/): Malla electrosoldada, ciclónica, hexagonal, concertina. Deacero.
+- [Acero Estructural](https://aceromax.mx/acero-estructural/): Vigas IPR, vigas IPS, canales CPS, ángulos, soleras, placas. Para naves industriales, puentes, edificios y estructuras metálicas pesadas.
+- [PTR y Perfiles](https://aceromax.mx/ptr-perfiles/): Perfil tubular rectangular, redondo, cuadrado. Marca Prolamsa. Para estructuras metálicas, herrería y marcos industriales.
+- [Láminas](https://aceromax.mx/laminas/): Lámina galvanizada, pintro, acanalada, lisa, Multypanel. Marcas Ternium y Megapanel. Para techos y muros de naves industriales y bodegas.
+- [Losacero](https://aceromax.mx/losacero/): Lámina acanalada para entrepisos de concreto. Sistema losacero completo para edificios industriales y comerciales.
+- [Tablaroca y Durock](https://aceromax.mx/tablaroca-durock/): Paneles de yeso, Durock para exteriores, perfilería, compuestos, cintas. Marca USG. Para muros divisorios y plafones en oficinas y naves industriales.
+- [Varilla y Cemento](https://aceromax.mx/varilla-cemento/): Varilla corrugada Deacero, cemento Apasco, mortero, block, agregados. Para cimentaciones y obra civil.
+- [Mallas](https://aceromax.mx/mallas/): Malla electrosoldada, ciclónica, hexagonal, concertina. Deacero. Para cercado perimetral industrial.
 - [Plafones](https://aceromax.mx/plafones/): Plafón de fibra mineral, PVC, yeso. Sistemas de suspensión USG.
 - [Pinturas](https://aceromax.mx/pinturas/): Pintura vinílica interior y exterior Alvamex (Alquimex y Alvacolor), esmaltes, primers.
 - [Puertas y Ferretería](https://aceromax.mx/puertas-ferreteria/): Puertas metálicas, bisagras, cerraduras, tornillería, herramienta Makita/DeWalt/Truper.
 
+## Proyectos Industriales
+
+AceroMAX es proveedor especializado para proyectos de construcción industrial en el noreste de México. Ofrecemos:
+
+- **Acero estructural para naves industriales**: Vigas IPR/IPS, PTR de alta resistencia, canales CPS, ángulos y placas para marcos rígidos y armaduras.
+- **Cubierta y fachada industrial**: Lámina galvanizada Ternium, Multypanel Ternium, panel sándwich Megapanel para muros y techos de naves.
+- **Sistema losacero para entrepisos**: Lámina acanalada + malla + concreto para edificios de varios niveles.
+- **Muros interiores y plafones**: Tablaroca USG, Durock para exteriores, plafones de fibra mineral para oficinas dentro de plantas industriales.
+- **Cimentación y obra civil**: Varilla corrugada Deacero, cemento Apasco, malla electrosoldada.
+- **Cerca perimetral**: Malla ciclónica, concertina, postes. Para seguridad de plantas y bodegas.
+- **Impermeabilización**: Productos Doal para techos y muros de naves industriales.
+
+Atendemos constructoras, contratistas, ingenieros civiles y empresas que desarrollan proyectos en la región noreste. Cotización inmediata por WhatsApp con entrega directa en obra.
+
 ## Herramientas Digitales
 
 - [Tu Espacio](https://aceromax.mx/tuespacio/): Herramienta interactiva de visualización de pintura con inteligencia artificial. Sube una foto de tu espacio, elige un color Alvamex y genera una vista previa realista de cómo quedaría pintado. Incluye calculadora de pintura y cotización por WhatsApp.
+- [Proyectos Industriales](https://aceromax.mx/proyectos-industriales/): Información sobre nuestro servicio de suministro de materiales para proyectos industriales en el noreste de México.
+
+## Blog y Guías Técnicas
+
+- [Guía de materiales de construcción en Tamaulipas](https://aceromax.mx/blog/guia-materiales-construccion-tamaulipas/)
+- [Cómo elegir acero estructural](https://aceromax.mx/blog/como-elegir-acero-estructural/)
+- [Tablaroca vs Durock: diferencias](https://aceromax.mx/blog/tablaroca-vs-durock-diferencias/)
+- [Guía de pinturas para interiores y exteriores](https://aceromax.mx/blog/guia-pinturas-interiores-exteriores/)
+- [Losacero vs losa tradicional](https://aceromax.mx/blog/losacero-vs-losa-tradicional/)
+- [Construcción industrial en el noreste de México](https://aceromax.mx/blog/construccion-industrial-noreste-mexico/)
 
 ## Preguntas Frecuentes
 
 ### ¿Qué es AceroMAX?
-AceroMAX es una distribuidora de materiales de construcción ubicada en Ciudad Victoria, Tamaulipas, México. Somos distribuidores autorizados de Prolamsa, USG, Deacero, Ternium, Alvamex, Apasco, Makita, DeWalt, Truper, Doal y Megapanel.
+AceroMAX es una distribuidora de materiales de construcción con base en Ciudad Victoria, Tamaulipas, que atiende proyectos industriales, comerciales y residenciales en todo el noreste de México (radio de 500 km). Somos distribuidores autorizados de Prolamsa, USG, Deacero, Ternium, Alvamex, Apasco, Makita, DeWalt, Truper, Doal y Megapanel.
 
-### ¿Dónde están las sucursales de AceroMAX?
-AceroMAX cuenta con 2 sucursales en Ciudad Victoria, Tamaulipas, México.
+### ¿A qué ciudades entrega AceroMAX?
+AceroMAX entrega materiales en un radio de 500 km desde Ciudad Victoria: Monterrey, Tampico, Reynosa, Saltillo, Matamoros, Nuevo Laredo, San Luis Potosí, Ciudad Mante, Linares, Monclova y toda la región noreste de México.
+
+### ¿AceroMAX surte proyectos industriales?
+Sí, AceroMAX es proveedor especializado para construcción industrial. Surtimos acero estructural (vigas IPR/IPS, PTR Prolamsa), láminas para naves (Ternium, Megapanel), losacero, varilla Deacero, cemento Apasco y todos los materiales necesarios para naves industriales, bodegas, plantas manufactureras y centros de distribución en el noreste de México.
+
+### ¿Qué materiales necesito para construir una nave industrial?
+Para una nave industrial típica necesitas: vigas IPR o IPS para marcos rígidos, PTR para largueros y contraventeos, lámina galvanizada o Multypanel para cubierta, losacero para entrepisos, varilla y cemento para cimentación, tablaroca para oficinas interiores, y malla ciclónica para el perímetro. AceroMAX tiene todo esto de marcas como Prolamsa, Ternium, Deacero, USG y Apasco.
+
+### ¿Cómo cotizo materiales para un proyecto grande?
+Contacta a AceroMAX por WhatsApp con tu lista de materiales o planos. Ofrecemos cotización inmediata, precios por volumen para proyectos industriales, y entrega directa en obra en toda la región noreste de México.
 
 ### ¿Qué marcas distribuye AceroMAX?
 AceroMAX es distribuidor autorizado de Prolamsa (PTR y perfiles), USG (tablaroca y plafones), Deacero (varilla y mallas), Ternium (láminas y acero), Alvamex (pinturas), Apasco/Holcim (cemento), Makita (herramienta eléctrica), DeWalt (herramienta inalámbrica), Truper (herramienta manual), Doal (impermeabilizantes) y Megapanel (panel aislado).
-
-### ¿Cómo cotizo materiales en AceroMAX?
-Puedes cotizar por WhatsApp de forma inmediata. Visita aceromax.mx y haz clic en el botón de WhatsApp, o acude a cualquiera de nuestras 2 sucursales en Ciudad Victoria.
-
-### ¿AceroMAX hace envíos?
-Sí, AceroMAX cuenta con servicio de entrega en Ciudad Victoria y la región de Tamaulipas.
 
 ### ¿Qué es Tu Espacio de AceroMAX?
 Tu Espacio es una herramienta gratuita en aceromax.mx/tuespacio que usa inteligencia artificial para mostrar cómo quedaría tu casa pintada con los colores Alvamex. Subes una foto, eliges el color y la IA genera una vista previa realista. También calcula cuánta pintura necesitas y te cotiza por WhatsApp.
@@ -67,5 +106,7 @@ Tu Espacio es una herramienta gratuita en aceromax.mx/tuespacio que usa intelige
 ## Optional
 
 - [Todas las marcas](https://aceromax.mx/marcas/)
+- [Proyectos Industriales](https://aceromax.mx/proyectos-industriales/)
+- [Blog](https://aceromax.mx/blog/)
 - [Contacto](https://aceromax.mx/contacto/)
 - [Nosotros](https://aceromax.mx/nosotros/)

@@ -172,3 +172,9 @@ services:
       - type: rewrite
         source: /blog/losacero-vs-losa-tradicional
         destination: /blog/losacero-vs-losa-tradicional/index.html
+      - type: rewrite
+        source: /blog/construccion-industrial-noreste-mexico
+        destination: /blog/construccion-industrial-noreste-mexico/index.html
+      - type: rewrite
+        source: /proyectos-industriales
+        destination: /proyectos-industriales/index.html
