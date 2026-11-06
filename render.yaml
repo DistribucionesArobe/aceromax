@@ -191,5 +191,8 @@ services:
         source: /vigas
         destination: /vigas/index.html
       - type: rewrite
+        source: /ferromax
+        destination: /ferromax/index.html
+      - type: rewrite
         source: /canales-polines
         destination: /canales-polines/index.html
