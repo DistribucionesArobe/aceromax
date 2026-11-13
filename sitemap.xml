@@ -425,6 +425,28 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- === NUEVOS BLOGS NOVIEMBRE 2026 === -->
+  <url>
+    <loc>https://aceromax.mx/blog/cuanto-cuesta-construir-bodega-tamaulipas/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aceromax.mx/blog/como-instalar-malla-ciclonica/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aceromax.mx/blog/boom-construccion-industrial-tamaulipas-2026/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- === FERROMAX (CAPTURA DE BÚSQUEDAS) === -->
   <url>
     <loc>https://aceromax.mx/ferromax/</loc>

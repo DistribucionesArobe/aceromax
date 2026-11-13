@@ -196,3 +196,12 @@ services:
       - type: rewrite
         source: /canales-polines
         destination: /canales-polines/index.html
+      - type: rewrite
+        source: /blog/cuanto-cuesta-construir-bodega-tamaulipas
+        destination: /blog/cuanto-cuesta-construir-bodega-tamaulipas/index.html
+      - type: rewrite
+        source: /blog/como-instalar-malla-ciclonica
+        destination: /blog/como-instalar-malla-ciclonica/index.html
+      - type: rewrite
+        source: /blog/boom-construccion-industrial-tamaulipas-2026
+        destination: /blog/boom-construccion-industrial-tamaulipas-2026/index.html
