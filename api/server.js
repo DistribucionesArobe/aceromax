@@ -191,7 +191,7 @@ app.post('/api/create-preference', async (req, res) => {
     }
 
     // --- URL del webhook ---
-    const apiUrl = process.env.API_URL || `https://aceromax-api.onrender.com`;
+    const apiUrl = process.env.API_URL || `https://aceromaxweb.onrender.com`;
     const notificationUrl = `${apiUrl}/api/webhook`;
 
     // --- Crear preferencia ---
