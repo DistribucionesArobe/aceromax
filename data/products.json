@@ -1,0 +1,938 @@
+{
+  "lastUpdated": "2026-11-19",
+  "currency": "MXN",
+  "categories": [
+    {
+      "id": "acero-estructural",
+      "name": "Acero Estructural",
+      "icon": "🏗️",
+      "description": "PTR, vigas IPR, canales CPS, ángulos y soleras de las mejores marcas"
+    },
+    {
+      "id": "laminas",
+      "name": "Láminas",
+      "icon": "🏠",
+      "description": "Lámina galvanizada, pintro, galvateja y aceroteja para techos y muros"
+    },
+    {
+      "id": "tablaroca-durock",
+      "name": "Tablaroca y Durock",
+      "icon": "🧱",
+      "description": "Paneles de yeso, cemento, perfilería, pastas y accesorios para construcción en seco"
+    },
+    {
+      "id": "varilla-cemento",
+      "name": "Varilla y Cemento",
+      "icon": "🪨",
+      "description": "Varilla corrugada, cemento, mortero y materiales para obra gris"
+    },
+    {
+      "id": "mallas",
+      "name": "Mallas y Cercas",
+      "icon": "🔗",
+      "description": "Malla ciclónica, borreguera, rejacero y accesorios para cercado"
+    },
+    {
+      "id": "herramienta",
+      "name": "Herramienta",
+      "icon": "🔧",
+      "description": "Herramienta eléctrica y manual Makita, DeWalt y Truper"
+    },
+    {
+      "id": "pinturas",
+      "name": "Pinturas",
+      "icon": "🎨",
+      "description": "Pintura vinílica, esmalte, impermeabilizante y recubrimientos"
+    },
+    {
+      "id": "puertas",
+      "name": "Puertas",
+      "icon": "🚪",
+      "description": "Puertas multipanel, tambor y accesorios para interior y exterior"
+    }
+  ],
+  "products": [
+    {
+      "id": "ptr-2x2-c14",
+      "name": "PTR 2x2\" Calibre 14",
+      "category": "acero-estructural",
+      "subcategory": "ptr",
+      "brand": "Prolamsa",
+      "price": 485,
+      "unit": "pieza",
+      "description": "Perfil tubular rectangular 2x2 pulgadas calibre 14, largo 6.10m. Ideal para estructuras ligeras, marcos y soportes.",
+      "image": "/images/products/ptr-2x2-c14.jpg",
+      "specs": {
+        "medida": "2x2\"",
+        "calibre": "14",
+        "largo": "6.10 m",
+        "peso": "8.49 kg/m"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "ptr-3x3-c14",
+      "name": "PTR 3x3\" Calibre 14",
+      "category": "acero-estructural",
+      "subcategory": "ptr",
+      "brand": "Prolamsa",
+      "price": 720,
+      "unit": "pieza",
+      "description": "Perfil tubular rectangular 3x3 pulgadas calibre 14, largo 6.10m. Para estructuras medianas, columnas y marcos.",
+      "image": "/images/products/ptr-3x3-c14.jpg",
+      "specs": {
+        "medida": "3x3\"",
+        "calibre": "14",
+        "largo": "6.10 m",
+        "peso": "12.90 kg/m"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "ptr-4x4-c11",
+      "name": "PTR 4x4\" Calibre 11",
+      "category": "acero-estructural",
+      "subcategory": "ptr",
+      "brand": "Prolamsa",
+      "price": 1150,
+      "unit": "pieza",
+      "description": "Perfil tubular rectangular 4x4 pulgadas calibre 11, largo 6.10m. Para estructuras pesadas, naves industriales y bodegas.",
+      "image": "/images/products/ptr-4x4-c11.jpg",
+      "specs": {
+        "medida": "4x4\"",
+        "calibre": "11",
+        "largo": "6.10 m",
+        "peso": "22.42 kg/m"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "viga-ipr-6x4",
+      "name": "Viga IPR 6x4\"",
+      "category": "acero-estructural",
+      "subcategory": "vigas",
+      "brand": "Prolamsa",
+      "price": 3200,
+      "unit": "pieza",
+      "description": "Viga IPR W6x9 (6x4 pulgadas), largo 6.10m. Para claros medianos, entrepisos y estructuras industriales.",
+      "image": "/images/products/viga-ipr-6x4.jpg",
+      "specs": {
+        "medida": "6x4\" (W6x9)",
+        "largo": "6.10 m",
+        "peso": "13.4 kg/m"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "viga-ipr-8x5",
+      "name": "Viga IPR 8x5¼\"",
+      "category": "acero-estructural",
+      "subcategory": "vigas",
+      "brand": "Prolamsa",
+      "price": 5800,
+      "unit": "pieza",
+      "description": "Viga IPR W8x18 (8x5¼ pulgadas), largo 6.10m. Para claros amplios, naves industriales y entrepisos de gran capacidad.",
+      "image": "/images/products/viga-ipr-8x5.jpg",
+      "specs": {
+        "medida": "8x5¼\" (W8x18)",
+        "largo": "6.10 m",
+        "peso": "26.8 kg/m"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "canal-cps-4",
+      "name": "Canal CPS 4\" Calibre 12",
+      "category": "acero-estructural",
+      "subcategory": "canales",
+      "brand": "Prolamsa",
+      "price": 850,
+      "unit": "pieza",
+      "description": "Canal estructural CPS 4 pulgadas calibre 12, largo 6.10m. Para largueros, polines y soportes de techos.",
+      "image": "/images/products/canal-cps-4.jpg",
+      "specs": {
+        "medida": "4\"",
+        "calibre": "12",
+        "largo": "6.10 m",
+        "peso": "9.52 kg/m"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "angulo-1-5x1-5",
+      "name": "Ángulo 1½x1½\" Calibre 11",
+      "category": "acero-estructural",
+      "subcategory": "angulos",
+      "brand": "Prolamsa",
+      "price": 320,
+      "unit": "pieza",
+      "description": "Ángulo de acero 1½x1½ pulgadas calibre 11, largo 6.10m. Para refuerzos, marcos de puertas y conexiones.",
+      "image": "/images/products/angulo-1-5.jpg",
+      "specs": {
+        "medida": "1½x1½\"",
+        "calibre": "11",
+        "largo": "6.10 m",
+        "peso": "4.08 kg/m"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "solera-1x1-8",
+      "name": "Solera 1\"x⅛\"",
+      "category": "acero-estructural",
+      "subcategory": "soleras",
+      "brand": "Prolamsa",
+      "price": 145,
+      "unit": "pieza",
+      "description": "Solera de acero 1 pulgada por ⅛ de espesor, largo 6.10m. Para refuerzos, bases y trabajos de herrería.",
+      "image": "/images/products/solera-1.jpg",
+      "specs": {
+        "medida": "1\"x⅛\"",
+        "largo": "6.10 m",
+        "peso": "1.59 kg/m"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "lamina-galv-c26-10ft",
+      "name": "Lámina Galvanizada Cal. 26 — 10 pies",
+      "category": "laminas",
+      "subcategory": "galvanizada",
+      "brand": "Ternium",
+      "price": 420,
+      "unit": "pieza",
+      "description": "Lámina galvanizada acanalada calibre 26, largo 3.05m (10 pies). Para techos de bodegas, cocheras y construcciones rurales.",
+      "image": "/images/products/lamina-galv-c26.jpg",
+      "specs": {
+        "calibre": "26",
+        "largo": "3.05 m (10 pies)",
+        "ancho útil": "82 cm",
+        "acabado": "Galvanizado"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "lamina-galv-c26-12ft",
+      "name": "Lámina Galvanizada Cal. 26 — 12 pies",
+      "category": "laminas",
+      "subcategory": "galvanizada",
+      "brand": "Ternium",
+      "price": 510,
+      "unit": "pieza",
+      "description": "Lámina galvanizada acanalada calibre 26, largo 3.66m (12 pies). Ideal para techos amplios y naves.",
+      "image": "/images/products/lamina-galv-c26-12.jpg",
+      "specs": {
+        "calibre": "26",
+        "largo": "3.66 m (12 pies)",
+        "ancho útil": "82 cm",
+        "acabado": "Galvanizado"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "lamina-pintro-c26-10ft",
+      "name": "Lámina Pintro Cal. 26 — 10 pies",
+      "category": "laminas",
+      "subcategory": "pintro",
+      "brand": "Ternium",
+      "price": 490,
+      "unit": "pieza",
+      "description": "Lámina pintada (pintro) acanalada calibre 26, largo 3.05m. Disponible en rojo, blanco, verde y azul.",
+      "image": "/images/products/lamina-pintro-c26.jpg",
+      "specs": {
+        "calibre": "26",
+        "largo": "3.05 m (10 pies)",
+        "ancho útil": "82 cm",
+        "acabado": "Pintro (varios colores)"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "galvateja-c26",
+      "name": "Galvateja Cal. 26 — 6 pies",
+      "category": "laminas",
+      "subcategory": "galvateja",
+      "brand": "Ternium",
+      "price": 310,
+      "unit": "pieza",
+      "description": "Lámina tipo teja galvanizada calibre 26, largo 1.83m (6 pies). Da apariencia de teja de barro a tu techo.",
+      "image": "/images/products/galvateja-c26.jpg",
+      "specs": {
+        "calibre": "26",
+        "largo": "1.83 m (6 pies)",
+        "ancho útil": "78 cm",
+        "acabado": "Galvanizado tipo teja"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "aceroteja-c26",
+      "name": "Aceroteja Pintro Cal. 26 — 6 pies",
+      "category": "laminas",
+      "subcategory": "aceroteja",
+      "brand": "Ternium",
+      "price": 395,
+      "unit": "pieza",
+      "description": "Lámina tipo teja pintada calibre 26, largo 1.83m. Colores terracota, rojo colonial y café. Acabado superior para residencias.",
+      "image": "/images/products/aceroteja-c26.jpg",
+      "specs": {
+        "calibre": "26",
+        "largo": "1.83 m (6 pies)",
+        "ancho útil": "78 cm",
+        "acabado": "Pintro tipo teja"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "lamina-galv-c24-10ft",
+      "name": "Lámina Galvanizada Cal. 24 — 10 pies",
+      "category": "laminas",
+      "subcategory": "galvanizada",
+      "brand": "Ternium",
+      "price": 580,
+      "unit": "pieza",
+      "description": "Lámina galvanizada acanalada calibre 24, largo 3.05m. Mayor resistencia para naves industriales y bodegas.",
+      "image": "/images/products/lamina-galv-c24.jpg",
+      "specs": {
+        "calibre": "24",
+        "largo": "3.05 m (10 pies)",
+        "ancho útil": "82 cm",
+        "acabado": "Galvanizado"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "tablaroca-usg-12mm",
+      "name": "Panel Tablaroca USG ½\" (12.7mm)",
+      "category": "tablaroca-durock",
+      "subcategory": "tablaroca",
+      "brand": "USG",
+      "price": 155,
+      "unit": "pieza",
+      "description": "Panel de yeso estándar USG de ½ pulgada (12.7mm), 1.22x2.44m. Para muros y plafones interiores.",
+      "image": "/images/products/tablaroca-usg-12.jpg",
+      "specs": {
+        "espesor": "12.7 mm (½\")",
+        "medida": "1.22 x 2.44 m",
+        "tipo": "Estándar",
+        "uso": "Interior"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "tablaroca-usg-mr",
+      "name": "Panel Tablaroca USG MR ½\" (Resistente a humedad)",
+      "category": "tablaroca-durock",
+      "subcategory": "tablaroca",
+      "brand": "USG",
+      "price": 195,
+      "unit": "pieza",
+      "description": "Panel de yeso resistente a humedad (verde) USG de ½ pulgada, 1.22x2.44m. Para baños, cocinas y áreas húmedas.",
+      "image": "/images/products/tablaroca-usg-mr.jpg",
+      "specs": {
+        "espesor": "12.7 mm (½\")",
+        "medida": "1.22 x 2.44 m",
+        "tipo": "Resistente a humedad (MR)",
+        "uso": "Áreas húmedas"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "durock-usg-12mm",
+      "name": "Panel Durock USG ½\" (12.7mm)",
+      "category": "tablaroca-durock",
+      "subcategory": "durock",
+      "brand": "USG",
+      "price": 310,
+      "unit": "pieza",
+      "description": "Panel de cemite Durock USG de ½ pulgada, 1.22x2.44m. Para fachadas exteriores, baños y áreas de alta humedad.",
+      "image": "/images/products/durock-usg-12.jpg",
+      "specs": {
+        "espesor": "12.7 mm (½\")",
+        "medida": "1.22 x 2.44 m",
+        "tipo": "Panel de cemento",
+        "uso": "Exterior e interior húmedo"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "perfil-poste-3-5-8",
+      "name": "Perfil Poste 3⅝\" Cal. 26 — 3.05m",
+      "category": "tablaroca-durock",
+      "subcategory": "perfileria",
+      "brand": "USG",
+      "price": 68,
+      "unit": "pieza",
+      "description": "Poste metálico (stud) calibre 26 de 3⅝ pulgadas, largo 3.05m. Estructura para muros de tablaroca.",
+      "image": "/images/products/perfil-poste.jpg",
+      "specs": {
+        "medida": "3⅝\"",
+        "calibre": "26",
+        "largo": "3.05 m",
+        "tipo": "Poste (stud)"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "perfil-canal-3-5-8",
+      "name": "Perfil Canal (Track) 3⅝\" Cal. 26 — 3.05m",
+      "category": "tablaroca-durock",
+      "subcategory": "perfileria",
+      "brand": "USG",
+      "price": 55,
+      "unit": "pieza",
+      "description": "Canal metálico (track) calibre 26 de 3⅝ pulgadas, largo 3.05m. Riel superior e inferior para postes de tablaroca.",
+      "image": "/images/products/perfil-canal.jpg",
+      "specs": {
+        "medida": "3⅝\"",
+        "calibre": "26",
+        "largo": "3.05 m",
+        "tipo": "Canal (track)"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "pasta-sheetrock-28kg",
+      "name": "Pasta Sheetrock USG — 28 kg",
+      "category": "tablaroca-durock",
+      "subcategory": "accesorios",
+      "brand": "USG",
+      "price": 290,
+      "unit": "cubeta",
+      "description": "Compuesto para juntas (pasta) listo para usar, cubeta de 28 kg. Para acabados de tablaroca.",
+      "image": "/images/products/pasta-sheetrock.jpg",
+      "specs": {
+        "peso": "28 kg",
+        "tipo": "Listo para usar",
+        "rendimiento": "~20 m² por cubeta",
+        "uso": "Juntas de tablaroca"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "varilla-3-8-deacero",
+      "name": "Varilla Corrugada ⅜\" (No. 3) — 12m",
+      "category": "varilla-cemento",
+      "subcategory": "varilla",
+      "brand": "Deacero",
+      "price": 62,
+      "unit": "pieza",
+      "description": "Varilla de acero corrugada de ⅜ pulgada (9.5mm, No. 3), largo 12m. Para castillos, cadenas y refuerzo estructural.",
+      "image": "/images/products/varilla-3-8.jpg",
+      "specs": {
+        "diámetro": "⅜\" (9.5 mm)",
+        "designación": "No. 3",
+        "largo": "12 m",
+        "peso": "0.56 kg/m",
+        "grado": "42"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "varilla-1-2-deacero",
+      "name": "Varilla Corrugada ½\" (No. 4) — 12m",
+      "category": "varilla-cemento",
+      "subcategory": "varilla",
+      "brand": "Deacero",
+      "price": 105,
+      "unit": "pieza",
+      "description": "Varilla de acero corrugada de ½ pulgada (12.7mm, No. 4), largo 12m. Para columnas, trabes y cimentaciones.",
+      "image": "/images/products/varilla-1-2.jpg",
+      "specs": {
+        "diámetro": "½\" (12.7 mm)",
+        "designación": "No. 4",
+        "largo": "12 m",
+        "peso": "0.994 kg/m",
+        "grado": "42"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "varilla-5-8-deacero",
+      "name": "Varilla Corrugada ⅝\" (No. 5) — 12m",
+      "category": "varilla-cemento",
+      "subcategory": "varilla",
+      "brand": "Deacero",
+      "price": 165,
+      "unit": "pieza",
+      "description": "Varilla de acero corrugada de ⅝ pulgada (15.9mm, No. 5), largo 12m. Para cimentaciones y elementos estructurales de alta carga.",
+      "image": "/images/products/varilla-5-8.jpg",
+      "specs": {
+        "diámetro": "⅝\" (15.9 mm)",
+        "designación": "No. 5",
+        "largo": "12 m",
+        "peso": "1.552 kg/m",
+        "grado": "42"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "cemento-apasco-50kg",
+      "name": "Cemento Apasco CPC 30R — 50 kg",
+      "category": "varilla-cemento",
+      "subcategory": "cemento",
+      "brand": "Apasco",
+      "price": 205,
+      "unit": "saco",
+      "description": "Cemento Portland Compuesto resistencia 30R, saco de 50 kg. Para todo tipo de obra: cimentaciones, muros, losas y acabados.",
+      "image": "/images/products/cemento-apasco.jpg",
+      "specs": {
+        "tipo": "CPC 30R",
+        "peso": "50 kg",
+        "resistencia": "30 MPa a 28 días",
+        "uso": "Obra general"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "mortero-apasco-50kg",
+      "name": "Mortero Apasco — 50 kg",
+      "category": "varilla-cemento",
+      "subcategory": "mortero",
+      "brand": "Apasco",
+      "price": 135,
+      "unit": "saco",
+      "description": "Mortero para pega de block, tabique y aplanados. Saco de 50 kg. Mezcla lista, solo agregar agua.",
+      "image": "/images/products/mortero-apasco.jpg",
+      "specs": {
+        "peso": "50 kg",
+        "tipo": "Mortero para albañilería",
+        "rendimiento": "~8 m² aplanado por saco",
+        "uso": "Pega, aplanados, junteo"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "malla-ciclonica-220-c11-20m",
+      "name": "Malla Ciclónica 2.20m Cal. 11.5 — Rollo 20m",
+      "category": "mallas",
+      "subcategory": "ciclonica",
+      "brand": "Deacero",
+      "price": 1650,
+      "unit": "rollo",
+      "description": "Malla ciclónica galvanizada de 2.20m de altura, calibre 11.5, rollo de 20 metros lineales. Para cercado perimetral.",
+      "image": "/images/products/malla-ciclonica-220.jpg",
+      "specs": {
+        "altura": "2.20 m",
+        "calibre": "11.5",
+        "largo": "20 m",
+        "abertura": "55 x 55 mm",
+        "acabado": "Galvanizado"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "malla-ciclonica-180-c12-20m",
+      "name": "Malla Ciclónica 1.80m Cal. 12.5 — Rollo 20m",
+      "category": "mallas",
+      "subcategory": "ciclonica",
+      "brand": "Deacero",
+      "price": 1150,
+      "unit": "rollo",
+      "description": "Malla ciclónica galvanizada de 1.80m de altura, calibre 12.5, rollo de 20 metros lineales.",
+      "image": "/images/products/malla-ciclonica-180.jpg",
+      "specs": {
+        "altura": "1.80 m",
+        "calibre": "12.5",
+        "largo": "20 m",
+        "abertura": "55 x 55 mm",
+        "acabado": "Galvanizado"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "malla-borreguera-100-50m",
+      "name": "Malla Borreguera 1.00m — Rollo 50m",
+      "category": "mallas",
+      "subcategory": "borreguera",
+      "brand": "Deacero",
+      "price": 1250,
+      "unit": "rollo",
+      "description": "Malla borreguera (ganadera) de 1.00m de altura, rollo de 50 metros. Para cercar ganado menor y aves.",
+      "image": "/images/products/malla-borreguera.jpg",
+      "specs": {
+        "altura": "1.00 m",
+        "largo": "50 m",
+        "abertura": "10 x 15 cm",
+        "uso": "Ganadería y avicultura"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "malla-borreguera-120-50m",
+      "name": "Malla Borreguera 1.20m — Rollo 50m",
+      "category": "mallas",
+      "subcategory": "borreguera",
+      "brand": "Deacero",
+      "price": 1480,
+      "unit": "rollo",
+      "description": "Malla borreguera (ganadera) de 1.20m de altura, rollo de 50 metros. Para cercar ganado menor.",
+      "image": "/images/products/malla-borreguera-120.jpg",
+      "specs": {
+        "altura": "1.20 m",
+        "largo": "50 m",
+        "abertura": "10 x 15 cm",
+        "uso": "Ganadería"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "rejacero-15x15-6x6",
+      "name": "Rejacero 15x15 cm — Panel 6x6\"",
+      "category": "mallas",
+      "subcategory": "rejacero",
+      "brand": "Deacero",
+      "price": 480,
+      "unit": "pieza",
+      "description": "Panel de rejacero (malla electrosoldada) abertura 15x15 cm, panel 2.44x1.22m. Para fachadas, rejas decorativas y protecciones.",
+      "image": "/images/products/rejacero.jpg",
+      "specs": {
+        "abertura": "15 x 15 cm",
+        "medida panel": "2.44 x 1.22 m",
+        "calibre": "10/10",
+        "acabado": "Galvanizado"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "rotomartillo-makita-hp1630",
+      "name": "Rotomartillo Makita HP1630 ½\"",
+      "category": "herramienta",
+      "subcategory": "electrica",
+      "brand": "Makita",
+      "price": 2450,
+      "unit": "pieza",
+      "description": "Rotomartillo eléctrico Makita HP1630 de ½ pulgada, 710W. Ideal para concreto, madera y metal. Incluye mandril con llave.",
+      "image": "/images/products/rotomartillo-makita.jpg",
+      "specs": {
+        "potencia": "710 W",
+        "capacidad": "½\" (13 mm) concreto: 16 mm",
+        "velocidad": "0-2,800 RPM",
+        "peso": "1.9 kg"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "rotomartillo-makita-hr2470",
+      "name": "Rotomartillo Makita HR2470 SDS-Plus",
+      "category": "herramienta",
+      "subcategory": "electrica",
+      "brand": "Makita",
+      "price": 4350,
+      "unit": "pieza",
+      "description": "Rotomartillo SDS-Plus Makita HR2470 de 24mm, 780W. 3 modos: rotación, percusión y solo percusión. Para trabajos profesionales en concreto.",
+      "image": "/images/products/rotomartillo-makita-hr2470.jpg",
+      "specs": {
+        "potencia": "780 W",
+        "capacidad concreto": "24 mm",
+        "energía de impacto": "2.7 J",
+        "velocidad": "0-1,100 RPM",
+        "peso": "2.6 kg"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "taladro-dewalt-dwd024",
+      "name": "Taladro Percutor DeWalt DWD024 ½\"",
+      "category": "herramienta",
+      "subcategory": "electrica",
+      "brand": "DeWalt",
+      "price": 1950,
+      "unit": "pieza",
+      "description": "Taladro percutor DeWalt DWD024 de ½ pulgada, 650W. Para madera, metal y mampostería. Velocidad variable y reversa.",
+      "image": "/images/products/taladro-dewalt.jpg",
+      "specs": {
+        "potencia": "650 W",
+        "capacidad": "½\" (13 mm)",
+        "velocidad": "0-2,800 RPM",
+        "peso": "1.73 kg"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "esmeriladora-makita-ga4530",
+      "name": "Esmeriladora Makita GA4530 4½\"",
+      "category": "herramienta",
+      "subcategory": "electrica",
+      "brand": "Makita",
+      "price": 1380,
+      "unit": "pieza",
+      "description": "Mini esmeriladora angular Makita GA4530 de 4½ pulgadas (115mm), 720W. Para corte y desbaste de metal.",
+      "image": "/images/products/esmeriladora-makita.jpg",
+      "specs": {
+        "potencia": "720 W",
+        "disco": "4½\" (115 mm)",
+        "velocidad": "11,000 RPM",
+        "peso": "1.8 kg"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "sierra-circular-dewalt-dwe560",
+      "name": "Sierra Circular DeWalt DWE560 7¼\"",
+      "category": "herramienta",
+      "subcategory": "electrica",
+      "brand": "DeWalt",
+      "price": 3250,
+      "unit": "pieza",
+      "description": "Sierra circular DeWalt DWE560 de 7¼ pulgadas, 1,400W. Corte máximo de 65mm a 90°. Incluye disco de 24 dientes.",
+      "image": "/images/products/sierra-dewalt.jpg",
+      "specs": {
+        "potencia": "1,400 W",
+        "disco": "7¼\" (184 mm)",
+        "corte a 90°": "65 mm",
+        "velocidad": "5,500 RPM",
+        "peso": "3.6 kg"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "juego-llaves-truper-12",
+      "name": "Juego de Llaves Combinadas Truper — 12 piezas",
+      "category": "herramienta",
+      "subcategory": "manual",
+      "brand": "Truper",
+      "price": 520,
+      "unit": "juego",
+      "description": "Juego de 12 llaves combinadas (estrías/boca) Truper, medidas de 8mm a 22mm. Acero cromo-vanadio. Incluye organizador.",
+      "image": "/images/products/llaves-truper.jpg",
+      "specs": {
+        "piezas": "12",
+        "medidas": "8-22 mm",
+        "material": "Cromo-Vanadio",
+        "tipo": "Combinadas"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "flexometro-truper-8m",
+      "name": "Flexómetro Truper Gripper 8m",
+      "category": "herramienta",
+      "subcategory": "manual",
+      "brand": "Truper",
+      "price": 145,
+      "unit": "pieza",
+      "description": "Flexómetro (cinta métrica) Truper Gripper de 8 metros, cinta de 25mm con recubrimiento de nylon. Freno automático.",
+      "image": "/images/products/flexometro-truper.jpg",
+      "specs": {
+        "largo": "8 m",
+        "ancho cinta": "25 mm",
+        "recubrimiento": "Nylon",
+        "tipo": "Autofrenado"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "desarmador-truper-6pzas",
+      "name": "Juego de Desarmadores Truper — 6 piezas",
+      "category": "herramienta",
+      "subcategory": "manual",
+      "brand": "Truper",
+      "price": 185,
+      "unit": "juego",
+      "description": "Juego de 6 desarmadores Truper con mango ergonómico bi-material. 3 planos + 3 Phillips. Punta magnética.",
+      "image": "/images/products/desarmadores-truper.jpg",
+      "specs": {
+        "piezas": "6",
+        "tipos": "3 planos + 3 Phillips",
+        "mango": "Bi-material ergonómico",
+        "punta": "Magnética"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "pintura-vinilica-19l-blanco",
+      "name": "Pintura Vinílica Blanco Mate — 19 litros",
+      "category": "pinturas",
+      "subcategory": "vinilica",
+      "brand": "AceroMAX",
+      "price": 980,
+      "unit": "cubeta",
+      "description": "Pintura vinílica de alta calidad color blanco mate, cubeta de 19 litros. Lavable, rendimiento de 8-10 m² por litro. Para interiores y exteriores protegidos.",
+      "image": "/images/products/pintura-vinilica-blanca.jpg",
+      "specs": {
+        "volumen": "19 litros",
+        "color": "Blanco mate",
+        "rendimiento": "8-10 m²/litro",
+        "uso": "Interior y exterior protegido"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "impermeabilizante-5a-19l",
+      "name": "Impermeabilizante 5 Años — 19 litros",
+      "category": "pinturas",
+      "subcategory": "impermeabilizante",
+      "brand": "AceroMAX",
+      "price": 1650,
+      "unit": "cubeta",
+      "description": "Impermeabilizante acrílico rojo 5 años de garantía, cubeta de 19 litros. Elastomérico, resiste temperaturas extremas. Rendimiento 3-4 m²/litro.",
+      "image": "/images/products/impermeabilizante-5a.jpg",
+      "specs": {
+        "volumen": "19 litros",
+        "garantía": "5 años",
+        "color": "Rojo terracota",
+        "rendimiento": "3-4 m²/litro",
+        "tipo": "Acrílico elastomérico"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "impermeabilizante-3a-19l",
+      "name": "Impermeabilizante 3 Años — 19 litros",
+      "category": "pinturas",
+      "subcategory": "impermeabilizante",
+      "brand": "AceroMAX",
+      "price": 1250,
+      "unit": "cubeta",
+      "description": "Impermeabilizante acrílico rojo 3 años de garantía, cubeta de 19 litros. Buena relación costo-beneficio.",
+      "image": "/images/products/impermeabilizante-3a.jpg",
+      "specs": {
+        "volumen": "19 litros",
+        "garantía": "3 años",
+        "color": "Rojo terracota",
+        "rendimiento": "3-4 m²/litro",
+        "tipo": "Acrílico"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "esmalte-4l-negro",
+      "name": "Esmalte Alquidálico Negro Brillante — 4 litros",
+      "category": "pinturas",
+      "subcategory": "esmalte",
+      "brand": "AceroMAX",
+      "price": 420,
+      "unit": "lata",
+      "description": "Esmalte alquidálico (aceite) negro brillante, lata de 4 litros. Para herrería, rejas, puertas metálicas y superficies de acero.",
+      "image": "/images/products/esmalte-negro.jpg",
+      "specs": {
+        "volumen": "4 litros",
+        "color": "Negro brillante",
+        "rendimiento": "10-12 m²/litro",
+        "uso": "Metal, herrería, madera"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "puerta-multipanel-doal-90",
+      "name": "Puerta Multipanel Doal 90x213 cm",
+      "category": "puertas",
+      "subcategory": "multipanel",
+      "brand": "Doal",
+      "price": 3850,
+      "unit": "pieza",
+      "description": "Puerta multipanel de acero Doal 90x213 cm, 6 paneles. Incluye marco, bisagras y preparación para chapa. Color blanco.",
+      "image": "/images/products/puerta-multipanel-doal.jpg",
+      "specs": {
+        "medida": "90 x 213 cm",
+        "material": "Acero calibre 24",
+        "paneles": "6",
+        "color": "Blanco",
+        "incluye": "Marco, bisagras"
+      },
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "puerta-multipanel-doal-80",
+      "name": "Puerta Multipanel Doal 80x213 cm",
+      "category": "puertas",
+      "subcategory": "multipanel",
+      "brand": "Doal",
+      "price": 3450,
+      "unit": "pieza",
+      "description": "Puerta multipanel de acero Doal 80x213 cm, 6 paneles. Incluye marco, bisagras y preparación para chapa. Color blanco.",
+      "image": "/images/products/puerta-multipanel-doal-80.jpg",
+      "specs": {
+        "medida": "80 x 213 cm",
+        "material": "Acero calibre 24",
+        "paneles": "6",
+        "color": "Blanco",
+        "incluye": "Marco, bisagras"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "puerta-tambor-alvamex-90",
+      "name": "Puerta Tambor Alvamex 90x213 cm",
+      "category": "puertas",
+      "subcategory": "tambor",
+      "brand": "Alvamex",
+      "price": 1850,
+      "unit": "pieza",
+      "description": "Puerta tambor Alvamex 90x213 cm lisa, acabado listo para pintar. Interior de cartón honeycomb. Para interiores.",
+      "image": "/images/products/puerta-tambor-alvamex.jpg",
+      "specs": {
+        "medida": "90 x 213 cm",
+        "material": "MDF / cartón honeycomb",
+        "acabado": "Listo para pintar",
+        "uso": "Interior"
+      },
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "puerta-tambor-alvamex-80",
+      "name": "Puerta Tambor Alvamex 80x213 cm",
+      "category": "puertas",
+      "subcategory": "tambor",
+      "brand": "Alvamex",
+      "price": 1650,
+      "unit": "pieza",
+      "description": "Puerta tambor Alvamex 80x213 cm lisa, acabado listo para pintar. Para recámaras, baños y closets.",
+      "image": "/images/products/puerta-tambor-alvamex-80.jpg",
+      "specs": {
+        "medida": "80 x 213 cm",
+        "material": "MDF / cartón honeycomb",
+        "acabado": "Listo para pintar",
+        "uso": "Interior"
+      },
+      "inStock": true,
+      "featured": false
+    }
+  ]
+}

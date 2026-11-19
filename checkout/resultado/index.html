@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado del Pago | AceroMAX</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .result-wrapper {
+      max-width: 600px;
+      margin: 40px auto 60px;
+      padding: 0 16px;
+    }
+    .result-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #e8e8e8;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* Status bar at top */
+    .result-status-bar {
+      padding: 30px 20px 20px;
+    }
+    .result-status-bar.approved { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+    .result-status-bar.pending { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+    .result-status-bar.failure { background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); }
+
+    .result-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .result-icon svg {
+      width: 36px;
+      height: 36px;
+      color: #fff;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    .result-title {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .result-subtitle {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+    }
+
+    /* Body */
+    .result-body {
+      padding: 28px;
+    }
+    .result-message {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Details */
+    .result-details {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .result-detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 0.88rem;
+      color: #555;
+    }
+    .result-detail-row .label { font-weight: 500; }
+    .result-detail-row .value { font-weight: 600; color: #1B2A4A; }
+
+    /* Actions */
+    .result-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      background: #2563EB;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #1d4ed8; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 24px;
+      background: #fff;
+      color: #1B2A4A;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: #1B2A4A; }
+
+    .btn-whatsapp-result {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 24px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-whatsapp-result:hover { background: #1fb855; }
+
+    /* Pending steps */
+    .pending-steps {
+      text-align: left;
+      margin: 16px 0;
+    }
+    .pending-step {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.88rem;
+      color: #555;
+    }
+    .pending-step:last-child { border-bottom: none; }
+    .pending-step-num {
+      width: 24px;
+      height: 24px;
+      background: #f59e0b;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Loading state */
+    .result-loading {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .result-loading .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #e8e8e8;
+      border-top-color: #2563EB;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 540px) {
+      .result-wrapper { margin: 20px auto 40px; }
+      .result-body { padding: 20px; }
+      .result-title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Tel: (834) 110-0942 | (834) 313-2000</span>
+      <span>Blvd. Tamaulipas 3700, Cd. Victoria, Tam.</span>
+    </div>
+  </div>
+  <header>
+    <div class="container">
+      <a href="/"><img src="/images/logo.png" alt="AceroMAX" class="logo"></a>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/productos">Productos</a>
+        <a href="/tienda">Tienda</a>
+        <a href="/marcas">Marcas</a>
+        <a href="/blog">Blog</a>
+        <a href="/nosotros">Nosotros</a>
+        <a href="/contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="result-wrapper" id="resultWrapper">
+    <div class="result-loading">
+      <div class="spinner"></div>
+      <p>Procesando resultado...</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>AceroMAX</h3>
+        <p>Distribuidora de materiales para construcción en Ciudad Victoria, Tamaulipas.</p>
+        <p>Blvd. Tamaulipas 3700, Col. Villa del Río<br>Cd. Victoria, Tamaulipas</p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p>Tel: (834) 110-0942</p>
+        <p>Tel: (834) 313-2000</p>
+        <p>WhatsApp: (834) 852-8236</p>
+      </div>
+      <div>
+        <h3>Horario</h3>
+        <p>Lunes a Viernes: 8:00 - 18:00</p>
+        <p>Sábado: 8:00 - 14:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 AceroMAX - Distribuciones Arobe S.A. de C.V. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/cart.js"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      var WHATSAPP = '528348528236';
+
+      // Parse URL params
+      var params = new URLSearchParams(window.location.search);
+      var status = params.get('status') || params.get('collection_status') || 'unknown';
+      var paymentId = params.get('payment_id') || params.get('collection_id') || '';
+      var externalRef = params.get('external_reference') || '';
+      var merchantOrderId = params.get('merchant_order_id') || '';
+      var preferenceId = params.get('preference_id') || '';
+
+      // Normalize status
+      if (status === 'approved' || status === 'accredited') status = 'approved';
+      else if (status === 'pending' || status === 'in_process' || status === 'in_mediation' || status === 'authorized') status = 'pending';
+      else if (status === 'rejected' || status === 'cancelled' || status === 'refunded' || status === 'charged_back') status = 'failure';
+      else status = 'failure';
+
+      var wrapper = document.getElementById('resultWrapper');
+
+      function render() {
+        var html = '<div class="result-card">';
+
+        if (status === 'approved') {
+          // Clear cart on success
+          if (window.AceroCart) {
+            try { window.AceroCart.clearCart(); } catch(e) {}
+          }
+
+          html +=
+            '<div class="result-status-bar approved">' +
+              '<div class="result-icon">' +
+                '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>' +
+              '</div>' +
+              '<div class="result-title">¡Pago aprobado!</div>' +
+              '<div class="result-subtitle">Tu pedido ha sido confirmado</div>' +
+            '</div>' +
+            '<div class="result-body">' +
+              '<p class="result-message">' +
+                'Gracias por tu compra. Hemos recibido tu pago exitosamente. ' +
+                'Nos comunicaremos contigo para coordinar la entrega de tu pedido.' +
+              '</p>' +
+              '<div class="result-details">' +
+                (paymentId ? '<div class="result-detail-row"><span class="label">ID de pago</span><span class="value">#' + paymentId + '</span></div>' : '') +
+                (externalRef ? '<div class="result-detail-row"><span class="label">Referencia</span><span class="value">' + externalRef + '</span></div>' : '') +
+                '<div class="result-detail-row"><span class="label">Fecha</span><span class="value">' + new Date().toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }) + '</span></div>' +
+                '<div class="result-detail-row"><span class="label">Estado</span><span class="value" style="color:#25D366;">Aprobado</span></div>' +
+              '</div>' +
+              '<div class="result-actions">' +
+                '<a href="/tienda" class="btn-primary">' +
+                  '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' +
+                  'Seguir comprando' +
+                '</a>' +
+                '<a href="https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hola, acabo de hacer un pago en la tienda en línea. Mi referencia es: ' + (externalRef || paymentId || 'N/A') + '. Quisiera confirmar mi pedido.') + '" class="btn-whatsapp-result" target="_blank" rel="noopener">' +
+                  '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>' +
+                  'Confirmar por WhatsApp' +
+                '</a>' +
+              '</div>' +
+            '</div>';
+
+        } else if (status === 'pending') {
+          html +=
+            '<div class="result-status-bar pending">' +
+              '<div class="result-icon">' +
+                '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
+              '</div>' +
+              '<div class="result-title">Pago pendiente</div>' +
+              '<div class="result-subtitle">Tu pago está siendo procesado</div>' +
+            '</div>' +
+            '<div class="result-body">' +
+              '<p class="result-message">' +
+                'Tu pago está pendiente de confirmación. Dependiendo del método de pago, puede tardar de unos minutos a 1-2 días hábiles.' +
+              '</p>' +
+              '<div class="pending-steps">' +
+                '<div class="pending-step"><div class="pending-step-num">1</div><div>Si pagaste en OXXO, el pago se acredita en 1-2 horas.</div></div>' +
+                '<div class="pending-step"><div class="pending-step-num">2</div><div>Si pagaste por SPEI, se acredita en minutos.</div></div>' +
+                '<div class="pending-step"><div class="pending-step-num">3</div><div>Te notificaremos por email cuando se confirme tu pago.</div></div>' +
+                '<div class="pending-step"><div class="pending-step-num">4</div><div>Coordinaremos la entrega una vez confirmado el pago.</div></div>' +
+              '</div>' +
+              '<div class="result-details">' +
+                (paymentId ? '<div class="result-detail-row"><span class="label">ID de pago</span><span class="value">#' + paymentId + '</span></div>' : '') +
+                (externalRef ? '<div class="result-detail-row"><span class="label">Referencia</span><span class="value">' + externalRef + '</span></div>' : '') +
+                '<div class="result-detail-row"><span class="label">Estado</span><span class="value" style="color:#f59e0b;">Pendiente</span></div>' +
+              '</div>' +
+              '<div class="result-actions">' +
+                '<a href="https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hola, hice un pago en la tienda pero aparece como pendiente. Mi referencia es: ' + (externalRef || paymentId || 'N/A')) + '" class="btn-whatsapp-result" target="_blank" rel="noopener">' +
+                  '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>' +
+                  'Preguntar por WhatsApp' +
+                '</a>' +
+                '<a href="/tienda" class="btn-secondary">Seguir comprando</a>' +
+              '</div>' +
+            '</div>';
+
+        } else {
+          // Failure
+          html +=
+            '<div class="result-status-bar failure">' +
+              '<div class="result-icon">' +
+                '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>' +
+              '</div>' +
+              '<div class="result-title">Pago no procesado</div>' +
+              '<div class="result-subtitle">No se pudo completar tu pago</div>' +
+            '</div>' +
+            '<div class="result-body">' +
+              '<p class="result-message">' +
+                'Lo sentimos, tu pago no pudo ser procesado. Esto puede ocurrir por fondos insuficientes, datos incorrectos de la tarjeta, o un error temporal. Puedes intentar de nuevo o contactarnos por WhatsApp.' +
+              '</p>' +
+              '<div class="result-actions">' +
+                '<a href="/checkout" class="btn-primary">' +
+                  '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>' +
+                  'Intentar de nuevo' +
+                '</a>' +
+                '<a href="https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hola, intenté pagar en la tienda en línea pero hubo un error. ¿Me pueden ayudar?') + '" class="btn-whatsapp-result" target="_blank" rel="noopener">' +
+                  '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>' +
+                  'Pedir por WhatsApp' +
+                '</a>' +
+                '<a href="/tienda" class="btn-secondary">Volver a la tienda</a>' +
+              '</div>' +
+            '</div>';
+        }
+
+        html += '</div>';
+        wrapper.innerHTML = html;
+      }
+
+      // Render on load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', render);
+      } else {
+        render();
+      }
+
+    })();
+  </script>
+</body>
+</html>

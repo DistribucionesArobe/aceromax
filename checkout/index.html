@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Finalizar Compra | AceroMAX</title>
+  <meta name="description" content="Finaliza tu compra de materiales de construcción. Paga con tarjeta, OXXO, SPEI o MercadoPago. Envío gratis en Cd. Victoria en compras mayores a $1,500.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://aceromax.mx/checkout/">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* ===== CHECKOUT LAYOUT ===== */
+    .checkout-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 30px;
+      margin: 30px 0 50px;
+      align-items: start;
+    }
+
+    /* ===== FORM SECTION ===== */
+    .checkout-form {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .checkout-form h2 {
+      color: #1B2A4A;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+    }
+    .form-group label .required {
+      color: #e53e3e;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2563EB;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1B2A4A;
+      margin: 24px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .form-section-title svg {
+      color: #2563EB;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* ===== SHIPPING ZONE ===== */
+    .shipping-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .shipping-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .shipping-option:hover { border-color: #2563EB; }
+    .shipping-option.selected {
+      border-color: #2563EB;
+      background: #f0f5ff;
+    }
+    .shipping-option input[type="radio"] { margin: 0; accent-color: #2563EB; }
+    .shipping-option-info { flex: 1; }
+    .shipping-option-name { font-weight: 600; color: #333; font-size: 0.92rem; }
+    .shipping-option-desc { font-size: 0.8rem; color: #777; }
+    .shipping-option-price {
+      font-weight: 700;
+      color: #1B2A4A;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .shipping-option-price.free {
+      color: #25D366;
+    }
+
+    /* ===== ORDER SUMMARY (SIDEBAR) ===== */
+    .order-summary {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 24px;
+      position: sticky;
+      top: 20px;
+    }
+    .order-summary h2 {
+      color: #1B2A4A;
+      font-size: 1.15rem;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    /* Cart items in summary */
+    .summary-items {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 16px;
+    }
+    .summary-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .summary-item:last-child { border-bottom: none; }
+    .summary-item-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      background: #f0f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .summary-item-img img { width: 100%; height: 100%; object-fit: cover; }
+    .summary-item-img .mini-placeholder { color: #ccc; font-size: 1.2rem; }
+    .summary-item-info { flex: 1; min-width: 0; }
+    .summary-item-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .summary-item-qty { font-size: 0.78rem; color: #888; }
+    .summary-item-price { font-weight: 600; color: #1B2A4A; font-size: 0.9rem; white-space: nowrap; }
+
+    /* Totals */
+    .summary-totals {
+      border-top: 2px solid #f0f0f0;
+      padding-top: 14px;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: #555;
+    }
+    .summary-row.shipping .value.free { color: #25D366; font-weight: 600; }
+    .summary-row.total {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1B2A4A;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 2px solid #1B2A4A;
+    }
+    .free-shipping-note {
+      background: #e6f9ee;
+      color: #0d7a3e;
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    /* Buttons */
+    .btn-pay-mp {
+      width: 100%;
+      padding: 14px 20px;
+      background: #009ee3;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .btn-pay-mp:hover { background: #0084c7; }
+    .btn-pay-mp:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .btn-pay-mp svg { width: 20px; height: 20px; }
+
+    .btn-pay-whatsapp {
+      width: 100%;
+      padding: 12px 20px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .btn-pay-whatsapp:hover { background: #1fb855; }
+
+    .or-separator {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.85rem;
+      margin: 10px 0;
+      position: relative;
+    }
+    .or-separator::before,
+    .or-separator::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #ddd;
+    }
+    .or-separator::before { left: 0; }
+    .or-separator::after { right: 0; }
+
+    /* Security badges */
+    .security-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #eee;
+    }
+    .security-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      color: #888;
+    }
+    .security-badge svg { width: 14px; height: 14px; }
+
+    /* ===== EMPTY CART ===== */
+    .empty-cart {
+      text-align: center;
+      padding: 60px 20px;
+      grid-column: 1 / -1;
+    }
+    .empty-cart svg { color: #ccc; margin-bottom: 16px; }
+    .empty-cart h2 { color: #555; margin-bottom: 10px; }
+    .empty-cart p { color: #888; margin-bottom: 20px; }
+    .btn-to-store {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #2563EB;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-to-store:hover { background: #1d4ed8; }
+
+    /* ===== LOADING OVERLAY ===== */
+    .checkout-loading {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.85);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .checkout-loading.active { display: flex; }
+    .checkout-loading .spinner {
+      width: 44px;
+      height: 44px;
+      border: 4px solid #e8e8e8;
+      border-top-color: #009ee3;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 860px) {
+      .checkout-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .order-summary {
+        position: static;
+        order: -1;
+      }
+    }
+    @media (max-width: 540px) {
+      .form-row { grid-template-columns: 1fr; }
+      .checkout-form { padding: 18px; }
+      .order-summary { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Tel: (834) 110-0942 | (834) 313-2000</span>
+      <span>Blvd. Tamaulipas 3700, Cd. Victoria, Tam.</span>
+    </div>
+  </div>
+  <header>
+    <div class="container">
+      <a href="/"><img src="/images/logo.png" alt="AceroMAX" class="logo"></a>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/productos">Productos</a>
+        <a href="/tienda">Tienda</a>
+        <a href="/marcas">Marcas</a>
+        <a href="/blog">Blog</a>
+        <a href="/nosotros">Nosotros</a>
+        <a href="/contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Loading overlay -->
+  <div class="checkout-loading" id="checkoutLoading">
+    <div class="spinner"></div>
+    <p style="color:#333; font-weight:600;">Preparando tu pago con MercadoPago...</p>
+  </div>
+
+  <section class="page-hero" style="padding: 20px 0;">
+    <div class="container">
+      <h1 style="font-size:1.5rem;">Finalizar Compra</h1>
+    </div>
+  </section>
+
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="/">Inicio</a> &rsaquo; <a href="/tienda">Tienda</a> &rsaquo; <strong>Checkout</strong>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="checkout-wrapper" id="checkoutContent">
+      <!-- Will be populated by JS depending on cart state -->
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>AceroMAX</h3>
+        <p>Distribuidora de materiales para construcción en Ciudad Victoria, Tamaulipas.</p>
+        <p>Blvd. Tamaulipas 3700, Col. Villa del Río<br>Cd. Victoria, Tamaulipas</p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p>Tel: (834) 110-0942</p>
+        <p>Tel: (834) 313-2000</p>
+        <p>WhatsApp: (834) 852-8236</p>
+      </div>
+      <div>
+        <h3>Horario</h3>
+        <p>Lunes a Viernes: 8:00 - 18:00</p>
+        <p>Sábado: 8:00 - 14:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 AceroMAX - Distribuciones Arobe S.A. de C.V. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/cart.js"></script>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      var API_URL = window.ACEROMAX_API_URL || 'https://aceromax-api.onrender.com';
+      var WHATSAPP = '528348528236';
+      var FREE_SHIPPING_MIN = 1500;
+
+      var SHIPPING_ZONES = {
+        victoria: { name: 'Cd. Victoria', freeMin: FREE_SHIPPING_MIN, flatRate: 250 },
+        tamaulipas: { name: 'Resto de Tamaulipas', rate: 400 },
+        otro: { name: 'Fuera de estado', rate: null }
+      };
+
+      var selectedZone = 'victoria';
+
+      function fmt(n) {
+        return '$' + Number(n).toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+
+      function getShippingCost(zone, subtotal) {
+        var z = SHIPPING_ZONES[zone];
+        if (!z) return 0;
+        if (zone === 'victoria') {
+          return subtotal >= z.freeMin ? 0 : z.flatRate;
+        }
+        if (zone === 'tamaulipas') return z.rate;
+        return null; // cotizar
+      }
+
+      function renderCheckout() {
+        var wrapper = document.getElementById('checkoutContent');
+        var cart = window.AceroCart ? window.AceroCart.getCart() : [];
+
+        if (!cart || cart.length === 0) {
+          wrapper.innerHTML =
+            '<div class="empty-cart">' +
+              '<svg width="80" height="80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>' +
+              '<h2>Tu carrito está vacío</h2>' +
+              '<p>Agrega productos desde nuestra tienda para continuar.</p>' +
+              '<a href="/tienda" class="btn-to-store">Ir a la tienda</a>' +
+            '</div>';
+          return;
+        }
+
+        var subtotal = window.AceroCart.getTotal();
+        var shipping = getShippingCost(selectedZone, subtotal);
+
+        // Build form
+        var formHTML =
+          '<div class="checkout-form">' +
+            '<h2>Datos de envío</h2>' +
+
+            '<div class="form-section-title">' +
+              '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>' +
+              'Información personal' +
+            '</div>' +
+            '<div class="form-row">' +
+              '<div class="form-group">' +
+                '<label>Nombre completo <span class="required">*</span></label>' +
+                '<input type="text" id="payerName" placeholder="Tu nombre" required>' +
+              '</div>' +
+              '<div class="form-group">' +
+                '<label>Teléfono <span class="required">*</span></label>' +
+                '<input type="tel" id="payerPhone" placeholder="834 123 4567" required>' +
+              '</div>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Email <span class="required">*</span></label>' +
+              '<input type="email" id="payerEmail" placeholder="tu@email.com" required>' +
+            '</div>' +
+
+            '<div class="form-section-title">' +
+              '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' +
+              'Dirección de envío' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Dirección <span class="required">*</span></label>' +
+              '<input type="text" id="payerAddress" placeholder="Calle, número, colonia">' +
+            '</div>' +
+            '<div class="form-row">' +
+              '<div class="form-group">' +
+                '<label>Ciudad</label>' +
+                '<input type="text" id="payerCity" value="Ciudad Victoria">' +
+              '</div>' +
+              '<div class="form-group">' +
+                '<label>Código Postal</label>' +
+                '<input type="text" id="payerZip" placeholder="87000">' +
+              '</div>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Notas del pedido (opcional)</label>' +
+              '<textarea id="payerNotes" rows="2" placeholder="Instrucciones especiales de entrega..."></textarea>' +
+            '</div>' +
+
+            '<div class="form-section-title">' +
+              '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>' +
+              'Zona de envío' +
+            '</div>' +
+            '<div class="shipping-options">' +
+              buildShippingOption('victoria', 'Cd. Victoria', 'Entrega en 24-48 horas', subtotal) +
+              buildShippingOption('tamaulipas', 'Resto de Tamaulipas', 'Entrega en 2-5 días hábiles', subtotal) +
+              buildShippingOption('otro', 'Fuera de estado', 'Cotización por WhatsApp', subtotal) +
+            '</div>' +
+          '</div>';
+
+        // Build summary
+        var itemsHTML = '';
+        cart.forEach(function(item) {
+          itemsHTML +=
+            '<div class="summary-item">' +
+              '<div class="summary-item-img">' +
+                (item.image
+                  ? '<img src="' + item.image + '" alt="' + item.name + '">'
+                  : '<span class="mini-placeholder">&#x1F4E6;</span>'
+                ) +
+              '</div>' +
+              '<div class="summary-item-info">' +
+                '<div class="summary-item-name">' + item.name + '</div>' +
+                '<div class="summary-item-qty">Cant: ' + item.quantity + '</div>' +
+              '</div>' +
+              '<div class="summary-item-price">' + fmt(item.price * item.quantity) + '</div>' +
+            '</div>';
+        });
+
+        var shippingLabel = shipping === 0 ? 'GRATIS' : (shipping === null ? 'Por cotizar' : fmt(shipping));
+        var shippingClass = shipping === 0 ? ' free' : '';
+        var total = shipping === null ? subtotal : subtotal + shipping;
+
+        var summaryHTML =
+          '<div class="order-summary">' +
+            '<h2>Resumen del pedido</h2>' +
+            (shipping === 0
+              ? '<div class="free-shipping-note">&#x1F69A; ¡Envío GRATIS por comprar más de $1,500!</div>'
+              : ''
+            ) +
+            '<div class="summary-items">' + itemsHTML + '</div>' +
+            '<div class="summary-totals">' +
+              '<div class="summary-row"><span>Subtotal (' + window.AceroCart.getItemCount() + ' artículos)</span><span>' + fmt(subtotal) + '</span></div>' +
+              '<div class="summary-row shipping"><span>Envío (' + SHIPPING_ZONES[selectedZone].name + ')</span><span class="value' + shippingClass + '">' + shippingLabel + '</span></div>' +
+              '<div class="summary-row total"><span>Total</span><span>' + (shipping === null ? fmt(subtotal) + ' + envío' : fmt(total)) + '</span></div>' +
+            '</div>' +
+
+            '<button class="btn-pay-mp" id="btnPayMP" ' + (shipping === null ? 'disabled' : '') + '>' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>' +
+              'Pagar con MercadoPago' +
+            '</button>' +
+
+            '<div class="or-separator">o</div>' +
+
+            '<a class="btn-pay-whatsapp" id="btnPayWA" href="#" target="_blank" rel="noopener">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.137 0-4.146-.587-5.864-1.607l-.42-.252-3.084 1.034 1.034-3.084-.252-.42A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>' +
+              'Pedir por WhatsApp' +
+            '</a>' +
+
+            '<div class="security-badges">' +
+              '<div class="security-badge">' +
+                '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' +
+                'Pago seguro' +
+              '</div>' +
+              '<div class="security-badge">' +
+                '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>' +
+                'SSL cifrado' +
+              '</div>' +
+              '<div class="security-badge">' +
+                '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>' +
+                'MercadoPago' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+
+        wrapper.innerHTML = formHTML + summaryHTML;
+
+        // Wire up events after rendering
+        wireEvents(cart, subtotal);
+      }
+
+      function buildShippingOption(key, name, desc, subtotal) {
+        var checked = selectedZone === key ? ' checked' : '';
+        var selectedClass = selectedZone === key ? ' selected' : '';
+        var cost = getShippingCost(key, subtotal);
+        var priceStr, priceClass = '';
+
+        if (key === 'victoria' && subtotal >= FREE_SHIPPING_MIN) {
+          priceStr = 'GRATIS';
+          priceClass = ' free';
+        } else if (key === 'victoria') {
+          priceStr = fmt(cost);
+        } else if (cost === null) {
+          priceStr = 'Cotizar';
+        } else {
+          priceStr = fmt(cost);
+        }
+
+        return '<label class="shipping-option' + selectedClass + '">' +
+          '<input type="radio" name="shippingZone" value="' + key + '"' + checked + '>' +
+          '<div class="shipping-option-info">' +
+            '<div class="shipping-option-name">' + name + '</div>' +
+            '<div class="shipping-option-desc">' + desc + '</div>' +
+          '</div>' +
+          '<div class="shipping-option-price' + priceClass + '">' + priceStr + '</div>' +
+        '</label>';
+      }
+
+      function wireEvents(cart, subtotal) {
+        // Shipping zone change
+        var radios = document.querySelectorAll('input[name="shippingZone"]');
+        radios.forEach(function(r) {
+          r.addEventListener('change', function() {
+            selectedZone = this.value;
+            renderCheckout(); // Re-render to update totals
+          });
+        });
+
+        // WhatsApp button
+        var waBtn = document.getElementById('btnPayWA');
+        if (waBtn) {
+          waBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var name = (document.getElementById('payerName') || {}).value || '';
+            var phone = (document.getElementById('payerPhone') || {}).value || '';
+
+            var msg = '¡Hola! Quiero hacer un pedido:\n\n';
+            cart.forEach(function(item) {
+              msg += '- ' + item.name + ' x' + item.quantity + ' = ' + fmt(item.price * item.quantity) + '\n';
+            });
+            msg += '\nSubtotal: ' + fmt(subtotal);
+            var ship = getShippingCost(selectedZone, subtotal);
+            if (ship === 0) msg += '\nEnvío: GRATIS (Cd. Victoria)';
+            else if (ship === null) msg += '\nEnvío: Por cotizar (fuera de estado)';
+            else msg += '\nEnvío: ' + fmt(ship) + ' (' + SHIPPING_ZONES[selectedZone].name + ')';
+            if (name) msg += '\n\nNombre: ' + name;
+            if (phone) msg += '\nTeléfono: ' + phone;
+
+            window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
+          });
+        }
+
+        // MercadoPago pay button
+        var mpBtn = document.getElementById('btnPayMP');
+        if (mpBtn) {
+          mpBtn.addEventListener('click', function() {
+            var name = (document.getElementById('payerName') || {}).value;
+            var email = (document.getElementById('payerEmail') || {}).value;
+            var phone = (document.getElementById('payerPhone') || {}).value;
+
+            if (!name || !email || !phone) {
+              alert('Por favor completa tu nombre, email y teléfono.');
+              return;
+            }
+
+            var shipping = getShippingCost(selectedZone, subtotal);
+            if (shipping === null) {
+              alert('Para envíos fuera de estado, por favor contáctanos por WhatsApp para cotización.');
+              return;
+            }
+
+            // Show loading
+            document.getElementById('checkoutLoading').classList.add('active');
+            mpBtn.disabled = true;
+
+            var items = cart.map(function(item) {
+              return {
+                id: item.id || item.sku,
+                title: item.name,
+                quantity: Number(item.quantity),
+                unit_price: Number(item.price),
+                picture_url: item.image ? 'https://aceromax.mx' + item.image : undefined
+              };
+            });
+
+            var body = {
+              items: items,
+              shipping: {
+                cost: shipping,
+                zone: selectedZone
+              },
+              payer: {
+                name: name,
+                email: email,
+                phone: phone,
+                address: (document.getElementById('payerAddress') || {}).value || '',
+                city: (document.getElementById('payerCity') || {}).value || '',
+                zip: (document.getElementById('payerZip') || {}).value || ''
+              },
+              notes: (document.getElementById('payerNotes') || {}).value || ''
+            };
+
+            fetch(API_URL + '/api/create-preference', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(body)
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+              if (data.init_point) {
+                // Save order ref for result page
+                try { localStorage.setItem('aceromax_last_order', JSON.stringify({ ref: data.external_reference, date: new Date().toISOString() })); } catch(e){}
+                window.location.href = data.init_point;
+              } else {
+                throw new Error(data.error || 'Error al crear preferencia de pago');
+              }
+            })
+            .catch(function(err) {
+              document.getElementById('checkoutLoading').classList.remove('active');
+              mpBtn.disabled = false;
+              alert('Error al procesar el pago: ' + err.message + '\n\nIntenta de nuevo o pide por WhatsApp.');
+            });
+          });
+        }
+      }
+
+      // Listen for cart changes
+      document.addEventListener('cart:updated', renderCheckout);
+
+      // Initial render
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(renderCheckout, 100); // Let cart.js initialize
+        });
+      } else {
+        setTimeout(renderCheckout, 100);
+      }
+
+    })();
+  </script>
+</body>
+</html>

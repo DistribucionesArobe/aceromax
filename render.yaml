@@ -205,3 +205,12 @@ services:
       - type: rewrite
         source: /blog/boom-construccion-industrial-tamaulipas-2026
         destination: /blog/boom-construccion-industrial-tamaulipas-2026/index.html
+      - type: rewrite
+        source: /tienda
+        destination: /tienda/index.html
+      - type: rewrite
+        source: /checkout
+        destination: /checkout/index.html
+      - type: rewrite
+        source: /checkout/resultado
+        destination: /checkout/resultado/index.html

@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: aceromax-api
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: MP_ACCESS_TOKEN
+        sync: false
+      - key: MP_PUBLIC_KEY
+        sync: false
+      - key: FRONTEND_URL
+        value: https://aceromax.mx
+      - key: API_URL
+        value: https://aceromax-api.onrender.com
+      - key: NODE_ENV
+        value: production
