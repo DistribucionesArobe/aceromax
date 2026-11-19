@@ -2,12 +2,42 @@
   "lastUpdated": "2026-11-19",
   "currency": "MXN",
   "categories": [
-    {"id": "tablaroca", "name": "Tablaroca y Metal", "icon": "🧱", "description": "Paneles USG, perfileria, pastas, cintas y accesorios para construccion en seco"},
-    {"id": "plafones", "name": "Plafones", "icon": "⬜", "description": "Losetas minerales USG y sistema de suspension (tees, angulos)"},
-    {"id": "rejacero", "name": "Rejacero", "icon": "🔲", "description": "Paneles de rejacero clasico, postes y accesorios de fijacion"},
-    {"id": "pinturas", "name": "Pinturas", "icon": "🎨", "description": "Pintura vinilica y esmalte Alvamex, thinner, brochas y lijas"},
-    {"id": "impermeabilizante", "name": "Impermeabilizante", "icon": "💧", "description": "Impermeabilizante DOAL, mallas y accesorios para impermeabilizacion"},
-    {"id": "puertas", "name": "Puertas", "icon": "🚪", "description": "Puertas lisas, mixtas y clasicas en diferentes medidas"}
+    {
+      "id": "tablaroca",
+      "name": "Tablaroca y Metal",
+      "icon": "🧱",
+      "description": "Paneles USG, perfileria, pastas, cintas y accesorios para construccion en seco"
+    },
+    {
+      "id": "plafones",
+      "name": "Plafones",
+      "icon": "⬜",
+      "description": "Losetas minerales USG y sistema de suspension (tees, angulos)"
+    },
+    {
+      "id": "rejacero",
+      "name": "Rejacero",
+      "icon": "🔲",
+      "description": "Paneles de rejacero clasico, postes y accesorios de fijacion"
+    },
+    {
+      "id": "pinturas",
+      "name": "Pinturas",
+      "icon": "🎨",
+      "description": "Pintura vinilica y esmalte Alvamex, thinner, brochas y lijas"
+    },
+    {
+      "id": "impermeabilizante",
+      "name": "Impermeabilizante",
+      "icon": "💧",
+      "description": "Impermeabilizante DOAL, mallas y accesorios para impermeabilizacion"
+    },
+    {
+      "id": "puertas",
+      "name": "Puertas",
+      "icon": "🚪",
+      "description": "Puertas lisas, mixtas y clasicas en diferentes medidas"
+    }
   ],
   "products": [
     {
@@ -18,8 +48,12 @@
       "price": 245,
       "unit": "pieza",
       "description": "Panel de yeso ultraligero USG, facil de manejar e instalar. Medida estandar 4x8 pies.",
-      "image": "/images/products/tablaroca-ultralight.jpg",
-      "specs": {"tipo": "Ultralight", "espesor": "1/2\"", "medida": "4x8 pies"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-1?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Ultralight",
+        "espesor": "1/2\"",
+        "medida": "4x8 pies"
+      },
       "inStock": true,
       "featured": true
     },
@@ -31,8 +65,12 @@
       "price": 370,
       "unit": "pieza",
       "description": "Panel de yeso con tratamiento anti-moho, ideal para banos y areas humedas.",
-      "image": "/images/products/tablaroca-antimoho.jpg",
-      "specs": {"tipo": "Anti-Moho (MR)", "espesor": "1/2\"", "medida": "4x8 pies"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-1?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Anti-Moho (MR)",
+        "espesor": "1/2\"",
+        "medida": "4x8 pies"
+      },
       "inStock": true,
       "featured": false
     },
@@ -44,8 +82,12 @@
       "price": 380,
       "unit": "pieza",
       "description": "Panel de yeso resistente al fuego, para muros y plafones con requerimiento de proteccion.",
-      "image": "/images/products/tablaroca-antifuego.jpg",
-      "specs": {"tipo": "Anti Fuego", "espesor": "1/2\"", "medida": "4x8 pies"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-1?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Anti Fuego",
+        "espesor": "1/2\"",
+        "medida": "4x8 pies"
+      },
       "inStock": true,
       "featured": false
     },
@@ -57,8 +99,12 @@
       "price": 920,
       "unit": "pieza",
       "description": "Panel de cemento para exteriores, fachadas y areas mojadas. Maxima resistencia a la humedad.",
-      "image": "/images/products/durock-usg.jpg",
-      "specs": {"tipo": "Panel de cemento", "espesor": "1/2\"", "medida": "4x8 pies"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-durock-forte-1?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Panel de cemento",
+        "espesor": "1/2\"",
+        "medida": "4x8 pies"
+      },
       "inStock": true,
       "featured": true
     },
@@ -70,8 +116,11 @@
       "price": 880,
       "unit": "pieza",
       "description": "Panel de fibrocemento para exteriores con alta resistencia al impacto y humedad.",
-      "image": "/images/products/securock.jpg",
-      "specs": {"tipo": "Fibrocemento", "medida": "4x8 pies"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-durock-forte-tablero?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Fibrocemento",
+        "medida": "4x8 pies"
+      },
       "inStock": true,
       "featured": false
     },
@@ -83,8 +132,11 @@
       "price": 386,
       "unit": "pieza",
       "description": "Adhesivo en polvo para pegar paneles de tablaroca. Saco de 18 kg.",
-      "image": "/images/products/pegatabla-usg.jpg",
-      "specs": {"peso": "18 kg", "tipo": "Adhesivo"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "peso": "18 kg",
+        "tipo": "Adhesivo"
+      },
       "inStock": true,
       "featured": false
     },
@@ -96,8 +148,11 @@
       "price": 430,
       "unit": "pieza",
       "description": "Pasta para juntas lista para usar. Cubeta de 21.8 kg.",
-      "image": "/images/products/redimix-21.jpg",
-      "specs": {"peso": "21.8 kg", "tipo": "Pasta lista"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "peso": "21.8 kg",
+        "tipo": "Pasta lista"
+      },
       "inStock": true,
       "featured": false
     },
@@ -109,8 +164,11 @@
       "price": 660,
       "unit": "pieza",
       "description": "Pasta para juntas lista para usar. Cubeta grande de 28 kg.",
-      "image": "/images/products/redimix-28.jpg",
-      "specs": {"peso": "28 kg", "tipo": "Pasta lista"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "peso": "28 kg",
+        "tipo": "Pasta lista"
+      },
       "inStock": true,
       "featured": false
     },
@@ -122,8 +180,11 @@
       "price": 600,
       "unit": "pieza",
       "description": "Base coat gris para sistema EIFS y acabados en Durock/Securock.",
-      "image": "/images/products/basecoat-gris.jpg",
-      "specs": {"tipo": "Base coat", "color": "Gris"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-durock-instalador-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Base coat",
+        "color": "Gris"
+      },
       "inStock": true,
       "featured": false
     },
@@ -135,8 +196,11 @@
       "price": 110,
       "unit": "rollo",
       "description": "Cinta de papel para juntas de tablaroca USG. Rollo de 76 metros.",
-      "image": "/images/products/perfacinta-usg.jpg",
-      "specs": {"largo": "76 m", "tipo": "Cinta papel"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "largo": "76 m",
+        "tipo": "Cinta papel"
+      },
       "inStock": true,
       "featured": false
     },
@@ -148,8 +212,10 @@
       "price": 95,
       "unit": "rollo",
       "description": "Cinta de malla de fibra de vidrio autoadherible para juntas.",
-      "image": "/images/products/cinta-fibra-vidrio.jpg",
-      "specs": {"tipo": "Malla autoadherible"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Malla autoadherible"
+      },
       "inStock": true,
       "featured": false
     },
@@ -161,8 +227,12 @@
       "price": 43,
       "unit": "pieza",
       "description": "Poste metalico para tablaroca 41mm x 2.44m calibre 26.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "4.10 cm (41mm)", "largo": "2.44 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "4.10 cm (41mm)",
+        "largo": "2.44 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -174,8 +244,12 @@
       "price": 54,
       "unit": "pieza",
       "description": "Poste metalico para tablaroca 41mm x 3.05m calibre 26.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "4.10 cm (41mm)", "largo": "3.05 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "4.10 cm (41mm)",
+        "largo": "3.05 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -187,8 +261,12 @@
       "price": 52,
       "unit": "pieza",
       "description": "Poste metalico para tablaroca 63.5mm x 2.44m calibre 26.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "6.35 cm (63.5mm)", "largo": "2.44 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "6.35 cm (63.5mm)",
+        "largo": "2.44 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -200,8 +278,12 @@
       "price": 65,
       "unit": "pieza",
       "description": "Poste metalico para tablaroca 63.5mm x 3.05m calibre 26.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "6.35 cm (63.5mm)", "largo": "3.05 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "6.35 cm (63.5mm)",
+        "largo": "3.05 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -213,8 +295,12 @@
       "price": 82,
       "unit": "pieza",
       "description": "Poste metalico para tablaroca 92mm x 3.05m calibre 26.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "9.20 cm (92mm)", "largo": "3.05 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "9.20 cm (92mm)",
+        "largo": "3.05 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -226,8 +312,12 @@
       "price": 118,
       "unit": "pieza",
       "description": "Poste metalico para tablaroca 152.4mm x 3.05m calibre 26.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "15.24 cm (152.4mm)", "largo": "3.05 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "15.24 cm (152.4mm)",
+        "largo": "3.05 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -239,8 +329,12 @@
       "price": 46,
       "unit": "pieza",
       "description": "Canal de amarre para tablaroca 41mm x 3.05m calibre 26.",
-      "image": "/images/products/canal-metalico.jpg",
-      "specs": {"ancho": "4.10 cm (41mm)", "largo": "3.05 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "4.10 cm (41mm)",
+        "largo": "3.05 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -252,8 +346,12 @@
       "price": 54,
       "unit": "pieza",
       "description": "Canal de amarre para tablaroca 63.5mm x 3.05m calibre 26.",
-      "image": "/images/products/canal-metalico.jpg",
-      "specs": {"ancho": "6.35 cm (63.5mm)", "largo": "3.05 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "6.35 cm (63.5mm)",
+        "largo": "3.05 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -265,8 +363,12 @@
       "price": 72,
       "unit": "pieza",
       "description": "Canal de amarre para tablaroca 92mm x 3.05m calibre 26.",
-      "image": "/images/products/canal-metalico.jpg",
-      "specs": {"ancho": "9.20 cm (92mm)", "largo": "3.05 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "9.20 cm (92mm)",
+        "largo": "3.05 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -278,8 +380,12 @@
       "price": 107,
       "unit": "pieza",
       "description": "Canal de amarre para tablaroca 152.4mm x 3.05m calibre 26.",
-      "image": "/images/products/canal-metalico.jpg",
-      "specs": {"ancho": "15.24 cm (152.4mm)", "largo": "3.05 m", "calibre": "26"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "15.24 cm (152.4mm)",
+        "largo": "3.05 m",
+        "calibre": "26"
+      },
       "inStock": true,
       "featured": false
     },
@@ -291,8 +397,11 @@
       "price": 46,
       "unit": "pieza",
       "description": "Canal liston (furring channel) calibre 26 para plafones y recubrimientos.",
-      "image": "/images/products/canal-liston.jpg",
-      "specs": {"calibre": "26", "tipo": "Canal liston"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "calibre": "26",
+        "tipo": "Canal liston"
+      },
       "inStock": true,
       "featured": false
     },
@@ -304,8 +413,11 @@
       "price": 29,
       "unit": "pieza",
       "description": "Angulo de amarre calibre 26 para union de muros y plafones.",
-      "image": "/images/products/angulo-amarre.jpg",
-      "specs": {"calibre": "26", "tipo": "Angulo de amarre"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "calibre": "26",
+        "tipo": "Angulo de amarre"
+      },
       "inStock": true,
       "featured": false
     },
@@ -317,8 +429,11 @@
       "price": 31,
       "unit": "pieza",
       "description": "Esquinero metalico calibre 26 para proteccion de esquinas en tablaroca.",
-      "image": "/images/products/esquinero.jpg",
-      "specs": {"calibre": "26", "tipo": "Esquinero"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "calibre": "26",
+        "tipo": "Esquinero"
+      },
       "inStock": true,
       "featured": false
     },
@@ -330,8 +445,12 @@
       "price": 109,
       "unit": "pieza",
       "description": "Poste metalico reforzado 41mm x 3.05m calibre 20 para muros de mayor resistencia.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "4.10 cm (41mm)", "largo": "3.05 m", "calibre": "20"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "4.10 cm (41mm)",
+        "largo": "3.05 m",
+        "calibre": "20"
+      },
       "inStock": true,
       "featured": false
     },
@@ -343,8 +462,12 @@
       "price": 106,
       "unit": "pieza",
       "description": "Poste metalico reforzado 63.5mm x 2.44m calibre 20.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "6.35 cm (63.5mm)", "largo": "2.44 m", "calibre": "20"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "6.35 cm (63.5mm)",
+        "largo": "2.44 m",
+        "calibre": "20"
+      },
       "inStock": true,
       "featured": false
     },
@@ -356,8 +479,12 @@
       "price": 125,
       "unit": "pieza",
       "description": "Poste metalico reforzado 63.5mm x 3.05m calibre 20.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "6.35 cm (63.5mm)", "largo": "3.05 m", "calibre": "20"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "6.35 cm (63.5mm)",
+        "largo": "3.05 m",
+        "calibre": "20"
+      },
       "inStock": true,
       "featured": false
     },
@@ -369,8 +496,12 @@
       "price": 159,
       "unit": "pieza",
       "description": "Poste metalico reforzado 92mm x 3.05m calibre 20.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "9.20 cm (92mm)", "largo": "3.05 m", "calibre": "20"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "9.20 cm (92mm)",
+        "largo": "3.05 m",
+        "calibre": "20"
+      },
       "inStock": true,
       "featured": false
     },
@@ -382,8 +513,12 @@
       "price": 226,
       "unit": "pieza",
       "description": "Poste metalico reforzado 152.4mm x 3.05m calibre 20.",
-      "image": "/images/products/poste-metalico.jpg",
-      "specs": {"ancho": "15.24 cm (152.4mm)", "largo": "3.05 m", "calibre": "20"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "15.24 cm (152.4mm)",
+        "largo": "3.05 m",
+        "calibre": "20"
+      },
       "inStock": true,
       "featured": false
     },
@@ -395,8 +530,12 @@
       "price": 75,
       "unit": "pieza",
       "description": "Canal de amarre 41mm x 3.05m calibre 22.",
-      "image": "/images/products/canal-metalico.jpg",
-      "specs": {"ancho": "4.10 cm (41mm)", "largo": "3.05 m", "calibre": "22"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "4.10 cm (41mm)",
+        "largo": "3.05 m",
+        "calibre": "22"
+      },
       "inStock": true,
       "featured": false
     },
@@ -408,8 +547,12 @@
       "price": 91,
       "unit": "pieza",
       "description": "Canal de amarre 63.5mm x 3.05m calibre 22.",
-      "image": "/images/products/canal-metalico.jpg",
-      "specs": {"ancho": "6.35 cm (63.5mm)", "largo": "3.05 m", "calibre": "22"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "6.35 cm (63.5mm)",
+        "largo": "3.05 m",
+        "calibre": "22"
+      },
       "inStock": true,
       "featured": false
     },
@@ -421,8 +564,12 @@
       "price": 117,
       "unit": "pieza",
       "description": "Canal de amarre 92mm x 3.05m calibre 22.",
-      "image": "/images/products/canal-metalico.jpg",
-      "specs": {"ancho": "9.20 cm (92mm)", "largo": "3.05 m", "calibre": "22"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "9.20 cm (92mm)",
+        "largo": "3.05 m",
+        "calibre": "22"
+      },
       "inStock": true,
       "featured": false
     },
@@ -434,8 +581,12 @@
       "price": 171,
       "unit": "pieza",
       "description": "Canal de amarre 152.4mm x 3.05m calibre 22.",
-      "image": "/images/products/canal-metalico.jpg",
-      "specs": {"ancho": "15.24 cm (152.4mm)", "largo": "3.05 m", "calibre": "22"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "ancho": "15.24 cm (152.4mm)",
+        "largo": "3.05 m",
+        "calibre": "22"
+      },
       "inStock": true,
       "featured": false
     },
@@ -447,8 +598,11 @@
       "price": 47,
       "unit": "pieza",
       "description": "Canaleta metalica calibre 22 para instalaciones.",
-      "image": "/images/products/canaleta.jpg",
-      "specs": {"calibre": "22", "tipo": "Canaleta"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "calibre": "22",
+        "tipo": "Canaleta"
+      },
       "inStock": true,
       "featured": false
     },
@@ -460,8 +614,11 @@
       "price": 37,
       "unit": "pieza",
       "description": "Canaleta metalica calibre 24 para instalaciones.",
-      "image": "/images/products/canaleta.jpg",
-      "specs": {"calibre": "24", "tipo": "Canaleta"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "calibre": "24",
+        "tipo": "Canaleta"
+      },
       "inStock": true,
       "featured": false
     },
@@ -473,8 +630,11 @@
       "price": 92,
       "unit": "pieza",
       "description": "Canal liston (furring channel) calibre 20 reforzado.",
-      "image": "/images/products/canal-liston.jpg",
-      "specs": {"calibre": "20", "tipo": "Canal liston"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "calibre": "20",
+        "tipo": "Canal liston"
+      },
       "inStock": true,
       "featured": false
     },
@@ -486,8 +646,11 @@
       "price": 78,
       "unit": "pieza",
       "description": "Canal liston (furring channel) calibre 22.",
-      "image": "/images/products/canal-liston.jpg",
-      "specs": {"calibre": "22", "tipo": "Canal liston"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "calibre": "22",
+        "tipo": "Canal liston"
+      },
       "inStock": true,
       "featured": false
     },
@@ -499,8 +662,10 @@
       "price": 1,
       "unit": "pieza",
       "description": "Tornillo pija especial para fijar paneles Durock/Securock.",
-      "image": "/images/products/pija-durock.jpg",
-      "specs": {"tipo": "Pija Durock"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Pija Durock"
+      },
       "inStock": true,
       "featured": false
     },
@@ -512,8 +677,10 @@
       "price": 0.28,
       "unit": "pieza",
       "description": "Tornillo pija punta fina para fijar tablaroca a perfileria.",
-      "image": "/images/products/pija-tablaroca.jpg",
-      "specs": {"tipo": "Pija tablaroca punta fina"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Pija tablaroca punta fina"
+      },
       "inStock": true,
       "featured": false
     },
@@ -525,8 +692,10 @@
       "price": 0.46,
       "unit": "pieza",
       "description": "Tornillo pija framer con punta de broca para union de perfileria metalica.",
-      "image": "/images/products/pija-framer.jpg",
-      "specs": {"tipo": "Framer punta broca"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Framer punta broca"
+      },
       "inStock": true,
       "featured": false
     },
@@ -538,12 +707,13 @@
       "price": 0.46,
       "unit": "pieza",
       "description": "Tornillo pija framer con punta fina para union de perfileria metalica.",
-      "image": "/images/products/pija-framer.jpg",
-      "specs": {"tipo": "Framer punta fina"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Framer punta fina"
+      },
       "inStock": true,
       "featured": false
     },
-
     {
       "id": "plafon-radar-usg-2220",
       "name": "Plafon Radar USG (2220)",
@@ -552,8 +722,12 @@
       "price": 165,
       "unit": "pieza",
       "description": "Loseta mineral Radar USG modelo 2220 para plafon suspendido. 61x61 cm.",
-      "image": "/images/products/plafon-radar.jpg",
-      "specs": {"modelo": "2220", "medida": "61x61 cm", "tipo": "Mineral"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "modelo": "2220",
+        "medida": "61x61 cm",
+        "tipo": "Mineral"
+      },
       "inStock": true,
       "featured": true
     },
@@ -565,8 +739,12 @@
       "price": 155,
       "unit": "pieza",
       "description": "Loseta mineral Fissured USG modelo 506 con textura fisurada. 61x61 cm.",
-      "image": "/images/products/plafon-fissured.jpg",
-      "specs": {"modelo": "506", "medida": "61x61 cm", "tipo": "Mineral"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "modelo": "506",
+        "medida": "61x61 cm",
+        "tipo": "Mineral"
+      },
       "inStock": true,
       "featured": false
     },
@@ -578,8 +756,12 @@
       "price": 248,
       "unit": "pieza",
       "description": "Loseta mineral Olympia Micro USG modelo 4221, acabado fino. 61x61 cm.",
-      "image": "/images/products/plafon-olympia.jpg",
-      "specs": {"modelo": "4221", "medida": "61x61 cm", "tipo": "Mineral"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "modelo": "4221",
+        "medida": "61x61 cm",
+        "tipo": "Mineral"
+      },
       "inStock": true,
       "featured": true
     },
@@ -591,8 +773,11 @@
       "price": 130,
       "unit": "pieza",
       "description": "Loseta mineral texturizada Astral USG, opcion economica de buena calidad. 61x61 cm.",
-      "image": "/images/products/plafon-astral.jpg",
-      "specs": {"medida": "61x61 cm", "tipo": "Mineral texturizado"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "medida": "61x61 cm",
+        "tipo": "Mineral texturizado"
+      },
       "inStock": true,
       "featured": false
     },
@@ -604,8 +789,11 @@
       "price": 450,
       "unit": "pieza",
       "description": "Angulo perimetral USG para sistema de plafon suspendido. Calidad premium.",
-      "image": "/images/products/angulo-perimetral-usg.jpg",
-      "specs": {"marca": "USG", "tipo": "Angulo perimetral"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "marca": "USG",
+        "tipo": "Angulo perimetral"
+      },
       "inStock": true,
       "featured": false
     },
@@ -617,8 +805,12 @@
       "price": 400,
       "unit": "pieza",
       "description": "Perfil Tee principal USG 3.66m para sistema de suspension de plafon.",
-      "image": "/images/products/tee-principal-usg.jpg",
-      "specs": {"largo": "3.66 m", "marca": "USG", "tipo": "Tee principal"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "largo": "3.66 m",
+        "marca": "USG",
+        "tipo": "Tee principal"
+      },
       "inStock": true,
       "featured": false
     },
@@ -630,8 +822,12 @@
       "price": 120,
       "unit": "pieza",
       "description": "Perfil Tee crucero USG de 1.22m para cuadricula de plafon.",
-      "image": "/images/products/tee-crucero-usg.jpg",
-      "specs": {"largo": "1.22 m", "marca": "USG", "tipo": "Tee crucero"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "largo": "1.22 m",
+        "marca": "USG",
+        "tipo": "Tee crucero"
+      },
       "inStock": true,
       "featured": false
     },
@@ -643,8 +839,12 @@
       "price": 58,
       "unit": "pieza",
       "description": "Perfil Tee crucero USG de 0.61m para cuadricula de plafon.",
-      "image": "/images/products/tee-crucero-usg.jpg",
-      "specs": {"largo": "0.61 m", "marca": "USG", "tipo": "Tee crucero"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "largo": "0.61 m",
+        "marca": "USG",
+        "tipo": "Tee crucero"
+      },
       "inStock": true,
       "featured": false
     },
@@ -656,8 +856,11 @@
       "price": 70,
       "unit": "pieza",
       "description": "Angulo perimetral economico para sistema de plafon suspendido.",
-      "image": "/images/products/angulo-perimetral-eco.jpg",
-      "specs": {"tipo": "Angulo perimetral", "linea": "Economica"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "tipo": "Angulo perimetral",
+        "linea": "Economica"
+      },
       "inStock": true,
       "featured": false
     },
@@ -669,8 +872,12 @@
       "price": 138,
       "unit": "pieza",
       "description": "Perfil Tee principal economico 3.66m para sistema de suspension de plafon.",
-      "image": "/images/products/tee-principal-eco.jpg",
-      "specs": {"largo": "3.66 m", "tipo": "Tee principal", "linea": "Economica"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "largo": "3.66 m",
+        "tipo": "Tee principal",
+        "linea": "Economica"
+      },
       "inStock": true,
       "featured": false
     },
@@ -682,8 +889,12 @@
       "price": 40,
       "unit": "pieza",
       "description": "Perfil Tee crucero economico de 1.22m para cuadricula de plafon.",
-      "image": "/images/products/tee-crucero-eco.jpg",
-      "specs": {"largo": "1.22 m", "tipo": "Tee crucero", "linea": "Economica"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "largo": "1.22 m",
+        "tipo": "Tee crucero",
+        "linea": "Economica"
+      },
       "inStock": true,
       "featured": false
     },
@@ -695,12 +906,15 @@
       "price": 24,
       "unit": "pieza",
       "description": "Perfil Tee crucero economico de 0.61m para cuadricula de plafon.",
-      "image": "/images/products/tee-crucero-eco.jpg",
-      "specs": {"largo": "0.61 m", "tipo": "Tee crucero", "linea": "Economica"},
+      "image": "https://s7d9.scene7.com/is/image/usg/usg-ultralight-aplicacion?fmt=jpg&wid=400",
+      "specs": {
+        "largo": "0.61 m",
+        "tipo": "Tee crucero",
+        "linea": "Economica"
+      },
       "inStock": true,
       "featured": false
     },
-
     {
       "id": "rejacero-clasica-1m",
       "name": "Rejacero clasica 1 m",
@@ -709,8 +923,11 @@
       "price": 742,
       "unit": "pieza",
       "description": "Panel de rejacero clasico de 1 metro de altura. Ideal para cercado residencial.",
-      "image": "/images/products/rejacero-1m.jpg",
-      "specs": {"altura": "1 m", "tipo": "Clasica"},
+      "image": "https://deacero.com/images/thumbs/0000591_reja-deacero-clasica_1000.webp",
+      "specs": {
+        "altura": "1 m",
+        "tipo": "Clasica"
+      },
       "inStock": true,
       "featured": false
     },
@@ -722,8 +939,11 @@
       "price": 1069,
       "unit": "pieza",
       "description": "Panel de rejacero clasico de 1.50 metros de altura.",
-      "image": "/images/products/rejacero-150m.jpg",
-      "specs": {"altura": "1.50 m", "tipo": "Clasica"},
+      "image": "https://deacero.com/images/thumbs/0000591_reja-deacero-clasica_1000.webp",
+      "specs": {
+        "altura": "1.50 m",
+        "tipo": "Clasica"
+      },
       "inStock": true,
       "featured": true
     },
@@ -735,8 +955,11 @@
       "price": 1395,
       "unit": "pieza",
       "description": "Panel de rejacero clasico de 2 metros de altura. Maxima seguridad perimetral.",
-      "image": "/images/products/rejacero-2m.jpg",
-      "specs": {"altura": "2 m", "tipo": "Clasica"},
+      "image": "https://deacero.com/images/thumbs/0000591_reja-deacero-clasica_1000.webp",
+      "specs": {
+        "altura": "2 m",
+        "tipo": "Clasica"
+      },
       "inStock": true,
       "featured": true
     },
@@ -748,8 +971,11 @@
       "price": 517,
       "unit": "pieza",
       "description": "Poste metalico para rejacero de 1.50 metros.",
-      "image": "/images/products/poste-reja.jpg",
-      "specs": {"altura": "1.50 m", "tipo": "Poste"},
+      "image": "https://deacero.com/images/thumbs/0000603_reja-deacero-clasica_1000.webp",
+      "specs": {
+        "altura": "1.50 m",
+        "tipo": "Poste"
+      },
       "inStock": true,
       "featured": false
     },
@@ -761,8 +987,11 @@
       "price": 434,
       "unit": "pieza",
       "description": "Poste metalico para rejacero de 2 metros.",
-      "image": "/images/products/poste-reja.jpg",
-      "specs": {"altura": "2 m", "tipo": "Poste"},
+      "image": "https://deacero.com/images/thumbs/0000603_reja-deacero-clasica_1000.webp",
+      "specs": {
+        "altura": "2 m",
+        "tipo": "Poste"
+      },
       "inStock": true,
       "featured": false
     },
@@ -774,8 +1003,11 @@
       "price": 542,
       "unit": "pieza",
       "description": "Poste metalico para rejacero de 2.50 metros.",
-      "image": "/images/products/poste-reja.jpg",
-      "specs": {"altura": "2.50 m", "tipo": "Poste"},
+      "image": "https://deacero.com/images/thumbs/0000603_reja-deacero-clasica_1000.webp",
+      "specs": {
+        "altura": "2.50 m",
+        "tipo": "Poste"
+      },
       "inStock": true,
       "featured": false
     },
@@ -787,8 +1019,10 @@
       "price": 49,
       "unit": "pieza",
       "description": "Abrazadera metalica para fijar panel de rejacero al poste.",
-      "image": "/images/products/abrazadera-reja.jpg",
-      "specs": {"tipo": "Abrazadera"},
+      "image": "https://deacero.com/images/thumbs/0000591_reja-deacero-clasica_1000.webp",
+      "specs": {
+        "tipo": "Abrazadera"
+      },
       "inStock": true,
       "featured": false
     },
@@ -800,12 +1034,13 @@
       "price": 398,
       "unit": "pieza",
       "description": "Kit de base para anclar poste de rejacero al piso.",
-      "image": "/images/products/kit-base-reja.jpg",
-      "specs": {"tipo": "Kit base"},
+      "image": "https://deacero.com/images/thumbs/0000591_reja-deacero-clasica_1000.webp",
+      "specs": {
+        "tipo": "Kit base"
+      },
       "inStock": true,
       "featured": false
     },
-
     {
       "id": "pintura-vinilica-alvamex-exterior",
       "name": "Pintura vinilica Alvamex exterior cubeta",
@@ -814,8 +1049,12 @@
       "price": 800,
       "unit": "cubeta",
       "description": "Pintura vinilica para exteriores Alvamex, cubeta 19 litros. Alta durabilidad.",
-      "image": "/images/products/pintura-alvamex-exterior.jpg",
-      "specs": {"volumen": "19 L", "uso": "Exterior", "tipo": "Vinilica"},
+      "image": "",
+      "specs": {
+        "volumen": "19 L",
+        "uso": "Exterior",
+        "tipo": "Vinilica"
+      },
       "inStock": true,
       "featured": true
     },
@@ -827,8 +1066,12 @@
       "price": 387,
       "unit": "cubeta",
       "description": "Pintura vinilica para interiores Alvamex, cubeta 19 litros. Acabado mate lavable.",
-      "image": "/images/products/pintura-alvamex-interior.jpg",
-      "specs": {"volumen": "19 L", "uso": "Interior", "tipo": "Vinilica"},
+      "image": "",
+      "specs": {
+        "volumen": "19 L",
+        "uso": "Interior",
+        "tipo": "Vinilica"
+      },
       "inStock": true,
       "featured": true
     },
@@ -840,8 +1083,11 @@
       "price": 2833,
       "unit": "cubeta",
       "description": "Esmalte alquidalico Alvamex, cubeta 19 litros. Para metal y madera.",
-      "image": "/images/products/esmalte-alvamex-cubeta.jpg",
-      "specs": {"volumen": "19 L", "tipo": "Esmalte alquidalico"},
+      "image": "",
+      "specs": {
+        "volumen": "19 L",
+        "tipo": "Esmalte alquidalico"
+      },
       "inStock": true,
       "featured": false
     },
@@ -853,8 +1099,11 @@
       "price": 622,
       "unit": "galon",
       "description": "Esmalte alquidalico Alvamex, galon (3.78 litros). Para metal y madera.",
-      "image": "/images/products/esmalte-alvamex-galon.jpg",
-      "specs": {"volumen": "3.78 L (1 galon)", "tipo": "Esmalte alquidalico"},
+      "image": "",
+      "specs": {
+        "volumen": "3.78 L (1 galon)",
+        "tipo": "Esmalte alquidalico"
+      },
       "inStock": true,
       "featured": false
     },
@@ -866,8 +1115,11 @@
       "price": 177,
       "unit": "litro",
       "description": "Esmalte alquidalico Alvamex, 1 litro. Para metal y madera.",
-      "image": "/images/products/esmalte-alvamex-litro.jpg",
-      "specs": {"volumen": "1 L", "tipo": "Esmalte alquidalico"},
+      "image": "",
+      "specs": {
+        "volumen": "1 L",
+        "tipo": "Esmalte alquidalico"
+      },
       "inStock": true,
       "featured": false
     },
@@ -879,8 +1131,11 @@
       "price": 47,
       "unit": "litro",
       "description": "Thinner solvente, 1 litro. Para diluir esmaltes y limpieza.",
-      "image": "/images/products/thinner.jpg",
-      "specs": {"volumen": "1 L", "tipo": "Solvente"},
+      "image": "",
+      "specs": {
+        "volumen": "1 L",
+        "tipo": "Solvente"
+      },
       "inStock": true,
       "featured": false
     },
@@ -892,8 +1147,11 @@
       "price": 22,
       "unit": "pieza",
       "description": "Brocha de 2 pulgadas BYP para pintura y acabados.",
-      "image": "/images/products/brocha-byp.jpg",
-      "specs": {"ancho": "2\"", "marca": "BYP"},
+      "image": "",
+      "specs": {
+        "ancho": "2\"",
+        "marca": "BYP"
+      },
       "inStock": true,
       "featured": false
     },
@@ -905,8 +1163,11 @@
       "price": 32,
       "unit": "pieza",
       "description": "Brocha de 3 pulgadas BYP para pintura y acabados.",
-      "image": "/images/products/brocha-byp.jpg",
-      "specs": {"ancho": "3\"", "marca": "BYP"},
+      "image": "",
+      "specs": {
+        "ancho": "3\"",
+        "marca": "BYP"
+      },
       "inStock": true,
       "featured": false
     },
@@ -918,8 +1179,11 @@
       "price": 48,
       "unit": "pieza",
       "description": "Brocha de 4 pulgadas BYP para pintura y acabados.",
-      "image": "/images/products/brocha-byp.jpg",
-      "specs": {"ancho": "4\"", "marca": "BYP"},
+      "image": "",
+      "specs": {
+        "ancho": "4\"",
+        "marca": "BYP"
+      },
       "inStock": true,
       "featured": false
     },
@@ -931,12 +1195,13 @@
       "price": 18,
       "unit": "pieza",
       "description": "Lija Fandelli para preparacion de superficies antes de pintar.",
-      "image": "/images/products/lija-fandelli.jpg",
-      "specs": {"marca": "Fandelli"},
+      "image": "",
+      "specs": {
+        "marca": "Fandelli"
+      },
       "inStock": true,
       "featured": false
     },
-
     {
       "id": "impermeabilizante-doal-5anos",
       "name": "Impermeabilizante DOAL 5 anos cubeta",
@@ -945,8 +1210,12 @@
       "price": 890,
       "unit": "cubeta",
       "description": "Impermeabilizante acrilico DOAL con 5 anos de garantia. Cubeta 19 litros.",
-      "image": "/images/products/impermeabilizante-doal.jpg",
-      "specs": {"garantia": "5 anos", "volumen": "19 L", "tipo": "Acrilico"},
+      "image": "",
+      "specs": {
+        "garantia": "5 anos",
+        "volumen": "19 L",
+        "tipo": "Acrilico"
+      },
       "inStock": true,
       "featured": true
     },
@@ -958,8 +1227,11 @@
       "price": 1347,
       "unit": "rollo",
       "description": "Malla de refuerzo doble para sistema de impermeabilizacion. Rollo.",
-      "image": "/images/products/malla-impermeabilizar.jpg",
-      "specs": {"tipo": "Doble", "uso": "Refuerzo impermeabilizacion"},
+      "image": "",
+      "specs": {
+        "tipo": "Doble",
+        "uso": "Refuerzo impermeabilizacion"
+      },
       "inStock": true,
       "featured": false
     },
@@ -971,8 +1243,11 @@
       "price": 440,
       "unit": "rollo",
       "description": "Malla de refuerzo sencilla para sistema de impermeabilizacion. Rollo.",
-      "image": "/images/products/malla-impermeabilizar.jpg",
-      "specs": {"tipo": "Sencilla", "uso": "Refuerzo impermeabilizacion"},
+      "image": "",
+      "specs": {
+        "tipo": "Sencilla",
+        "uso": "Refuerzo impermeabilizacion"
+      },
       "inStock": true,
       "featured": false
     },
@@ -984,12 +1259,13 @@
       "price": 122,
       "unit": "pieza",
       "description": "Cepillo de ixtle para limpieza y preparacion de superficie antes de impermeabilizar.",
-      "image": "/images/products/cepillo-ixtle.jpg",
-      "specs": {"tipo": "Ixtle"},
+      "image": "",
+      "specs": {
+        "tipo": "Ixtle"
+      },
       "inStock": true,
       "featured": false
     },
-
     {
       "id": "puerta-lisa-90",
       "name": "Puerta lisa 90",
@@ -998,8 +1274,11 @@
       "price": 1800,
       "unit": "pieza",
       "description": "Puerta lisa de tambor, 90 cm de ancho. Para interior.",
-      "image": "/images/products/puerta-lisa.jpg",
-      "specs": {"ancho": "90 cm", "tipo": "Lisa"},
+      "image": "",
+      "specs": {
+        "ancho": "90 cm",
+        "tipo": "Lisa"
+      },
       "inStock": true,
       "featured": true
     },
@@ -1011,8 +1290,11 @@
       "price": 1780,
       "unit": "pieza",
       "description": "Puerta lisa de tambor, 85 cm de ancho. Para interior.",
-      "image": "/images/products/puerta-lisa.jpg",
-      "specs": {"ancho": "85 cm", "tipo": "Lisa"},
+      "image": "",
+      "specs": {
+        "ancho": "85 cm",
+        "tipo": "Lisa"
+      },
       "inStock": true,
       "featured": false
     },
@@ -1024,8 +1306,11 @@
       "price": 1760,
       "unit": "pieza",
       "description": "Puerta lisa de tambor, 80 cm de ancho. Para interior.",
-      "image": "/images/products/puerta-lisa.jpg",
-      "specs": {"ancho": "80 cm", "tipo": "Lisa"},
+      "image": "",
+      "specs": {
+        "ancho": "80 cm",
+        "tipo": "Lisa"
+      },
       "inStock": true,
       "featured": false
     },
@@ -1037,8 +1322,11 @@
       "price": 1740,
       "unit": "pieza",
       "description": "Puerta lisa de tambor, 75 cm de ancho. Para interior.",
-      "image": "/images/products/puerta-lisa.jpg",
-      "specs": {"ancho": "75 cm", "tipo": "Lisa"},
+      "image": "",
+      "specs": {
+        "ancho": "75 cm",
+        "tipo": "Lisa"
+      },
       "inStock": true,
       "featured": false
     },
@@ -1050,8 +1338,11 @@
       "price": 1720,
       "unit": "pieza",
       "description": "Puerta lisa de tambor, 70 cm de ancho. Para interior.",
-      "image": "/images/products/puerta-lisa.jpg",
-      "specs": {"ancho": "70 cm", "tipo": "Lisa"},
+      "image": "",
+      "specs": {
+        "ancho": "70 cm",
+        "tipo": "Lisa"
+      },
       "inStock": true,
       "featured": false
     },
@@ -1063,8 +1354,11 @@
       "price": 1900,
       "unit": "pieza",
       "description": "Puerta mixta con paneles decorativos, 90 cm de ancho.",
-      "image": "/images/products/puerta-mixta.jpg",
-      "specs": {"ancho": "90 cm", "tipo": "Mixta"},
+      "image": "",
+      "specs": {
+        "ancho": "90 cm",
+        "tipo": "Mixta"
+      },
       "inStock": true,
       "featured": true
     },
@@ -1076,8 +1370,11 @@
       "price": 1880,
       "unit": "pieza",
       "description": "Puerta mixta con paneles decorativos, 85 cm de ancho.",
-      "image": "/images/products/puerta-mixta.jpg",
-      "specs": {"ancho": "85 cm", "tipo": "Mixta"},
+      "image": "",
+      "specs": {
+        "ancho": "85 cm",
+        "tipo": "Mixta"
+      },
       "inStock": true,
       "featured": false
     },
@@ -1089,8 +1386,11 @@
       "price": 1860,
       "unit": "pieza",
       "description": "Puerta mixta con paneles decorativos, 80 cm de ancho.",
-      "image": "/images/products/puerta-mixta.jpg",
-      "specs": {"ancho": "80 cm", "tipo": "Mixta"},
+      "image": "",
+      "specs": {
+        "ancho": "80 cm",
+        "tipo": "Mixta"
+      },
       "inStock": true,
       "featured": false
     },
@@ -1102,8 +1402,11 @@
       "price": 2100,
       "unit": "pieza",
       "description": "Puerta clasica con molduras, 90 cm de ancho. Estilo elegante.",
-      "image": "/images/products/puerta-clasica.jpg",
-      "specs": {"ancho": "90 cm", "tipo": "Clasica"},
+      "image": "",
+      "specs": {
+        "ancho": "90 cm",
+        "tipo": "Clasica"
+      },
       "inStock": true,
       "featured": false
     },
@@ -1115,8 +1418,11 @@
       "price": 2080,
       "unit": "pieza",
       "description": "Puerta clasica con molduras, 85 cm de ancho.",
-      "image": "/images/products/puerta-clasica.jpg",
-      "specs": {"ancho": "85 cm", "tipo": "Clasica"},
+      "image": "",
+      "specs": {
+        "ancho": "85 cm",
+        "tipo": "Clasica"
+      },
       "inStock": true,
       "featured": false
     },
@@ -1128,8 +1434,11 @@
       "price": 2060,
       "unit": "pieza",
       "description": "Puerta clasica con molduras, 80 cm de ancho.",
-      "image": "/images/products/puerta-clasica.jpg",
-      "specs": {"ancho": "80 cm", "tipo": "Clasica"},
+      "image": "",
+      "specs": {
+        "ancho": "80 cm",
+        "tipo": "Clasica"
+      },
       "inStock": true,
       "featured": false
     }
