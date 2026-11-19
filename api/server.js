@@ -4,7 +4,7 @@
  * Este servicio maneja:
  * - Creación de preferencias de pago (Checkout Pro)
  * - Recepción de webhooks de MercadoPago
- * - Lógica de envío (gratis en Cd. Victoria > $1,500)
+ * - Lógica de envío (gratis en Cd. Victoria > $1,000)
  *
  * Deploy: Render.com (web service Node.js)
  */
@@ -151,7 +151,7 @@ app.post('/api/create-preference', async (req, res) => {
 
       switch (shippingZone) {
         case 'victoria':
-          shippingCost = subtotal >= 1500 ? 0 : 250;
+          shippingCost = subtotal >= 1000 ? 0 : 200;
           break;
         case 'tamaulipas-norte':
           shippingCost = 450;
