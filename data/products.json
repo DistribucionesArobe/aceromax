@@ -4,9 +4,15 @@
   "categories": [
     {
       "id": "tablaroca",
-      "name": "Tablaroca y Metal",
+      "name": "Tablaroca",
       "icon": "🧱",
-      "description": "Paneles USG, perfileria, pastas, cintas y accesorios para construccion en seco"
+      "description": "Paneles USG de yeso, cemento (Durock/Securock), pastas y cintas para construcción en seco"
+    },
+    {
+      "id": "metal",
+      "name": "Metal Tablaroca",
+      "icon": "🔩",
+      "description": "Postes, canales, canaletas, ángulos, esquineros y pijas para sistemas de tablaroca"
     },
     {
       "id": "plafones",
@@ -222,7 +228,7 @@
     {
       "id": "poste-410-244-c26",
       "name": "Poste 4.10 x 2.44 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 43,
       "unit": "pieza",
@@ -239,7 +245,7 @@
     {
       "id": "poste-410-305-c26",
       "name": "Poste 4.10 x 3.05 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 54,
       "unit": "pieza",
@@ -256,7 +262,7 @@
     {
       "id": "poste-635-244-c26",
       "name": "Poste 6.35 x 2.44 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 52,
       "unit": "pieza",
@@ -273,7 +279,7 @@
     {
       "id": "poste-635-305-c26",
       "name": "Poste 6.35 x 3.05 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 65,
       "unit": "pieza",
@@ -290,7 +296,7 @@
     {
       "id": "poste-920-305-c26",
       "name": "Poste 9.20 x 3.05 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 82,
       "unit": "pieza",
@@ -307,7 +313,7 @@
     {
       "id": "poste-1524-305-c26",
       "name": "Poste 15.24 x 3.05 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 118,
       "unit": "pieza",
@@ -324,7 +330,7 @@
     {
       "id": "canal-410-305-c26",
       "name": "Canal 4.10 x 3.05 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 46,
       "unit": "pieza",
@@ -341,7 +347,7 @@
     {
       "id": "canal-635-305-c26",
       "name": "Canal 6.35 x 3.05 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 54,
       "unit": "pieza",
@@ -358,7 +364,7 @@
     {
       "id": "canal-920-305-c26",
       "name": "Canal 9.20 x 3.05 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 72,
       "unit": "pieza",
@@ -375,7 +381,7 @@
     {
       "id": "canal-1524-305-c26",
       "name": "Canal 15.24 x 3.05 Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 107,
       "unit": "pieza",
@@ -392,7 +398,7 @@
     {
       "id": "canal-liston-c26",
       "name": "Canal liston Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 46,
       "unit": "pieza",
@@ -408,7 +414,7 @@
     {
       "id": "angulo-amarre-c26",
       "name": "Angulo de amarre Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 29,
       "unit": "pieza",
@@ -424,7 +430,7 @@
     {
       "id": "esquinero-c26",
       "name": "Esquinero Cal 26",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 31,
       "unit": "pieza",
@@ -440,7 +446,7 @@
     {
       "id": "poste-410-305-c20",
       "name": "Poste 4.10 x 3.05 Cal 20",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 109,
       "unit": "pieza",
@@ -457,7 +463,7 @@
     {
       "id": "poste-635-244-c20",
       "name": "Poste 6.35 x 2.44 Cal 20",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 106,
       "unit": "pieza",
@@ -474,7 +480,7 @@
     {
       "id": "poste-635-305-c20",
       "name": "Poste 6.35 x 3.05 Cal 20",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 125,
       "unit": "pieza",
@@ -491,7 +497,7 @@
     {
       "id": "poste-920-305-c20",
       "name": "Poste 9.20 x 3.05 Cal 20",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 159,
       "unit": "pieza",
@@ -508,7 +514,7 @@
     {
       "id": "poste-1524-305-c20",
       "name": "Poste 15.24 x 3.05 Cal 20",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 226,
       "unit": "pieza",
@@ -525,7 +531,7 @@
     {
       "id": "canal-410-305-c22",
       "name": "Canal 4.10 x 3.05 Cal 22",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 75,
       "unit": "pieza",
@@ -542,7 +548,7 @@
     {
       "id": "canal-635-305-c22",
       "name": "Canal 6.35 x 3.05 Cal 22",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 91,
       "unit": "pieza",
@@ -559,7 +565,7 @@
     {
       "id": "canal-920-305-c22",
       "name": "Canal 9.20 x 3.05 Cal 22",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 117,
       "unit": "pieza",
@@ -576,7 +582,7 @@
     {
       "id": "canal-1524-305-c22",
       "name": "Canal 15.24 x 3.05 Cal 22",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 171,
       "unit": "pieza",
@@ -593,7 +599,7 @@
     {
       "id": "canaleta-c22",
       "name": "Canaleta Cal 22",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 47,
       "unit": "pieza",
@@ -609,7 +615,7 @@
     {
       "id": "canaleta-c24",
       "name": "Canaleta Cal 24",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 37,
       "unit": "pieza",
@@ -625,7 +631,7 @@
     {
       "id": "canal-liston-c20",
       "name": "Canal liston Cal 20",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 92,
       "unit": "pieza",
@@ -641,7 +647,7 @@
     {
       "id": "canal-liston-c22",
       "name": "Canal liston Cal 22",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 78,
       "unit": "pieza",
@@ -657,7 +663,7 @@
     {
       "id": "pija-durock",
       "name": "Pija para durock",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 1,
       "unit": "pieza",
@@ -672,7 +678,7 @@
     {
       "id": "pija-tablaroca",
       "name": "Pija para tablaroca",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 0.28,
       "unit": "pieza",
@@ -687,7 +693,7 @@
     {
       "id": "pija-framer-broca",
       "name": "Pija framer punta de broca",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 0.46,
       "unit": "pieza",
@@ -702,7 +708,7 @@
     {
       "id": "pija-framer-fina",
       "name": "Pija framer punta fina",
-      "category": "tablaroca",
+      "category": "metal",
       "brand": "",
       "price": 0.46,
       "unit": "pieza",

@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comprar Materiales de Construcci&oacute;n en L&iacute;nea con Env&iacute;o a Domicilio | AceroMAX Cd. Victoria</title>
-  <meta name="description" content="Compra tablaroca USG, plafones, pintura Alvamex, impermeabilizante DOAL, rejacero y puertas en l&iacute;nea sin salir de casa. Env&iacute;o GRATIS a domicilio en Cd. Victoria en compras mayores a $1,500. Paga con tarjeta, OXXO, SPEI o MercadoPago. Precios de distribuidor.">
+  <meta name="description" content="Compra tablaroca USG, plafones, pintura Alvamex, impermeabilizante DOAL, rejacero y puertas en l&iacute;nea sin salir de casa. Env&iacute;o GRATIS a domicilio en Cd. Victoria en compras mayores a $1,000. Paga con tarjeta, OXXO, SPEI o MercadoPago. Precios de distribuidor.">
   <meta name="keywords" content="comprar materiales construccion en linea, envio a domicilio materiales construccion, tienda materiales construccion online, comprar tablaroca en linea, tablaroca usg precio envio, comprar pintura en linea cd victoria, plafones comprar online, rejacero precio con envio, impermeabilizante doal comprar, comprar sin salir de casa materiales, ferreteria en linea tamaulipas, envio gratis materiales victoria, tienda online materiales tamaulipas, materiales construccion a domicilio, comprar puertas en linea cd victoria">
   <meta property="og:title" content="Comprar Materiales de Construcci&oacute;n en L&iacute;nea — Env&iacute;o a Domicilio | AceroMAX">
   <meta property="og:description" content="Compra materiales de construcci&oacute;n sin salir de casa: tablaroca, plafones, pintura, impermeabilizante, rejacero y puertas. Env&iacute;o GRATIS a domicilio en Cd. Victoria. Paga con tarjeta, OXXO o SPEI.">
@@ -287,6 +287,56 @@
     .btn-add-cart:hover { background: #1d4ed8; }
     .btn-add-cart svg { width: 16px; height: 16px; }
 
+    /* ===== QUANTITY SELECTOR ===== */
+    .qty-selector {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: #f3f4f6;
+      color: #1B2A4A;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+      padding: 0;
+      line-height: 1;
+    }
+    .qty-btn:hover { background: #e5e7eb; }
+    .qty-btn:active { background: #d1d5db; }
+    .qty-input {
+      width: 38px;
+      height: 32px;
+      border: none;
+      border-left: 1px solid #e5e7eb;
+      border-right: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1B2A4A;
+      background: #fff;
+      -moz-appearance: textfield;
+      padding: 0;
+    }
+    .qty-input::-webkit-outer-spin-button,
+    .qty-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .product-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     /* ===== EMPTY STATE ===== */
     .empty-state {
       text-align: center;
@@ -343,6 +393,10 @@
       .product-card-body { padding: 10px; }
       .product-card-price { font-size: 1rem; }
       .btn-add-cart { padding: 7px 10px; font-size: 0.78rem; }
+      .product-card-footer { flex-direction: column; align-items: stretch; gap: 10px; }
+      .product-card-actions { justify-content: space-between; }
+      .qty-btn { width: 28px; height: 28px; }
+      .qty-input { width: 34px; height: 28px; font-size: 0.85rem; }
     }
     @media (max-width: 480px) {
       .products-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
@@ -418,7 +472,7 @@
 
   <!-- Promo Banner -->
   <div class="promo-banner">
-    <span>&#x1F69A;</span> Envío GRATIS en Cd. Victoria en compras mayores a $1,500
+    <span>&#x1F69A;</span> Env&iacute;o GRATIS en Cd. Victoria en compras mayores a $1,000
   </div>
 
   <!-- Hero -->
@@ -427,7 +481,7 @@
     <p class="hero-subtitle">Tablaroca USG, plafones, pinturas, impermeabilizante DOAL, rejacero Deacero y puertas con precios de distribuidor &mdash; directo a tu obra o domicilio.</p>
     <div class="hero-badges">
       <span class="hero-badge">&#x1F6D2; Compra desde tu celular</span>
-      <span class="hero-badge">&#x1F69A; Env&iacute;o GRATIS +$1,500</span>
+      <span class="hero-badge">&#x1F69A; Env&iacute;o GRATIS +$1,000</span>
       <span class="hero-badge">&#x1F4B3; Tarjeta, OXXO o SPEI</span>
       <span class="hero-badge">&#x1F4B0; Meses sin intereses</span>
     </div>
@@ -476,7 +530,8 @@
     <!-- Category Filters -->
     <div class="category-filters" id="categoryFilters">
       <button class="filter-btn active" data-category="all">&#x1F3E0; Todos</button>
-      <button class="filter-btn" data-category="tablaroca">&#x1F9F1; Tablaroca y Metal</button>
+      <button class="filter-btn" data-category="tablaroca">&#x1F9F1; Tablaroca</button>
+      <button class="filter-btn" data-category="metal">&#x1F529; Metal Tablaroca</button>
       <button class="filter-btn" data-category="plafones">&#x2B1C; Plafones</button>
       <button class="filter-btn" data-category="pinturas">&#x1F3A8; Pinturas</button>
       <button class="filter-btn" data-category="impermeabilizante">&#x1F4A7; Impermeabilizante</button>
@@ -522,7 +577,7 @@
       </div>
       <div style="padding:20px; border-radius:10px; background:#f8fafc; border:1px solid #e2e8f0;">
         <h3 style="color:#2563EB; font-size:1.1rem; margin-bottom:8px;">Envío GRATIS a domicilio</h3>
-        <p style="color:#475569; line-height:1.6; margin:0;">En compras mayores a $1,500 el envío es gratuito dentro de Cd. Victoria. También hacemos envíos a todo Tamaulipas con tarifas accesibles.</p>
+        <p style="color:#475569; line-height:1.6; margin:0;">En compras mayores a $1,000 el envío es gratuito dentro de Cd. Victoria. También hacemos envíos a todo Tamaulipas con tarifas accesibles.</p>
       </div>
       <div style="padding:20px; border-radius:10px; background:#f8fafc; border:1px solid #e2e8f0;">
         <h3 style="color:#2563EB; font-size:1.1rem; margin-bottom:8px;">Paga como quieras</h3>
@@ -545,7 +600,7 @@
       </details>
       <details style="border:1px solid #e2e8f0; border-radius:8px; padding:16px; margin-bottom:12px;">
         <summary style="cursor:pointer; font-weight:600; color:#1B2A4A;">¿El envío a domicilio es gratis?</summary>
-        <p style="margin-top:12px; color:#475569; line-height:1.6;">Sí, el envío es gratuito en Ciudad Victoria para compras mayores a $1,500 MXN. Para compras menores el envío tiene un costo de $250. También realizamos envíos a todo Tamaulipas con tarifas desde $350.</p>
+        <p style="margin-top:12px; color:#475569; line-height:1.6;">Sí, el envío es gratuito en Ciudad Victoria para compras mayores a $1,000 MXN. Para compras menores el envío tiene un costo de $200. También realizamos envíos a todo Tamaulipas con tarifas desde $350.</p>
       </details>
       <details style="border:1px solid #e2e8f0; border-radius:8px; padding:16px; margin-bottom:12px;">
         <summary style="cursor:pointer; font-weight:600; color:#1B2A4A;">¿Qué métodos de pago aceptan?</summary>
@@ -585,7 +640,7 @@
         "name": "¿El envío a domicilio es gratis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, el envío es gratuito en Ciudad Victoria para compras mayores a $1,500 MXN. Para compras menores el envío tiene un costo de $250. También realizamos envíos a todo Tamaulipas con tarifas desde $350."
+          "text": "Sí, el envío es gratuito en Ciudad Victoria para compras mayores a $1,000 MXN. Para compras menores el envío tiene un costo de $200. También realizamos envíos a todo Tamaulipas con tarifas desde $350."
         }
       },
       {
@@ -660,7 +715,8 @@
       let searchTerm = '';
 
       const CATEGORY_LABELS = {
-        'tablaroca': 'Tablaroca y Metal',
+        'tablaroca': 'Tablaroca',
+        'metal': 'Metal Tablaroca',
         'plafones': 'Plafones',
         'pinturas': 'Pinturas',
         'impermeabilizante': 'Impermeabilizante',
@@ -670,6 +726,7 @@
 
       const CATEGORY_EMOJI = {
         'tablaroca': '\u{1F9F1}',
+        'metal': '\u{1F529}',
         'plafones': '⬜',
         'pinturas': '\u{1F3A8}',
         'impermeabilizante': '\u{1F4A7}',
@@ -679,6 +736,7 @@
 
       const CATEGORY_BG = {
         'tablaroca': '#e8edf5',
+        'metal': '#e0e5ec',
         'plafones': '#eef0f2',
         'pinturas': '#fef3e8',
         'impermeabilizante': '#e8f4fd',
@@ -724,27 +782,60 @@
                 '<div class="product-card-price">' + formatPrice(p.price) + '</div>' +
                 '<div class="product-card-unit">/ ' + (p.unit || 'pieza') + '</div>' +
               '</div>' +
-              '<button class="btn-add-cart" data-id="' + p.id + '">' +
-                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>' +
-                'Agregar' +
-              '</button>' +
+              '<div class="product-card-actions">' +
+                '<div class="qty-selector">' +
+                  '<button class="qty-btn qty-minus" type="button" aria-label="Menos">−</button>' +
+                  '<input class="qty-input" type="number" value="1" min="1" max="999" aria-label="Cantidad">' +
+                  '<button class="qty-btn qty-plus" type="button" aria-label="Más">+</button>' +
+                '</div>' +
+                '<button class="btn-add-cart" data-id="' + p.id + '">' +
+                  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>' +
+                  'Agregar' +
+                '</button>' +
+              '</div>' +
             '</div>' +
           '</div>';
+
+        // Quantity selector handlers
+        var qtyInput = card.querySelector('.qty-input');
+        var minusBtn = card.querySelector('.qty-minus');
+        var plusBtn = card.querySelector('.qty-plus');
+
+        minusBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var val = parseInt(qtyInput.value) || 1;
+          if (val > 1) qtyInput.value = val - 1;
+        });
+        plusBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var val = parseInt(qtyInput.value) || 1;
+          if (val < 999) qtyInput.value = val + 1;
+        });
+        qtyInput.addEventListener('change', function() {
+          var val = parseInt(this.value) || 1;
+          if (val < 1) val = 1;
+          if (val > 999) val = 999;
+          this.value = val;
+        });
+        qtyInput.addEventListener('click', function(e) { e.stopPropagation(); });
 
         // Add to cart handler
         var btn = card.querySelector('.btn-add-cart');
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
+          var qty = parseInt(qtyInput.value) || 1;
           if (window.AceroCart) {
             window.AceroCart.addItem({
               id: p.id,
               name: p.name,
               price: p.price,
-              quantity: 1,
+              quantity: qty,
               image: p.image || '',
               category: p.category,
               sku: p.id
             });
+            // Reset quantity to 1 after adding
+            qtyInput.value = 1;
           }
         });
 

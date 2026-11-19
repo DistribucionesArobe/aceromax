@@ -9,9 +9,9 @@
   /* ========== CONSTANTS ========== */
   var STORAGE_KEY = 'aceromax_cart';
   var ZONE_KEY = 'aceromax_shipping_zone';
-  var FREE_SHIPPING_MIN = 1500;
+  var FREE_SHIPPING_MIN = 1000;
   var SHIPPING_RATES = {
-    victoria: { under: 250, over: 0 },
+    victoria: { under: 200, over: 0 },
     tamaulipas: { under: 450, over: 350 },
     otro: { under: null, over: null } // cotizar por WhatsApp
   };
