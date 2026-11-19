@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda en Línea — Materiales de Construcción y Herramienta | AceroMAX</title>
-  <meta name="description" content="Compra materiales de construcción en línea: pinturas, tablaroca USG, plafones, malla ciclónica y rejacero Deacero. Envío GRATIS en Cd. Victoria en compras mayores a $1,500. Paga con tarjeta, OXXO o SPEI.">
-  <meta name="keywords" content="tienda materiales construccion, pintura vinilica precio, tablaroca usg precio, plafon mineral, malla ciclonica precio, rejacero deacero, materiales construccion cd victoria, ferreteria en linea tamaulipas">
+  <meta name="description" content="Compra materiales de construcción en línea: pinturas, tablaroca USG, plafones, rejacero, impermeabilizante y puertas. Envío GRATIS en Cd. Victoria en compras mayores a $1,500. Paga con tarjeta, OXXO o SPEI.">
+  <meta name="keywords" content="tienda materiales construccion, pintura vinilica precio, tablaroca usg precio, plafon mineral, rejacero deacero, impermeabilizante doal, puertas, materiales construccion cd victoria, ferreteria en linea tamaulipas">
   <meta property="og:title" content="Tienda en Línea — AceroMAX">
-  <meta property="og:description" content="Compra pinturas, tablaroca, plafones, malla ciclónica y rejacero en línea. Envío GRATIS en Cd. Victoria en compras mayores a $1,500.">
+  <meta property="og:description" content="Compra pinturas, tablaroca, plafones, rejacero, impermeabilizante y puertas en línea. Envío GRATIS en Cd. Victoria en compras mayores a $1,500.">
+  <meta property="og:image" content="https://aceromax.mx/images/tienda/hero.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aceromax.mx/tienda/">
   <link rel="canonical" href="https://aceromax.mx/tienda/">
@@ -24,6 +25,58 @@
       letter-spacing: 0.3px;
     }
     .promo-banner span { font-size: 1.2em; }
+
+    /* ===== HERO IMAGE ===== */
+    .store-hero {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      background: #1B2A4A;
+    }
+    .store-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+    }
+    .store-hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .store-hero-overlay .hero-logo {
+      width: 180px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    }
+    .store-hero-overlay h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0 0 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+      letter-spacing: -0.5px;
+    }
+    .store-hero-overlay p {
+      color: rgba(255,255,255,0.92);
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+      line-height: 1.5;
+    }
+    @media (max-width: 768px) {
+      .store-hero { height: 280px; }
+      .store-hero-overlay h1 { font-size: 1.7rem; }
+      .store-hero-overlay p { font-size: 0.95rem; }
+      .store-hero-overlay .hero-logo { width: 120px; }
+    }
 
     /* ===== STORE CONTROLS ===== */
     .store-controls {
@@ -294,7 +347,7 @@
     "@context": "https://schema.org",
     "@type": "Store",
     "name": "AceroMAX — Tienda en Línea",
-    "description": "Tienda en línea de materiales de construcción en Ciudad Victoria, Tamaulipas: pinturas, tablaroca, plafones, malla ciclónica y rejacero.",
+    "description": "Tienda en línea de materiales de construcción en Ciudad Victoria, Tamaulipas: tablaroca, plafones, pinturas, impermeabilizante, rejacero y puertas.",
     "url": "https://aceromax.mx/tienda/",
     "telephone": "+528341100942",
     "address": {
@@ -318,11 +371,12 @@
       "@type": "OfferCatalog",
       "name": "Materiales de Construcción y Herramienta",
       "itemListElement": [
-        {"@type": "OfferCatalog", "name": "Pinturas e Impermeabilizantes"},
-        {"@type": "OfferCatalog", "name": "Tablaroca y Accesorios"},
-        {"@type": "OfferCatalog", "name": "Plafones y Suspensión"},
-        {"@type": "OfferCatalog", "name": "Malla Ciclónica"},
-        {"@type": "OfferCatalog", "name": "Rejacero Electrosoldado"}
+        {"@type": "OfferCatalog", "name": "Tablaroca y Perfilería Metálica"},
+        {"@type": "OfferCatalog", "name": "Plafones y Sistema de Suspensión"},
+        {"@type": "OfferCatalog", "name": "Pinturas y Accesorios"},
+        {"@type": "OfferCatalog", "name": "Impermeabilizante DOAL"},
+        {"@type": "OfferCatalog", "name": "Rejacero Deacero"},
+        {"@type": "OfferCatalog", "name": "Puertas de Tambor"}
       ]
     }
   }
@@ -337,7 +391,7 @@
   </div>
   <header>
     <div class="container">
-      <a href="/"><img src="/images/logo.png" alt="AceroMAX" class="logo"></a>
+      <a href="/"><img src="/images/logo-aceromax.png" alt="AceroMAX" class="logo"></a>
       <nav>
         <a href="/">Inicio</a>
         <a href="/productos">Productos</a>
@@ -355,17 +409,19 @@
     <span>&#x1F69A;</span> Envío GRATIS en Cd. Victoria en compras mayores a $1,500
   </div>
 
-  <!-- Hero -->
-  <section class="page-hero">
-    <div class="container">
+  <!-- Hero Image -->
+  <section class="store-hero">
+    <img src="/images/tienda/hero.jpg" alt="Bodega AceroMAX — materiales de construcción en Ciudad Victoria">
+    <div class="store-hero-overlay">
+      <img src="/images/logo-aceromax.png" alt="AceroMAX" class="hero-logo">
       <h1>Tienda en Línea</h1>
-      <p>Compra pinturas, tablaroca, plafones, malla ciclónica y rejacero con envío a todo Tamaulipas. Paga con tarjeta, OXXO, SPEI o MercadoPago.</p>
+      <p>Tablaroca, plafones, pinturas, impermeabilizante, rejacero y puertas con precios de distribuidor. Paga con tarjeta, OXXO, SPEI o a meses sin intereses.</p>
     </div>
   </section>
 
   <!-- Breadcrumb -->
   <div class="container">
-    <nav class="breadcrumb">
+    <nav class="breadcrumb" style="margin-top: 16px;">
       <a href="/">Inicio</a> &rsaquo; <strong>Tienda</strong>
     </nav>
   </div>
@@ -405,12 +461,13 @@
 
     <!-- Category Filters -->
     <div class="category-filters" id="categoryFilters">
-      <button class="filter-btn active" data-category="all">Todos</button>
-      <button class="filter-btn" data-category="pinturas">Pinturas</button>
-      <button class="filter-btn" data-category="tablaroca">Tablaroca</button>
-      <button class="filter-btn" data-category="plafones">Plafones</button>
-      <button class="filter-btn" data-category="malla-ciclonica">Malla Ciclónica</button>
-      <button class="filter-btn" data-category="rejacero">Rejacero</button>
+      <button class="filter-btn active" data-category="all">&#x1F3E0; Todos</button>
+      <button class="filter-btn" data-category="tablaroca">&#x1F9F1; Tablaroca y Metal</button>
+      <button class="filter-btn" data-category="plafones">&#x2B1C; Plafones</button>
+      <button class="filter-btn" data-category="pinturas">&#x1F3A8; Pinturas</button>
+      <button class="filter-btn" data-category="impermeabilizante">&#x1F4A7; Impermeabilizante</button>
+      <button class="filter-btn" data-category="rejacero">&#x1F532; Rejacero</button>
+      <button class="filter-btn" data-category="puertas">&#x1F6AA; Puertas</button>
     </div>
 
     <!-- Product Grid -->
@@ -477,11 +534,12 @@
       let searchTerm = '';
 
       const CATEGORY_LABELS = {
-        'pinturas': 'Pinturas',
-        'tablaroca': 'Tablaroca y Accesorios',
+        'tablaroca': 'Tablaroca y Metal',
         'plafones': 'Plafones',
-        'malla-ciclonica': 'Malla Ciclónica',
-        'rejacero': 'Rejacero'
+        'pinturas': 'Pinturas',
+        'impermeabilizante': 'Impermeabilizante',
+        'rejacero': 'Rejacero',
+        'puertas': 'Puertas'
       };
 
       // Format price
@@ -507,7 +565,7 @@
               ? '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy">'
               : '<div class="placeholder-icon"><svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>'
             ) +
-            '<span class="brand-badge">' + (p.brand || '') + '</span>' +
+            (p.brand ? '<span class="brand-badge">' + p.brand + '</span>' : '') +
             (p.inStock !== false ? '<span class="stock-badge">En stock</span>' : '') +
           '</div>' +
           '<div class="product-card-body">' +
