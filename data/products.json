@@ -139,7 +139,7 @@
       "price": 386,
       "unit": "pieza",
       "description": "Adhesivo en polvo para pegar paneles de tablaroca. Saco de 18 kg.",
-      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "image": "/images/productos/pegatabla.png",
       "specs": {
         "peso": "18 kg",
         "tipo": "Adhesivo"
@@ -219,7 +219,7 @@
       "price": 95,
       "unit": "rollo",
       "description": "Cinta de malla de fibra de vidrio autoadherible para juntas.",
-      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "image": "/images/productos/cinta-fibra-vidrio.png",
       "specs": {
         "tipo": "Malla autoadherible"
       },
@@ -669,7 +669,7 @@
       "price": 1,
       "unit": "pieza",
       "description": "Tornillo pija especial para fijar paneles Durock/Securock.",
-      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "image": "/images/productos/pija.png",
       "specs": {
         "tipo": "Pija Durock"
       },
@@ -684,7 +684,7 @@
       "price": 0.28,
       "unit": "pieza",
       "description": "Tornillo pija punta fina para fijar tablaroca a perfileria.",
-      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "image": "/images/productos/pija.png",
       "specs": {
         "tipo": "Pija tablaroca punta fina"
       },
@@ -699,7 +699,7 @@
       "price": 0.46,
       "unit": "pieza",
       "description": "Tornillo pija framer con punta de broca para union de perfileria metalica.",
-      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "image": "/images/productos/pija.png",
       "specs": {
         "tipo": "Framer punta broca"
       },
@@ -714,7 +714,7 @@
       "price": 0.46,
       "unit": "pieza",
       "description": "Tornillo pija framer con punta fina para union de perfileria metalica.",
-      "image": "https://s7d9.scene7.com/is/image/usg/usg-tablaroca-ultralight-3?fmt=jpg&wid=400",
+      "image": "/images/productos/pija.png",
       "specs": {
         "tipo": "Framer punta fina"
       },
@@ -1220,7 +1220,7 @@
       "price": 18,
       "unit": "pieza",
       "description": "Lija Fandelli para preparacion de superficies antes de pintar.",
-      "image": "",
+      "image": "/images/productos/lija-fandeli.png",
       "specs": {
         "marca": "Fandelli"
       },
@@ -1252,7 +1252,7 @@
       "price": 1347,
       "unit": "rollo",
       "description": "Malla de refuerzo doble para sistema de impermeabilizacion. Rollo.",
-      "image": "",
+      "image": "/images/productos/malla-imper.png",
       "specs": {
         "tipo": "Doble",
         "uso": "Refuerzo impermeabilizacion"
@@ -1268,7 +1268,7 @@
       "price": 440,
       "unit": "rollo",
       "description": "Malla de refuerzo sencilla para sistema de impermeabilizacion. Rollo.",
-      "image": "",
+      "image": "/images/productos/malla-imper.png",
       "specs": {
         "tipo": "Sencilla",
         "uso": "Refuerzo impermeabilizacion"
