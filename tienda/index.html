@@ -22,24 +22,31 @@
   <link rel="canonical" href="https://aceromax.mx/tienda/">
   <link rel="stylesheet" href="/css/style.css">
   <style>
+    /* ===== HEADER COMPACT ===== */
+    header .logo { max-height: 48px; width: auto; }
+    header .container { display: flex; align-items: center; justify-content: space-between; padding: 8px 20px; }
+    header nav { display: flex; gap: 20px; align-items: center; }
+    header nav a { text-decoration: none; color: #1F2937; font-weight: 500; font-size: 0.9rem; }
+    header nav a:hover, header nav a.active { color: #2563EB; }
+
     /* ===== PROMO BANNER ===== */
     .promo-banner {
       background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
       color: #fff;
       text-align: center;
-      padding: 12px 16px;
-      font-size: 1.05rem;
+      padding: 8px 16px;
+      font-size: 0.92rem;
       font-weight: 600;
       letter-spacing: 0.3px;
     }
-    .promo-banner span { font-size: 1.2em; }
+    .promo-banner span { font-size: 1.1em; }
 
     /* ===== HERO ===== */
     .store-hero {
       position: relative;
       width: 100%;
       background: linear-gradient(135deg, #1B2A4A 0%, #0f1b33 60%, #2563EB 100%);
-      padding: 56px 20px 48px;
+      padding: 28px 20px 24px;
       text-align: center;
       overflow: hidden;
     }
@@ -52,18 +59,18 @@
     }
     .store-hero h1 {
       color: #fff;
-      font-size: 2.6rem;
+      font-size: 1.8rem;
       font-weight: 800;
-      margin: 0 0 12px;
+      margin: 0 0 8px;
       letter-spacing: -0.5px;
       position: relative;
     }
     .store-hero .hero-subtitle {
       color: rgba(255,255,255,0.88);
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       max-width: 620px;
-      margin: 0 auto 20px;
-      line-height: 1.6;
+      margin: 0 auto 14px;
+      line-height: 1.5;
       position: relative;
     }
     .store-hero .hero-badges {
@@ -77,17 +84,17 @@
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.2);
       color: #fff;
-      padding: 8px 18px;
+      padding: 6px 14px;
       border-radius: 24px;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 500;
       backdrop-filter: blur(4px);
     }
     @media (max-width: 768px) {
-      .store-hero { padding: 40px 16px 36px; }
-      .store-hero h1 { font-size: 1.8rem; }
-      .store-hero .hero-subtitle { font-size: 0.95rem; }
-      .store-hero .hero-badge { font-size: 0.8rem; padding: 6px 14px; }
+      .store-hero { padding: 20px 16px 18px; }
+      .store-hero h1 { font-size: 1.4rem; }
+      .store-hero .hero-subtitle { font-size: 0.85rem; }
+      .store-hero .hero-badge { font-size: 0.75rem; padding: 5px 10px; }
     }
 
     /* ===== STORE CONTROLS ===== */
