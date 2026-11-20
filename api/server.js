@@ -13,6 +13,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { MercadoPagoConfig, Preference, Payment } = require('mercadopago');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,6 +29,135 @@ const mpClient = new MercadoPagoConfig({
 
 const preferenceClient = new Preference(mpClient);
 const paymentClient = new Payment(mpClient);
+
+// ============================================================
+// Configuración de Email (Nodemailer)
+// ============================================================
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || 'acero2@aceromax.mx';
+
+const emailTransporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.SMTP_USER,       // acero2@aceromax.mx
+    pass: process.env.SMTP_PASSWORD    // App Password de Google
+  }
+});
+
+/**
+ * Envía correo de notificación de venta al equipo AceroMAX
+ */
+async function enviarCorreoVenta(info, items) {
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+    console.log('[Email] SMTP no configurado, saltando notificación por correo');
+    return;
+  }
+
+  const fecha = new Date(info.date).toLocaleString('es-MX', {
+    timeZone: 'America/Monterrey',
+    dateStyle: 'long',
+    timeStyle: 'short'
+  });
+
+  const metodos = {
+    'credit_card': 'Tarjeta de crédito',
+    'debit_card': 'Tarjeta de débito',
+    'account_money': 'Dinero en cuenta MercadoPago',
+    'ticket': 'Pago en efectivo (OXXO)',
+    'bank_transfer': 'Transferencia bancaria (SPEI)',
+    'atm': 'Cajero automático'
+  };
+  const metodo = metodos[info.payment_method] || info.payment_method;
+
+  // Construir tabla de productos si hay items
+  let productosHTML = '';
+  if (items && items.length > 0) {
+    const filas = items
+      .filter(i => i.id !== 'envio')
+      .map(i => `
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #eee;">${i.title}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:center;">${i.quantity}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #eee;text-align:right;">$${(i.unit_price * i.quantity).toLocaleString('es-MX', {minimumFractionDigits:2})}</td>
+        </tr>
+      `).join('');
+
+    const envioItem = items.find(i => i.id === 'envio');
+    const envioHTML = envioItem
+      ? `<tr style="background:#f0fdf4;">
+          <td style="padding:8px 12px;" colspan="2"><strong>Envío</strong></td>
+          <td style="padding:8px 12px;text-align:right;">$${envioItem.unit_price.toLocaleString('es-MX', {minimumFractionDigits:2})}</td>
+        </tr>`
+      : `<tr style="background:#f0fdf4;">
+          <td style="padding:8px 12px;" colspan="2"><strong>Envío</strong></td>
+          <td style="padding:8px 12px;text-align:right;color:#25D366;font-weight:bold;">GRATIS</td>
+        </tr>`;
+
+    productosHTML = `
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+        <thead>
+          <tr style="background:#1B2A4A;color:#fff;">
+            <th style="padding:10px 12px;text-align:left;">Producto</th>
+            <th style="padding:10px 12px;text-align:center;">Cant.</th>
+            <th style="padding:10px 12px;text-align:right;">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${filas}
+          ${envioHTML}
+          <tr style="background:#1B2A4A;color:#fff;">
+            <td style="padding:10px 12px;" colspan="2"><strong>TOTAL</strong></td>
+            <td style="padding:10px 12px;text-align:right;font-size:1.1em;"><strong>$${info.amount.toLocaleString('es-MX', {minimumFractionDigits:2})} MXN</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    `;
+  }
+
+  const html = `
+    <div style="font-family:'Segoe UI',system-ui,sans-serif;max-width:600px;margin:0 auto;">
+      <div style="background:#1B2A4A;color:#fff;padding:20px 24px;border-radius:8px 8px 0 0;">
+        <h1 style="margin:0;font-size:22px;">&#x2705; Nueva Venta en AceroMAX</h1>
+        <p style="margin:6px 0 0;opacity:0.85;font-size:14px;">${fecha}</p>
+      </div>
+
+      <div style="background:#fff;padding:24px;border:1px solid #e5e7eb;border-top:none;">
+        <div style="background:#f0fdf4;border-left:4px solid #25D366;padding:16px;border-radius:0 8px 8px 0;margin-bottom:20px;">
+          <div style="font-size:28px;font-weight:800;color:#1B2A4A;">$${info.amount.toLocaleString('es-MX', {minimumFractionDigits:2})} MXN</div>
+          <div style="color:#666;font-size:14px;margin-top:4px;">Pago aprobado — ${metodo}</div>
+        </div>
+
+        <table style="width:100%;font-size:14px;margin-bottom:16px;">
+          <tr><td style="padding:6px 0;color:#666;">ID de pago:</td><td style="padding:6px 0;font-weight:600;">${info.id}</td></tr>
+          <tr><td style="padding:6px 0;color:#666;">Referencia:</td><td style="padding:6px 0;font-weight:600;">${info.external_reference}</td></tr>
+          <tr><td style="padding:6px 0;color:#666;">Email cliente:</td><td style="padding:6px 0;font-weight:600;">${info.payer_email || 'No proporcionado'}</td></tr>
+          <tr><td style="padding:6px 0;color:#666;">Estado:</td><td style="padding:6px 0;font-weight:600;color:#25D366;">APROBADO &#x2713;</td></tr>
+        </table>
+
+        ${productosHTML}
+
+        <div style="text-align:center;margin-top:20px;">
+          <a href="https://www.mercadopago.com.mx/activities" style="display:inline-block;background:#2563EB;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;">Ver en MercadoPago</a>
+        </div>
+      </div>
+
+      <div style="background:#f9fafb;padding:16px 24px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;text-align:center;">
+        <p style="margin:0;font-size:12px;color:#9ca3af;">AceroMAX — Blvd. Tamaulipas 3700, Cd. Victoria, Tam. — (834) 110-0942</p>
+      </div>
+    </div>
+  `;
+
+  try {
+    await emailTransporter.sendMail({
+      from: `"AceroMAX Ventas" <${process.env.SMTP_USER}>`,
+      to: NOTIFY_EMAIL,
+      subject: `💰 Nueva venta $${info.amount.toLocaleString('es-MX', {minimumFractionDigits:2})} MXN — ${metodo}`,
+      html: html
+    });
+    console.log(`[Email] Notificación enviada a ${NOTIFY_EMAIL}`);
+  } catch (emailError) {
+    console.error('[Email] Error enviando correo:', emailError.message);
+  }
+}
 
 // ============================================================
 // Middleware
@@ -290,9 +420,16 @@ app.post('/api/webhook', async (req, res) => {
           console.log(`  Email: ${info.payer_email}`);
           console.log(`  Referencia: ${info.external_reference}`);
 
-          // TODO: Enviar notificación por WhatsApp Business API
-          // al número 834 110 0942
-          // Ejemplo: notificarWhatsApp(info);
+          // Obtener items de la preferencia si es posible
+          let items = [];
+          try {
+            if (payment.additional_info?.items) {
+              items = payment.additional_info.items;
+            }
+          } catch (e) { /* silent */ }
+
+          // Enviar correo de notificación
+          await enviarCorreoVenta(info, items);
         }
 
       } catch (paymentError) {
